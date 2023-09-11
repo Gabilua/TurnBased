@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63e3763e89e4724780468c3508cabc4, type: 3}
+  m_Name: Sage
+  m_EditorClassIdentifier: 
+  characterName: Sage
+  inGameGFX: {fileID: 8590507262704659968, guid: a57b19ffe32e8e9449100ca0a3f99146, type: 3}
+  faceSprite: {fileID: 21300000, guid: f71f4b46214135d4cbe7286012b6df6d, type: 3}
+  characterStats:
+    strenght: 1
+    vitality: 100
+    dexterity: 6
+    agility: 12
+    intelligence: 17
+  learnableSkills:
+  - {fileID: 11400000, guid: 0c05481526ad2e6499be753ae90d2966, type: 2}
+  - {fileID: 11400000, guid: 3075c9a2bcdd1dd46adaec6f0093c779, type: 2}
+  - {fileID: 11400000, guid: 45dd0c785e6ab3b4ea24c9a7f5fe84e0, type: 2}

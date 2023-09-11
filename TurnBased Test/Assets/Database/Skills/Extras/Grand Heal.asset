@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
+  m_Name: Grand Heal
+  m_EditorClassIdentifier: 
+  skillName: Grand Heal
+  skillIcon: {fileID: 21300000, guid: 3fc22de2076a24144b83333cccfc3aba, type: 3}
+  effectType: 1
+  hitChance: 70
+  effectBaseValue: 0
+  affectedByStats: 1
+  statEffectOnBaseValue: 0
+  effectiveStat: 4
+  costStat: 1
+  costAmount: 7
+  targetRange: 4
+  selfTargetingAllowed: 1
+  useVFX: {fileID: 0}
+  receiveVFX: {fileID: 0}
+  usesSpecialAnimation: 1
+  targetReactionDelay: 1
+  appliesStatusEffect: 0
+  statusEffect: {fileID: 0}
