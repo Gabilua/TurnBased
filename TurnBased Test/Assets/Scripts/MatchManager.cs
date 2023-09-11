@@ -80,9 +80,9 @@ public class MatchManager : MonoBehaviour
             bool isPlayerCombatant = intendedTeam == GetPlayerTeam;
 
             if (isPlayerCombatant)
-                combatant.gameObject.name = "Player's " + combatant._characterInfo.characterName;
+                combatant.gameObject.name = "Player's " + combatant._characterInfo.name;
             else
-                combatant.gameObject.name = "Enemy " + combatant._characterInfo.characterName;
+                combatant.gameObject.name = "Enemy " + combatant._characterInfo.name;
 
             CombatantCreated?.Invoke(combatant, isPlayerCombatant);
         }

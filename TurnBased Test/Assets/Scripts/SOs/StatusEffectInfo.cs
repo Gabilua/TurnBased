@@ -6,10 +6,9 @@ using UnityEngine;
 public class StatusEffectInfo : ScriptableObject
 {
     [Header("Basic Info")]
-    public string effectName;
     public Sprite effectIcon;
     public EffectType effectType;
-    public int afflictionChance;
+    public TargetStat targetStat;
     public int durationInTurns;
 
     [Header("Power")]
@@ -17,6 +16,7 @@ public class StatusEffectInfo : ScriptableObject
     public bool affectedByStats;
     public StatEffectOnBaseValue statEffectOnBaseValue;
     public EffectiveStat effectiveStat;
+    public bool effectStacksDuration;
 
     [Header("Visual Feedback Parameters")]
     public GameObject receiveVFX;

@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.UI;
 
 public class StatusEffectController : MonoBehaviour
 {
     public Action<StatusEffectController> EffectDurationEnded;
-
-    [SerializeField] Image _statusEffectIcon;
 
     public RealtimeCombatant _target { get; private set; }
     public RealtimeCombatant _skillUser { get; private set; }
@@ -19,12 +16,15 @@ public class StatusEffectController : MonoBehaviour
     {
         target.CombatantDied += TargetDied;
 
-        _statusEffectIcon.sprite = effectInfo.effectIcon;
-
         _target = target;
         _skillUser = user;
         _effectApplied = effectInfo;
         _remainingAffectedTurns = _effectApplied.durationInTurns;
+    }
+
+    public void StackDuration()
+    {
+        _remainingAffectedTurns += _effectApplied.durationInTurns;
     }
 
     void TurnCountdown()

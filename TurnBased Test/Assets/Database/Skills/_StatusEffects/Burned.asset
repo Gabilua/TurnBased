@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d7fae53e7d3ff4f800b93bc04c8e96, type: 3}
   m_Name: Burned
   m_EditorClassIdentifier: 
-  effectName: B
   effectIcon: {fileID: 1265298394, guid: 9ceae9da5ce5dc647bbf8834f87f5afd, type: 3}
   effectType: 0
-  afflictionChance: 30
+  targetStat: 0
   durationInTurns: 3
-  effectBaseValue: 2
-  affectedByStats: 0
+  effectBaseValue: 0
+  affectedByStats: 1
   statEffectOnBaseValue: 0
-  effectiveStat: 0
+  effectiveStat: 4
   receiveVFX: {fileID: 8709639680917579618, guid: 7a5c3638696b60946adde54cd9ef5d5e, type: 3}

@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
-  m_Name: BasicAttack
+  m_Name: Blessing
   m_EditorClassIdentifier: 
-  skillName: Basic Attack
-  skillIcon: {fileID: 21300000, guid: 26cce71d645dbfb4aa0fd0380e3f8319, type: 3}
-  effectType: 0
-  hitChance: 60
-  effectBaseValue: 1
-  affectedByStats: 1
-  statEffectOnBaseValue: 1
-  effectiveStat: 0
+  skillIcon: {fileID: 21300000, guid: 2b006d7be0ca99248a04f2c76c99c635, type: 3}
+  effectType: 1
+  targetStat: 0
+  hitChance: 95
+  effectBaseValue: 0
+  affectedByStats: 0
+  statEffectOnBaseValue: 0
+  effectiveStat: 4
   costStat: 1
-  costAmount: 0
-  targetRange: 1
-  selfTargetingAllowed: 0
+  costAmount: 35
+  targetRange: 2
+  selfTargetingAllowed: 1
   useVFX: {fileID: 0}
   receiveVFX: {fileID: 0}
   usesSpecialAnimation: 0
   targetReactionDelay: 0.35
-  appliesStatusEffect: 0
-  statusEffect: {fileID: 0}
+  appliesStatusEffect: 1
+  statusEffect: {fileID: 11400000, guid: e1ca554908d8fb8469e3c9bf8b473d0e, type: 2}
+  afflictionChance: 100

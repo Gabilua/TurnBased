@@ -32,7 +32,7 @@ public class CombatantInfoUI : MonoBehaviour
         _respectiveCombatant.CombatantTurnStateChanged += UpdateCombatantInfo;
 
         _characterFaceIcon.sprite = combatant._characterInfo.faceSprite;
-        _characterName.text = combatant._characterInfo.characterName;
+        _characterName.text = combatant._characterInfo.name;
 
         _characterHealthValueDisplay.text = combatant._healthPoints.currentResource.ToString("F0");
         _characterHealthBar.fillAmount = (float)combatant._healthPoints.currentResource / (float)combatant._healthPoints.maxResource;
@@ -45,7 +45,7 @@ public class CombatantInfoUI : MonoBehaviour
         foreach (var skill in _availableSkills)
             SetupSkillIcon(skill);
 
-        gameObject.name = combatant._characterInfo.characterName + " Info";
+        gameObject.name = combatant._characterInfo.name + " Info";
         gameObject.SetActive(false);
     }
 

@@ -124,15 +124,26 @@ public class CombatManager : MonoBehaviour
         if (!skill.appliesStatusEffect)
             return;
 
-        if (UnityEngine.Random.value * 100 >= skill.statusEffect.afflictionChance)
+        if (UnityEngine.Random.value * 100 >= skill.afflictionChance)
             return;
 
-        StatusEffectController controller = Instantiate(_statusEffectControllerPrefab, target.transform).GetComponent<StatusEffectController>();
+        foreach (var activeStatusEffect in _activeStatusEffects)
+        {
+            if (activeStatusEffect._target == target && activeStatusEffect._effectApplied == skill.statusEffect)
+            {
+                if (activeStatusEffect._effectApplied.effectStacksDuration)
+                    activeStatusEffect.StackDuration();
+                return;
+            }
+        }
+
+        StatusEffectController controller = target.gameObject.AddComponent<StatusEffectController>();
         controller.SetupStatusEffect(target, user, skill.statusEffect);
 
         _activeStatusEffects.Add(controller);
-
         controller.EffectDurationEnded += StatusEffectDurationEnded;
+
+        target.SetStatusEffectAffliction(controller._effectApplied, true);
     }
 
     void EnterTurnActionIntoStorage(RealtimeCombatant performer, List<RealtimeCombatant> receivers, SkillInfo skillUsed, int finalEffectValue, List<bool> skillActuallyHit)
@@ -248,15 +259,17 @@ public class CombatManager : MonoBehaviour
             foreach (var combatant in _bothTeams)
             {
                 if (combatant == user && !skill.selfTargetingAllowed)
-                    continue;           
+                    continue;
 
                 _validTargets.Add(combatant);
             }
         }
-        else if(skill.targetRange == TargetRange.EnemySide || skill.targetRange == TargetRange.AnySingleEnemy)
+        else if (skill.targetRange == TargetRange.EnemySide || skill.targetRange == TargetRange.AnySingleEnemy)
             _validTargets.AddRange(_adversaryTeam);
         else if (skill.targetRange == TargetRange.AllySide || skill.targetRange == TargetRange.AnySingleAlly)
             _validTargets.AddRange(_allyTeam);
+        else if (skill.targetRange == TargetRange.OnlyUser)
+            _validTargets.Add(user);
 
         ToggleTargetPotentialDisplayOnValidTargets(_validTargets, true);
 
@@ -334,11 +347,14 @@ public class CombatManager : MonoBehaviour
                     }
                 }
                 break;
+            case TargetRange.OnlyUser:
+                affectedTargets.AddRange(targets);
+                break;
         }
 
         foreach (var target in affectedTargets)
         {
-            float skillEffectiveHitChance = skill.hitChance + user._runtimeStats.hit - target._runtimeStats.dodge;
+            float skillEffectiveHitChance = skill.hitChance + user._runtimeStats.accuracy - target._runtimeStats.dodge;
 
             bool skillActuallyHit = true;
 
@@ -393,12 +409,14 @@ public class CombatManager : MonoBehaviour
             _matchManager.ReadyToAdvanceTurn();
     }
 
-    void StatusEffectDurationEnded(StatusEffectController statusEffect)
+    void StatusEffectDurationEnded(StatusEffectController statusEffectController)
     {
-        _activeStatusEffects.Remove(statusEffect);
+        statusEffectController._target.SetStatusEffectAffliction(statusEffectController._effectApplied, false);
 
-        if (statusEffect.gameObject != null)
-            Destroy(statusEffect.gameObject);
+        _activeStatusEffects.Remove(statusEffectController);
+
+        if (statusEffectController.gameObject != null)
+            Destroy(statusEffectController);
     }
 
     #endregion

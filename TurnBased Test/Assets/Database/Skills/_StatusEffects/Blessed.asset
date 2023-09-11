@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14d7fae53e7d3ff4f800b93bc04c8e96, type: 3}
-  m_Name: Healing
+  m_Name: Blessed
   m_EditorClassIdentifier: 
-  effectName: Healing
   effectIcon: {fileID: 328954958, guid: 9ceae9da5ce5dc647bbf8834f87f5afd, type: 3}
   effectType: 1
   afflictionChance: 100
   durationInTurns: 3
-  effectBaseValue: 1
+  effectBaseValue: 4
   affectedByStats: 1
   statEffectOnBaseValue: 1
   effectiveStat: 4

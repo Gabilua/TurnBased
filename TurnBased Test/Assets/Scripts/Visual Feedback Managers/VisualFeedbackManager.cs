@@ -14,18 +14,19 @@ public abstract class VisualFeedbackManager : MonoBehaviour
         _thisCombatant.CombatantReleasedSkill += ReleasedSkill;
         _thisCombatant.CombatantReceivedSkillEffect += ReceivedSkill;
         _thisCombatant.CombatantDodgedSkill += DodgedSkill;
+        _thisCombatant.CombatantStatusEffectAfflictionChange += StatusEffectChange;
         _thisCombatant.CombatantReceivedDamage += Damaged;
         _thisCombatant.CombatantReceivedHealing += Healed;
         _thisCombatant.CombatantDied += Died;
         _thisCombatant.CombatantClicked += Clicked;
     }
 
-    protected virtual void Damaged(int value)
+    protected virtual void Damaged(int value, TargetStat stat)
     {
 
     }
 
-    protected virtual void Healed(int value)
+    protected virtual void Healed(int value, TargetStat stat)
     {
 
     }
@@ -43,6 +44,11 @@ public abstract class VisualFeedbackManager : MonoBehaviour
     protected virtual void ReceivedSkill(SkillInfo skill)
     {
 
+    }
+
+    protected virtual void StatusEffectChange(StatusEffectInfo statusEffect, bool state)
+    {
+   
     }
 
     protected virtual void DodgedSkill()

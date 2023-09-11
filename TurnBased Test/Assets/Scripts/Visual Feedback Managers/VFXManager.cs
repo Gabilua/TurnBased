@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class VFXManager : VisualFeedbackManager
 {
@@ -13,9 +14,14 @@ public class VFXManager : VisualFeedbackManager
     [SerializeField] TextMeshProUGUI _healValueDisplay;
     [SerializeField] TextMeshProUGUI _skillDodgedDisplay;
 
+    [SerializeField] GameObject _statusEffectDisplayPrefab;
+    [SerializeField] Transform _statusEffectDisplayHolder;
+    List<Image> _activeStatusEffectDisplays = new List<Image>();
+
     Animator _damageValueAnimator;
     Animator _healValueAnimator;
-    Animator _skillDodgedAnimator;    
+    Animator _skillDodgedAnimator;
+
 
     protected override void Start()
     {
@@ -37,7 +43,7 @@ public class VFXManager : VisualFeedbackManager
              _displaysHolder.localScale.y, _displaysHolder.localScale.y);
     }
 
-    protected override void Damaged(int value)
+    protected override void Damaged(int value, TargetStat stat)
     {
         _damagedFX.SetTrigger("Action");
 
@@ -49,7 +55,7 @@ public class VFXManager : VisualFeedbackManager
         _damageValueAnimator.SetTrigger("Action");
     }
 
-    protected override void Healed(int value)
+    protected override void Healed(int value, TargetStat stat)
     {
         _healedFX.SetTrigger("Action");
 
@@ -85,5 +91,33 @@ public class VFXManager : VisualFeedbackManager
         GameObject fx = Instantiate(skill.receiveVFX, _displaysHolder);
         fx.transform.SetAsFirstSibling();
         Destroy(fx, 5f);
+    }
+
+    protected override void StatusEffectChange(StatusEffectInfo statusEffect, bool state)
+    {
+        if (state)
+        {
+           Image display = Instantiate(_statusEffectDisplayPrefab, _statusEffectDisplayHolder).GetComponent<Image>();
+            display.sprite = statusEffect.effectIcon;
+            display.gameObject.name = statusEffect.name;
+
+            _activeStatusEffectDisplays.Add(display);
+        }
+        else
+        {
+            Image doomedDisplay = null;
+
+            foreach (var display in _activeStatusEffectDisplays)
+            {
+                if (display.gameObject.name == statusEffect.name)
+                {
+                    doomedDisplay = display;
+                    break;
+                }
+            }
+
+            _activeStatusEffectDisplays.Remove(doomedDisplay);
+            Destroy(doomedDisplay.gameObject);
+        }
     }
 }

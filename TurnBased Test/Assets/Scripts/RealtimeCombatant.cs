@@ -58,10 +58,11 @@ public class RealtimeCombatant : MonoBehaviour
 {
     public Action<RealtimeCombatant,SkillInfo> CombatantAimedSkill;
     public Action<RealtimeCombatant, SkillInfo, List<RealtimeCombatant>> CombatantUsedSkill;
-    public Action<int> CombatantReceivedHealing;
-    public Action<int> CombatantReceivedDamage;
+    public Action<int, TargetStat> CombatantReceivedHealing;
+    public Action<int, TargetStat> CombatantReceivedDamage;
     public Action<SkillInfo> CombatantReceivedSkillEffect;
     public Action<StatusEffectInfo> CombatantAffectedByStatusEffect;
+    public Action<StatusEffectInfo, bool> CombatantStatusEffectAfflictionChange;
     public Action<SkillInfo> CombatantReleasedSkill;
     public Action CombatantDodgedSkill;
     public Action CombatantDied;
@@ -164,52 +165,52 @@ public class RealtimeCombatant : MonoBehaviour
         CombatantReleasedSkill?.Invoke(skill);
     }
 
+    public void SetStatusEffectAffliction(StatusEffectInfo statusEffect, bool gettingAfflicted)
+    {
+        CombatantStatusEffectAfflictionChange?.Invoke(statusEffect, gettingAfflicted);
+    }
+
     public void AffectedByStatusEffect(int finalEffectValue, StatusEffectInfo statusEffect)
     {
-        if (currentTurnState == CombatantTurnState.Dead)
-            return;
-
-        if (statusEffect.effectType == EffectType.Damaging)
-        {
-            _healthPoints.Deplete(finalEffectValue);
-
-            if (_healthPoints.IsResourceFullyDepleted())
-                Death();
-
-            CombatantReceivedDamage?.Invoke(finalEffectValue);
-        }
-        else if (statusEffect.effectType == EffectType.Healing)
-        {
-            _healthPoints.Replenish(finalEffectValue);
-
-            CombatantReceivedHealing?.Invoke(finalEffectValue);
-        }
+        ApplyEffect(finalEffectValue, statusEffect.effectType, statusEffect.targetStat);
 
         CombatantAffectedByStatusEffect?.Invoke(statusEffect);
     }
 
     public void ReceiveSkillEffect(int finalEffectValue, SkillInfo skill)
     {
+        ApplyEffect(finalEffectValue, skill.effectType, skill.targetStat);
+
+        CombatantReceivedSkillEffect?.Invoke(skill);
+    }
+
+    void ApplyEffect(int finalEffectValue, EffectType effectType, TargetStat targetStat)
+    {
         if (currentTurnState == CombatantTurnState.Dead)
             return;
 
-        if (skill.effectType == EffectType.Damaging)
+        ManagedResource targetResource = null;
+
+        if (targetStat == TargetStat.HP)
+            targetResource = _healthPoints;
+        else if (targetStat == TargetStat.MP)
+            targetResource = _manaPoints;
+
+        if (effectType == EffectType.Damaging)
         {
-            _healthPoints.Deplete(finalEffectValue);
+            targetResource.Deplete(finalEffectValue);
 
             if (_healthPoints.IsResourceFullyDepleted())
                 Death();
 
-            CombatantReceivedDamage?.Invoke(finalEffectValue);
+            CombatantReceivedDamage?.Invoke(finalEffectValue, targetStat);
         }
-        else if(skill.effectType == EffectType.Healing)
+        else if (effectType == EffectType.Healing)
         {
-            _healthPoints.Replenish(finalEffectValue);
+            targetResource.Replenish(finalEffectValue);
 
-            CombatantReceivedHealing?.Invoke(finalEffectValue);
+            CombatantReceivedHealing?.Invoke(finalEffectValue, targetStat);
         }
-
-        CombatantReceivedSkillEffect?.Invoke(skill);
     }
 
     public void DodgeSkill()

@@ -130,6 +130,8 @@ MonoBehaviour:
   _damageValueDisplay: {fileID: 8133095629401534574}
   _healValueDisplay: {fileID: 2056478464889181215}
   _skillDodgedDisplay: {fileID: 8516603381224961855}
+  _statusEffectDisplayPrefab: {fileID: 8187417799915368311, guid: b049dbc9438594b4fb7dad3d342bc278, type: 3}
+  _statusEffectDisplayHolder: {fileID: 2634255413445436929}
 --- !u!1001 &3943410183152251992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,6 +248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2634255413445436929 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1312535392823677529, guid: a201d41a4801cc441af56ce07201d3ea, type: 3}
+  m_PrefabInstance: {fileID: 3943410183152251992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3609419874809913519 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 337474115532559607, guid: a201d41a4801cc441af56ce07201d3ea, type: 3}

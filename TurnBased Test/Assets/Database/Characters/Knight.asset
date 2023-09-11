@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63e3763e89e4724780468c3508cabc4, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  characterName: Knight
   inGameGFX: {fileID: 8590507262704659968, guid: 452b2f8c05195d64b8c51f7f78691b5d, type: 3}
   faceSprite: {fileID: 21300000, guid: 6b97d3cb48006614eaf5d713acdab17e, type: 3}
   characterStats:
-    strenght: 12
-    vitality: 100
-    dexterity: 10
-    agility: 2
-    intelligence: 2
+    strenght: 8
+    vitality: 11
+    dexterity: 5
+    agility: 1
+    intelligence: 0
   learnableSkills:
   - {fileID: 11400000, guid: 0c05481526ad2e6499be753ae90d2966, type: 2}
-  - {fileID: 11400000, guid: 34f7be921b33e5042b414664f2d897b2, type: 2}
+  - {fileID: 11400000, guid: 23bafd54c162ebe4386fae49a6bd735e, type: 2}
+  - {fileID: 11400000, guid: 5caba9afd218b4048a3336638488abf5, type: 2}
+  - {fileID: 11400000, guid: cad666d9a212b4848a02df810808cd23, type: 2}

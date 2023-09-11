@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum EffectType { Damaging, Healing }
+public enum TargetStat { HP, MP }
 public enum StatEffectOnBaseValue { Additive, Multiplicative }
 public enum EffectiveStat {  Strenght, Vitality, Dexterity, Agility, Intelligence}
 public enum CostStat { HP, MP }
-public enum TargetRange { AnySingleTarget, AnySingleEnemy, AnySingleAlly, EnemySide, AllySide, Everyone }
+public enum TargetRange { AnySingleTarget, AnySingleEnemy, AnySingleAlly, EnemySide, AllySide, Everyone, OnlyUser }
 
 [CreateAssetMenu(fileName = "New Skill", menuName = "TurnBasedSystem/Skill")]
 public class SkillInfo : ScriptableObject
 {
     [Header("Basic Info")]
-    public string skillName;
     public Sprite skillIcon;
     public EffectType effectType;
+    public TargetStat targetStat;
     public float hitChance;
 
     [Header("Power")]
@@ -40,4 +41,5 @@ public class SkillInfo : ScriptableObject
     [Header("Status Effect")]
     public bool appliesStatusEffect;
     public StatusEffectInfo statusEffect;
+    public int afflictionChance;
 }

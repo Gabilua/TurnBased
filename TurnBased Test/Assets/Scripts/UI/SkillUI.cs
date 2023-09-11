@@ -17,7 +17,7 @@ public class SkillUI : MonoBehaviour
     {
         _skillInfo = skill;
         _skillIconDisplay.sprite = _skillInfo.skillIcon;
-        _skillNameDisplay.text = _skillInfo.skillName;
+        _skillNameDisplay.text = _skillInfo.name;
     }
 
     public void SkillIconClicked()

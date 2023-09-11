@@ -13,12 +13,12 @@ public class AnimationManager : VisualFeedbackManager
         _animator = GetComponent<Animator>();
     }
 
-    protected override void Damaged(int value)
+    protected override void Damaged(int value, TargetStat stat)
     {
         _animator.SetTrigger("Hurt");
     }
 
-    protected override void Healed(int value)
+    protected override void Healed(int value, TargetStat stat)
     {
         _animator.SetTrigger("Healed");
     }

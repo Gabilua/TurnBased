@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
-  m_Name: Fireball
+  m_Name: Iron Rain
   m_EditorClassIdentifier: 
-  skillName: Fireball
-  skillIcon: {fileID: 21300000, guid: d5b88f0577ddc0a4782bdd7e6878533d, type: 3}
+  skillIcon: {fileID: 21300000, guid: bce0eb42afa47d14e8f73088882af497, type: 3}
   effectType: 0
-  hitChance: 60
-  effectBaseValue: 2
+  targetStat: 0
+  hitChance: 55
+  effectBaseValue: 4
   affectedByStats: 1
-  statEffectOnBaseValue: 0
-  effectiveStat: 4
+  statEffectOnBaseValue: 1
+  effectiveStat: 2
   costStat: 1
-  costAmount: 3
-  targetRange: 1
+  costAmount: 35
+  targetRange: 3
   selfTargetingAllowed: 0
-  useVFX: {fileID: 8709639680917579618, guid: 34e24821d29c3c5438c06d6f3ae849d3, type: 3}
-  receiveVFX: {fileID: 8709639680917579618, guid: 7a5c3638696b60946adde54cd9ef5d5e, type: 3}
+  useVFX: {fileID: 0}
+  receiveVFX: {fileID: 0}
   usesSpecialAnimation: 1
   targetReactionDelay: 1
   appliesStatusEffect: 1
-  statusEffect: {fileID: 11400000, guid: 8a3a9fccafc79d84bb7cf392900fdc35, type: 2}
+  statusEffect: {fileID: 11400000, guid: b39fa624355b2134ca60795f313c28af, type: 2}
+  afflictionChance: 25

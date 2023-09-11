@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
-  m_Name: Continuous Healing
+  m_Name: Energy Transfer
   m_EditorClassIdentifier: 
-  skillName: Recover
-  skillIcon: {fileID: 21300000, guid: 2b006d7be0ca99248a04f2c76c99c635, type: 3}
+  skillIcon: {fileID: 21300000, guid: fb527877f46c6b24c8ff21e15bd0d250, type: 3}
   effectType: 1
+  targetStat: 1
   hitChance: 100
-  effectBaseValue: 3
+  effectBaseValue: 55
   affectedByStats: 0
-  statEffectOnBaseValue: 0
+  statEffectOnBaseValue: 1
   effectiveStat: 4
   costStat: 1
-  costAmount: 6
+  costAmount: 55
   targetRange: 2
   selfTargetingAllowed: 1
   useVFX: {fileID: 0}
   receiveVFX: {fileID: 0}
   usesSpecialAnimation: 0
   targetReactionDelay: 0.35
-  appliesStatusEffect: 1
-  statusEffect: {fileID: 11400000, guid: e1ca554908d8fb8469e3c9bf8b473d0e, type: 2}
+  appliesStatusEffect: 0
+  statusEffect: {fileID: 0}

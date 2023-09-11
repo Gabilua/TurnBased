@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
-  m_Name: Heal
+  m_Name: Quick Blow
   m_EditorClassIdentifier: 
-  skillName: Heal
-  skillIcon: {fileID: 21300000, guid: fb527877f46c6b24c8ff21e15bd0d250, type: 3}
-  effectType: 1
-  hitChance: 100
-  effectBaseValue: 2
+  skillIcon: {fileID: 21300000, guid: 26cce71d645dbfb4aa0fd0380e3f8319, type: 3}
+  effectType: 0
+  hitChance: 90
+  effectBaseValue: 8
   affectedByStats: 1
   statEffectOnBaseValue: 1
-  effectiveStat: 4
+  effectiveStat: 0
   costStat: 1
-  costAmount: 4
-  targetRange: 2
-  selfTargetingAllowed: 1
+  costAmount: 0
+  targetRange: 1
+  selfTargetingAllowed: 0
   useVFX: {fileID: 0}
   receiveVFX: {fileID: 0}
   usesSpecialAnimation: 0

@@ -10,22 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
-  m_Name: CriticalAttack
+  m_Name: Combustion
   m_EditorClassIdentifier: 
-  skillName: Critical Attack
-  skillIcon: {fileID: 21300000, guid: 1eae4e6f1819e0a4e84847d636ad0e57, type: 3}
+  skillIcon: {fileID: 21300000, guid: d5b88f0577ddc0a4782bdd7e6878533d, type: 3}
   effectType: 0
-  hitChance: 40
-  effectBaseValue: 0
+  hitChance: 75
+  effectBaseValue: 8
   affectedByStats: 1
-  statEffectOnBaseValue: 0
-  effectiveStat: 0
+  statEffectOnBaseValue: 1
+  effectiveStat: 4
   costStat: 1
-  costAmount: 4
+  costAmount: 35
   targetRange: 1
   selfTargetingAllowed: 0
-  useVFX: {fileID: 0}
-  receiveVFX: {fileID: 8709639680917579618, guid: 1b20d09fe24ee6649af0bd0f7acfaecb, type: 3}
+  useVFX: {fileID: 8709639680917579618, guid: 34e24821d29c3c5438c06d6f3ae849d3, type: 3}
+  receiveVFX: {fileID: 8709639680917579618, guid: 7a5c3638696b60946adde54cd9ef5d5e, type: 3}
   usesSpecialAnimation: 1
   targetReactionDelay: 1
   appliesStatusEffect: 0

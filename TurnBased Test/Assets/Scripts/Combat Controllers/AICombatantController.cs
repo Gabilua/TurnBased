@@ -115,6 +115,11 @@ public class AICombatantController : MonoBehaviour
                     chosenTargets.Add(availableEnemies[Random.Range(0, availableEnemies.Count)]);
                 }
                 break;
+            case TargetRange.OnlyUser:
+                {
+                    chosenTargets.Add(_thisCombatant);
+                }
+                break;
         }
         #endregion
 

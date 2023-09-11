@@ -10,23 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
-  m_Name: Inferno
+  m_Name: Aura Spark
   m_EditorClassIdentifier: 
-  skillName: Inferno
-  skillIcon: {fileID: 21300000, guid: bce0eb42afa47d14e8f73088882af497, type: 3}
+  skillIcon: {fileID: 21300000, guid: 96c3111d36e7ed64d8b0ebdc46fbd8fc, type: 3}
   effectType: 0
-  hitChance: 70
-  effectBaseValue: 2
+  hitChance: 85
+  effectBaseValue: 6
   affectedByStats: 1
-  statEffectOnBaseValue: 1
+  statEffectOnBaseValue: 0
   effectiveStat: 4
   costStat: 1
-  costAmount: 7
-  targetRange: 3
+  costAmount: 10
+  targetRange: 1
   selfTargetingAllowed: 0
-  useVFX: {fileID: 8709639680917579618, guid: 34e24821d29c3c5438c06d6f3ae849d3, type: 3}
-  receiveVFX: {fileID: 8709639680917579618, guid: 7a5c3638696b60946adde54cd9ef5d5e, type: 3}
-  usesSpecialAnimation: 1
-  targetReactionDelay: 1
+  useVFX: {fileID: 8709639680917579618, guid: dc1ea17813e33df49ba89119444f36f9, type: 3}
+  receiveVFX: {fileID: 8709639680917579618, guid: 5bb55f439e04bf24784f1c8cef391399, type: 3}
+  usesSpecialAnimation: 0
+  targetReactionDelay: 0.35
   appliesStatusEffect: 0
   statusEffect: {fileID: 0}
