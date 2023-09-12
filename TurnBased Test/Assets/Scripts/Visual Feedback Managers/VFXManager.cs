@@ -22,7 +22,6 @@ public class VFXManager : VisualFeedbackManager
     Animator _healValueAnimator;
     Animator _skillDodgedAnimator;
 
-
     protected override void Start()
     {
         base.Start();
@@ -93,6 +92,14 @@ public class VFXManager : VisualFeedbackManager
         Destroy(fx, 5f);
     }
 
+    protected override void Died()
+    {
+        foreach (Transform child in _statusEffectDisplayHolder)
+            Destroy(child.gameObject);
+
+        _activeStatusEffectDisplays.Clear();
+    }
+
     protected override void StatusEffectChange(StatusEffectInfo statusEffect, bool state)
     {
         if (state)
@@ -102,6 +109,8 @@ public class VFXManager : VisualFeedbackManager
             display.gameObject.name = statusEffect.name;
 
             _activeStatusEffectDisplays.Add(display);
+
+            ShowStatusEffectVFX(statusEffect);
         }
         else
         {
@@ -116,8 +125,33 @@ public class VFXManager : VisualFeedbackManager
                 }
             }
 
-            _activeStatusEffectDisplays.Remove(doomedDisplay);
-            Destroy(doomedDisplay.gameObject);
+            RemoveStatusEffectDisplay(doomedDisplay);
         }
+    }
+
+    void RemoveStatusEffectDisplay(Image display)
+    {
+        _activeStatusEffectDisplays.Remove(display);
+        Destroy(display.gameObject);
+    }
+
+    protected override void StatusEffectHit(StatusEffectInfo statusEffect)
+    {
+        ShowStatusEffectVFX(statusEffect);
+    }
+
+    protected override void StatusEffectInterrupt(StatusEffectInfo statusEffect)
+    {
+        ShowStatusEffectVFX(statusEffect);
+    }
+
+    void ShowStatusEffectVFX(StatusEffectInfo statusEffect)
+    {
+        if (statusEffect.receiveVFX == null)
+            return;
+
+        GameObject fx = Instantiate(statusEffect.receiveVFX, _displaysHolder);
+        fx.transform.SetAsFirstSibling();
+        Destroy(fx, 5f);
     }
 }

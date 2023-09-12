@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillIcon: {fileID: 21300000, guid: bce0eb42afa47d14e8f73088882af497, type: 3}
   effectType: 0
+  targetStat: 0
   hitChance: 60
-  effectBaseValue: 4
+  effectBaseValue: 6
   affectedByStats: 1
   statEffectOnBaseValue: 1
   effectiveStat: 4
@@ -27,5 +28,6 @@ MonoBehaviour:
   receiveVFX: {fileID: 8709639680917579618, guid: 7a5c3638696b60946adde54cd9ef5d5e, type: 3}
   usesSpecialAnimation: 1
   targetReactionDelay: 1
-  appliesStatusEffect: 0
-  statusEffect: {fileID: 0}
+  appliesStatusEffect: 1
+  statusEffect: {fileID: 11400000, guid: 8a3a9fccafc79d84bb7cf392900fdc35, type: 2}
+  afflictionChance: 25

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63e3763e89e4724780468c3508cabc4, type: 3}
+  m_Name: Dragon
+  m_EditorClassIdentifier: 
+  inGameGFX: {fileID: 8590507262704659968, guid: 78b0d1bec142e104fbb989c3e865b7d2, type: 3}
+  faceSprite: {fileID: -1627211188, guid: 1f70b4261e614014f991176bf8629024, type: 3}
+  characterStats:
+    characterStatTier: 3
+    strenght: 5
+    vitality: 4
+    dexterity: 2
+    agility: 1
+    intelligence: 3
+  learnableSkills:
+  - {fileID: 11400000, guid: 0c05481526ad2e6499be753ae90d2966, type: 2}
+  - {fileID: 11400000, guid: 23bafd54c162ebe4386fae49a6bd735e, type: 2}
+  - {fileID: 11400000, guid: cad666d9a212b4848a02df810808cd23, type: 2}
+  - {fileID: 11400000, guid: a1a9ea4ca2b886d409dc074f9b442b54, type: 2}

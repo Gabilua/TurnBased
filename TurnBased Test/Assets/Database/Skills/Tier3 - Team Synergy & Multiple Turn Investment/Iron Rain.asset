@@ -16,7 +16,7 @@ MonoBehaviour:
   effectType: 0
   targetStat: 0
   hitChance: 55
-  effectBaseValue: 4
+  effectBaseValue: 6
   affectedByStats: 1
   statEffectOnBaseValue: 1
   effectiveStat: 2

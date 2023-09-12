@@ -15,10 +15,25 @@ public abstract class VisualFeedbackManager : MonoBehaviour
         _thisCombatant.CombatantReceivedSkillEffect += ReceivedSkill;
         _thisCombatant.CombatantDodgedSkill += DodgedSkill;
         _thisCombatant.CombatantStatusEffectAfflictionChange += StatusEffectChange;
+        _thisCombatant.CombatantAffectedByStatusEffect += StatusEffectHit;
+        _thisCombatant.CombatantInterruptedByStatusEffect += StatusEffectInterrupt;
         _thisCombatant.CombatantReceivedDamage += Damaged;
         _thisCombatant.CombatantReceivedHealing += Healed;
         _thisCombatant.CombatantDied += Died;
         _thisCombatant.CombatantClicked += Clicked;
+
+        _thisCombatant.CombatantTurnStateChanged += TurnStateChange;
+        _thisCombatant.CombatantFinishedSetup += SetupFinished;
+    }
+
+    protected virtual void SetupFinished()
+    {
+
+    }
+
+    protected virtual void TurnStateChange(RealtimeCombatant combatant, CombatantTurnState turnState)
+    {
+
     }
 
     protected virtual void Damaged(int value, TargetStat stat)
@@ -49,6 +64,16 @@ public abstract class VisualFeedbackManager : MonoBehaviour
     protected virtual void StatusEffectChange(StatusEffectInfo statusEffect, bool state)
     {
    
+    }
+
+    protected virtual void StatusEffectHit(StatusEffectInfo statusEffect)
+    {
+
+    }
+
+    protected virtual void StatusEffectInterrupt(StatusEffectInfo statusEffect)
+    {
+
     }
 
     protected virtual void DodgedSkill()

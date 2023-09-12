@@ -6,16 +6,23 @@ using UnityEngine.UI;
 [System.Serializable]
 public class CharacterStats
 {
-    [Range(0, 25)]
+    enum CharacterStatTier { Minion, Creature, Hero, Boss}
+
+    [Header("How Strong is This Character?")]
+    [SerializeField] CharacterStatTier characterStatTier;
+
+    [Header("Main Stats")]
+    [Range(1, 5)]
     public int strenght;
-    [Range(0, 25)]
+    [Range(1, 5)]
     public int vitality;
-    [Range(0, 25)]
+    [Range(1, 5)]
     public int dexterity;
-    [Range(0, 25)]
+    [Range(1, 5)]
     public int agility;
-    [Range(0, 25)]
+    [Range(1, 5)]
     public int intelligence;
+
 
     public int maxHP { get; private set; }
     public int maxMP { get; private set; }
@@ -24,6 +31,8 @@ public class CharacterStats
 
     public void CopyStats(CharacterStats referenceStats)
     {
+        characterStatTier = referenceStats.characterStatTier;
+
         strenght = referenceStats.strenght;
         vitality = referenceStats.vitality;
         dexterity = referenceStats.dexterity;
@@ -33,10 +42,12 @@ public class CharacterStats
 
     public void CalculateSecondaryStats()
     {
-        maxHP = Mathf.CeilToInt(100 + ((float)vitality * 100));
-        maxMP = Mathf.CeilToInt(100 + ((float)intelligence * 25));
-        dodge = Mathf.CeilToInt(5 + ((float)agility / 3));
-        accuracy = Mathf.CeilToInt(20 + ((float)dexterity / 4));
+        int tierMultiplier = (int)characterStatTier + 1;
+
+        maxHP = Mathf.CeilToInt((35 * tierMultiplier) + (vitality * 60 * tierMultiplier));
+        maxMP = Mathf.CeilToInt((35 * tierMultiplier) + (intelligence * 50 * tierMultiplier));
+        dodge = Mathf.CeilToInt(5 + (agility * tierMultiplier));
+        accuracy = Mathf.CeilToInt(65 + (dexterity * tierMultiplier));
     }
 }
 

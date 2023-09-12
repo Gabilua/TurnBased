@@ -50,22 +50,33 @@ public class ManagedResource
     {
         return currentResource <= 0;
     }
+
+    public bool IsResourceFullyCompleted()
+    {
+        return currentResource == maxResource;
+    }
 }
 
 public enum CombatantTurnState { PreGame, NotMyTeamsTurn, WaitingForInput, DoneForTheTurn, Dead, PostGame }
 
 public class RealtimeCombatant : MonoBehaviour
 {
+    public Action CombatantFinishedSetup;
+
     public Action<RealtimeCombatant,SkillInfo> CombatantAimedSkill;
     public Action<RealtimeCombatant, SkillInfo, List<RealtimeCombatant>> CombatantUsedSkill;
+    public Action<SkillInfo> CombatantReleasedSkill;
+    public Action<SkillInfo> CombatantReceivedSkillEffect;
+    public Action CombatantDodgedSkill;
+
+    public Action<StatusEffectInfo, bool> CombatantStatusEffectAfflictionChange;
+    public Action<StatusEffectInfo> CombatantAffectedByStatusEffect;
+    public Action<StatusEffectInfo> CombatantInterruptedByStatusEffect;
+
     public Action<int, TargetStat> CombatantReceivedHealing;
     public Action<int, TargetStat> CombatantReceivedDamage;
-    public Action<SkillInfo> CombatantReceivedSkillEffect;
-    public Action<StatusEffectInfo> CombatantAffectedByStatusEffect;
-    public Action<StatusEffectInfo, bool> CombatantStatusEffectAfflictionChange;
-    public Action<SkillInfo> CombatantReleasedSkill;
-    public Action CombatantDodgedSkill;
     public Action CombatantDied;
+
     public Action<RealtimeCombatant> CombatantClicked;
     public Action<RealtimeCombatant, CombatantTurnState> CombatantTurnStateChanged;
 
@@ -77,8 +88,6 @@ public class RealtimeCombatant : MonoBehaviour
     [SerializeField] ToggleableElement _selectionDisplay;
     [SerializeField] ToggleableElement _targetPotentialDisplay;
     [SerializeField] ToggleableElement _targetLockedDisplay;
-
-    List<RealtimeCombatant> _allCombatants = new List<RealtimeCombatant>();
 
     public ManagedResource _healthPoints { get; private set; }
     public ManagedResource _manaPoints { get; private set; }
@@ -110,11 +119,13 @@ public class RealtimeCombatant : MonoBehaviour
 
         _targetPotentialDisplay.transform.SetAsLastSibling();
         _targetLockedDisplay.transform.SetAsLastSibling();
+
+        CombatantFinishedSetup?.Invoke();
     }
 
     public void SetCombatantList(List<RealtimeCombatant> combatants)
     {
-        _allCombatants.AddRange(combatants);
+        GetCombatantList.AddRange(combatants);
     }
 
     #endregion
@@ -134,7 +145,7 @@ public class RealtimeCombatant : MonoBehaviour
 
     public List<SkillInfo> GetSkillList { get { return _learnedSkills; } }
 
-    public List<RealtimeCombatant> GetCombatantList { get { return _allCombatants; } }
+    public List<RealtimeCombatant> GetCombatantList { get; } = new List<RealtimeCombatant>();
 
     #endregion
 
@@ -184,6 +195,11 @@ public class RealtimeCombatant : MonoBehaviour
         CombatantReceivedSkillEffect?.Invoke(skill);
     }
 
+    public void InterruptedByStatusEffect(StatusEffectInfo statusEffect)
+    {
+        CombatantInterruptedByStatusEffect?.Invoke(statusEffect);
+    }
+
     void ApplyEffect(int finalEffectValue, EffectType effectType, TargetStat targetStat)
     {
         if (currentTurnState == CombatantTurnState.Dead)
@@ -207,6 +223,9 @@ public class RealtimeCombatant : MonoBehaviour
         }
         else if (effectType == EffectType.Healing)
         {
+            if (targetResource.IsResourceFullyCompleted())
+                finalEffectValue = 0;
+
             targetResource.Replenish(finalEffectValue);
 
             CombatantReceivedHealing?.Invoke(finalEffectValue, targetStat);

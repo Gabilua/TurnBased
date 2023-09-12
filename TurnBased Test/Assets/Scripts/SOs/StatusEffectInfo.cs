@@ -17,6 +17,8 @@ public class StatusEffectInfo : ScriptableObject
     public StatEffectOnBaseValue statEffectOnBaseValue;
     public EffectiveStat effectiveStat;
     public bool effectStacksDuration;
+    [Range(0, 100)]
+    public int chanceToInterruptActions;
 
     [Header("Visual Feedback Parameters")]
     public GameObject receiveVFX;

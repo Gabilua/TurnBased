@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillIcon: {fileID: 21300000, guid: 96c3111d36e7ed64d8b0ebdc46fbd8fc, type: 3}
   effectType: 0
+  targetStat: 0
   hitChance: 85
-  effectBaseValue: 6
+  effectBaseValue: 8
   affectedByStats: 1
   statEffectOnBaseValue: 0
   effectiveStat: 4
@@ -29,3 +30,4 @@ MonoBehaviour:
   targetReactionDelay: 0.35
   appliesStatusEffect: 0
   statusEffect: {fileID: 0}
+  afflictionChance: 0

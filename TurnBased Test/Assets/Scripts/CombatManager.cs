@@ -43,7 +43,6 @@ public class CombatManager : MonoBehaviour
 
     #region Combat
 
-
     public List<CombatantInfoUI> GetAllCharacterInfoUI { get; } = new List<CombatantInfoUI>();
 
     void AssignCharacterInfoUI(RealtimeCombatant combatant)
@@ -59,7 +58,6 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator ExecuteStoredCombatActions()
     {
-
         //at the start of the execution turn, before conventional skill effects are applied, we start by applying status effects to their targets
         foreach (var activeStatusEffect in _activeStatusEffects)
         {
@@ -73,6 +71,9 @@ public class CombatManager : MonoBehaviour
         {
             // dead combatants dont execute actions
             if (_storedTurnActions[i].performer.currentTurnState == CombatantTurnState.Dead)
+                continue;
+
+            if (CheckForActionInterruption(_storedTurnActions[i].performer))
                 continue;
 
             bool allTargetsAlreadyDead = true;
@@ -117,6 +118,26 @@ public class CombatManager : MonoBehaviour
         _storedTurnActions.Clear();
 
         _matchManager.ReadyToAdvanceTurn();
+    }
+
+    bool CheckForActionInterruption(RealtimeCombatant combatant)
+    {
+        bool actionInterrupted = false;
+
+        foreach (var activeStatusEffect in _activeStatusEffects)
+        {
+            if (activeStatusEffect._target != combatant)
+                continue;
+
+            if (UnityEngine.Random.value * 100 < activeStatusEffect._effectApplied.chanceToInterruptActions)
+            {
+                activeStatusEffect._target.InterruptedByStatusEffect(activeStatusEffect._effectApplied);
+                actionInterrupted = true;
+                break;
+            }
+        }
+
+        return actionInterrupted;
     }
 
     void CheckForStatusEffectAppliedBySkill(RealtimeCombatant target, RealtimeCombatant user, SkillInfo skill)
@@ -415,7 +436,7 @@ public class CombatManager : MonoBehaviour
 
         _activeStatusEffects.Remove(statusEffectController);
 
-        if (statusEffectController.gameObject != null)
+        if (statusEffectController != null)
             Destroy(statusEffectController);
     }
 

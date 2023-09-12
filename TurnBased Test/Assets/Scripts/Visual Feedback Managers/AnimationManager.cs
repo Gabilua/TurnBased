@@ -13,6 +13,12 @@ public class AnimationManager : VisualFeedbackManager
         _animator = GetComponent<Animator>();
     }
 
+    protected override void TurnStateChange(RealtimeCombatant combatant, CombatantTurnState turnState)
+    {
+        if(turnState == CombatantTurnState.WaitingForInput && _animator.GetBool("Aiming"))
+            _animator.SetBool("Aiming", false);
+    }
+
     protected override void Damaged(int value, TargetStat stat)
     {
         _animator.SetTrigger("Hurt");

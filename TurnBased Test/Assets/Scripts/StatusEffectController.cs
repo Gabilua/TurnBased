@@ -37,7 +37,7 @@ public class StatusEffectController : MonoBehaviour
 
     void TargetDied()
     {
-        Destroy(gameObject);
+        Destroy(this);
     }
 
     public void ApplyStatusEffectToTarget()
