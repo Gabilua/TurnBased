@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63e3763e89e4724780468c3508cabc4, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  inGameGFX: {fileID: 8590507262704659968, guid: 63711fe9f0eca5d44a918ccaf2ba9a1f, type: 3}
+  faceSprite: {fileID: 21300000, guid: 7b68674d64b3925499517207bd9424e3, type: 3}
+  characterStats:
+    characterStatTier: 2
+    strenght: 5
+    vitality: 4
+    dexterity: 3
+    agility: 2
+    intelligence: 1
+  nativeEquipmentSets:
+  - equipments:
+    - {fileID: 11400000, guid: 047663d781d0b1640b80f8f4668751d1, type: 2}
+    - {fileID: 11400000, guid: 9246c8d66d910ae45802437ba265c252, type: 2}
+    - {fileID: 11400000, guid: c7ff754764572114291f48c11bcec933, type: 2}

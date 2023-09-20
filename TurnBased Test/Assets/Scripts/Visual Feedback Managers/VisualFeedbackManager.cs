@@ -26,7 +26,7 @@ public abstract class VisualFeedbackManager : MonoBehaviour
         _thisCombatant.CombatantFinishedSetup += SetupFinished;
     }
 
-    protected virtual void SetupFinished()
+    protected virtual void SetupFinished(RealtimeCombatant combatant)
     {
 
     }

@@ -39,7 +39,7 @@ public class CombatantInfoUI : MonoBehaviour
 
         _characterManaValueDisplay.text = combatant._manaPoints.currentResource.ToString("F0");
         _characterManaBar.fillAmount = (float)combatant._manaPoints.currentResource / (float)combatant._manaPoints.maxResource;
-        
+
         _availableSkills.AddRange(_respectiveCombatant.GetSkillList);
 
         foreach (var skill in _availableSkills)

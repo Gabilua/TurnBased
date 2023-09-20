@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
+  m_Name: Olive Branch
+  m_EditorClassIdentifier: 
+  equipmentIcon: {fileID: 21300000, guid: 4fbb544d60d447a4390d7dbaa680b71c, type: 3}
+  awardedSkill: {fileID: 11400000, guid: 3075c9a2bcdd1dd46adaec6f0093c779, type: 2}
+  allowedUsers:
+  - {fileID: 11400000, guid: a57c1b75eb8d4ea4a94bec55938b74e0, type: 2}
+  - {fileID: 11400000, guid: 764208b4da457eb4190c999944efac39, type: 2}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
+  m_Name: Sapphire Necklace
+  m_EditorClassIdentifier: 
+  equipmentIcon: {fileID: 21300000, guid: a5025bbc0e919ef4688261877aab83e8, type: 3}
+  awardedSkill: {fileID: 11400000, guid: c2908194be7e1df4c8aec9b874180711, type: 2}
+  allowedUsers:
+  - {fileID: 11400000, guid: 3fdf187ab3e7ad24a934241dbe77353b, type: 2}
