@@ -16,18 +16,18 @@ MonoBehaviour:
   effectType: 0
   targetStat: 0
   hitChance: 85
-  effectBaseValue: 8
+  effectBaseValue: 10
   affectedByStats: 1
-  statEffectOnBaseValue: 0
+  statEffectOnBaseValue: 1
   effectiveStat: 4
   costStat: 1
   costAmount: 10
   targetRange: 1
   selfTargetingAllowed: 0
-  useVFX: {fileID: 8709639680917579618, guid: dc1ea17813e33df49ba89119444f36f9, type: 3}
-  receiveVFX: {fileID: 8709639680917579618, guid: 5bb55f439e04bf24784f1c8cef391399, type: 3}
+  useVFX: {fileID: 8709639680917579618, guid: 5bb55f439e04bf24784f1c8cef391399, type: 3}
+  receiveVFX: {fileID: 8709639680917579618, guid: dc1ea17813e33df49ba89119444f36f9, type: 3}
   usesSpecialAnimation: 0
-  targetReactionDelay: 0.35
+  targetReactionDelay: 0.45
   appliesStatusEffect: 0
   statusEffect: {fileID: 0}
   afflictionChance: 0

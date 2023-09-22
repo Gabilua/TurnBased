@@ -19,23 +19,24 @@ public class CharacterStats
 
     [Header("Main Stats")]
     [Range(1, 5)]
-    public int strenght;
+    int strenght;
     [Range(1, 5)]
-    public int vitality;
+    int vitality;
     [Range(1, 5)]
-    public int dexterity;
+    int dexterity;
     [Range(1, 5)]
-    public int agility;
+    int agility;
     [Range(1, 5)]
-    public int intelligence;
+    int intelligence;
 
+    int maxHP;
+    int maxMP;
+    int dodge;
+    int accuracy;
 
-    public int maxHP { get; private set; }
-    public int maxMP { get; private set; }
-    public int dodge { get; private set; }
-    public int accuracy { get; private set; }
+    List<TemporaryStatChanges> _temporaryStatChanges = new List<TemporaryStatChanges>();
 
-    public void CopyStats(CharacterStats referenceStats)
+    public void CopyBaseStats(CharacterStats referenceStats)
     {
         characterStatTier = referenceStats.characterStatTier;
 
@@ -46,14 +47,90 @@ public class CharacterStats
         intelligence = referenceStats.intelligence;
     }
 
-    public void CalculateSecondaryStats()
+    public int GetFinalStat(TargetStat stat)
     {
+        int finalStat = 0;
+        int additiveBonus = 0;
+        int multiplicativeBonus = 1;
         int tierMultiplier = (int)characterStatTier + 1;
 
-        maxHP = Mathf.CeilToInt((35 * tierMultiplier) + (vitality * 60 * tierMultiplier));
-        maxMP = Mathf.CeilToInt((35 * tierMultiplier) + (intelligence * 50 * tierMultiplier));
-        dodge = Mathf.CeilToInt(5 + (agility * tierMultiplier));
-        accuracy = Mathf.CeilToInt(65 + (dexterity * tierMultiplier));
+        switch (stat)
+        {
+            case TargetStat.HP:
+                finalStat = maxHP = Mathf.CeilToInt((35 * tierMultiplier) + (vitality * 60 * tierMultiplier));
+                break;
+            case TargetStat.MP:
+                finalStat = maxMP = Mathf.CeilToInt((35 * tierMultiplier) + (intelligence * 50 * tierMultiplier));
+                break;
+            case TargetStat.STR:
+                finalStat = strenght;
+                break;
+            case TargetStat.VIT:
+                finalStat = vitality;
+                break;
+            case TargetStat.DEX:
+                finalStat = dexterity;
+                break;
+            case TargetStat.AGI:
+                finalStat = agility;
+                break;
+            case TargetStat.INT:
+                finalStat = intelligence;
+                break;
+            case TargetStat.ACCURACY:
+                finalStat = accuracy = Mathf.CeilToInt(65 + (dexterity * tierMultiplier));
+                break;
+            case TargetStat.DODGE:
+                finalStat = dodge = Mathf.CeilToInt(5 + (agility * tierMultiplier));
+                break;
+        }
+
+        foreach (var temporaryStatChange in _temporaryStatChanges)
+        {          
+            if (temporaryStatChange.targetStat == stat)
+            {
+                switch (temporaryStatChange.statEffectOnBaseValue)
+                {
+                    case StatEffectOnBaseValue.Additive:
+                        additiveBonus += temporaryStatChange.effectBaseValue;
+                        break;
+                    case StatEffectOnBaseValue.Multiplicative:
+                        multiplicativeBonus += temporaryStatChange.effectBaseValue;
+                        break;
+                }
+            }
+        }
+
+        finalStat += additiveBonus;
+        finalStat *= multiplicativeBonus;
+       
+        return finalStat;
+    }
+
+    public void AddTemporaryChange(StatusEffectInfo statusEffect)
+    {
+        TemporaryStatChanges newChange = new TemporaryStatChanges();
+
+        newChange.targetStat = statusEffect.targetStat;
+        newChange.effectBaseValue = statusEffect.effectBaseValue;
+        newChange.statEffectOnBaseValue = statusEffect.statEffectOnBaseValue;
+        newChange.sourceOfChanges = statusEffect;
+
+        _temporaryStatChanges.Add(newChange);
+    }
+
+    public void RemoveTemporaryChange(StatusEffectInfo statusEffect)
+    {
+        TemporaryStatChanges changeToBeRemoved = null;
+
+        foreach (var change in _temporaryStatChanges)
+        {
+            if (change.sourceOfChanges == statusEffect)
+                changeToBeRemoved = change;
+        }
+
+        if (changeToBeRemoved != null)
+            _temporaryStatChanges.Remove(changeToBeRemoved);
     }
 }
 

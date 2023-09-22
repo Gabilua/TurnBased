@@ -24,10 +24,12 @@ public class PlayerTeamController : MonoBehaviour
         _combatManager.CombatantSelected += CombatantSelected;
     }
 
-    void TeamCreated()
+    void TeamCreated(bool firstMatchInARow)
     {
-        SetupTeam();
-        SetupTeamSkills();      
+        if (firstMatchInARow)
+            SetupTeam();
+
+        SetupTeamSkills();
     }
 
     void MatchSetupDone()

@@ -16,10 +16,10 @@ MonoBehaviour:
   faceSprite: {fileID: 855269690, guid: 11133a2f78a54e841ba81eee1988e3a5, type: 3}
   characterStats:
     characterStatTier: 0
-    strenght: 2
+    strenght: 1
     vitality: 1
-    dexterity: 3
-    agility: 4
+    dexterity: 1
+    agility: 1
     intelligence: 1
   nativeEquipmentSet:
     equipments:

@@ -9,10 +9,12 @@ public class ManagedResource
     public float currentResource;
     public float maxResource;
 
-    public void SetupResource(float maxAmount)
+    public void SetupResource(float maxAmount, bool alsoUpdateCurrentToNewMaximum = true)
     {
         maxResource = maxAmount;
-        currentResource = maxResource;
+
+        if (alsoUpdateCurrentToNewMaximum)
+            currentResource = maxResource;
     }
 
     void ChangeResourceValue(float _changeAmount)
@@ -92,7 +94,7 @@ public class RealtimeCombatant : MonoBehaviour
     public ManagedResource _healthPoints { get; private set; }
     public ManagedResource _manaPoints { get; private set; }
 
-    public CharacterStats _runtimeStats { get; private set; }
+    public CharacterStats _runtimeStats { get; private set; }   
 
     GameObject _characterGFX;
 
@@ -106,14 +108,13 @@ public class RealtimeCombatant : MonoBehaviour
         _characterInfo = info;
 
         _runtimeStats = new CharacterStats();
-        _runtimeStats.CopyStats(_characterInfo.characterStats);
-        _runtimeStats.CalculateSecondaryStats();
+        _runtimeStats.CopyBaseStats(_characterInfo.characterStats);
 
         _healthPoints = new ManagedResource();
-        _healthPoints.SetupResource(_runtimeStats.maxHP);
+        _healthPoints.SetupResource(_runtimeStats.GetFinalStat(TargetStat.HP));
 
         _manaPoints = new ManagedResource();
-        _manaPoints.SetupResource(_runtimeStats.maxMP);
+        _manaPoints.SetupResource(_runtimeStats.GetFinalStat(TargetStat.MP));
 
         _characterGFX = Instantiate(_characterInfo.inGameGFX, transform);
 
@@ -123,6 +124,8 @@ public class RealtimeCombatant : MonoBehaviour
 
     public void SetupCombatantSkills(List<SkillInfo> skills)
     {
+        _learnedSkills.Clear();
+
         _learnedSkills.AddRange(skills);
 
         FinishCombatantSetup();
@@ -191,6 +194,20 @@ public class RealtimeCombatant : MonoBehaviour
     public void SetStatusEffectAffliction(StatusEffectInfo statusEffect, bool gettingAfflicted)
     {
         CombatantStatusEffectAfflictionChange?.Invoke(statusEffect, gettingAfflicted);
+
+        if (statusEffect.effectType != EffectType.Altering)
+            return;
+
+        if (statusEffect.targetStat == TargetStat.HP)
+            _healthPoints.SetupResource(_runtimeStats.GetFinalStat(TargetStat.HP), false);
+        else if (statusEffect.targetStat == TargetStat.MP)
+            _manaPoints.SetupResource(_runtimeStats.GetFinalStat(TargetStat.MP), false);
+
+        if (_healthPoints.currentResource > _healthPoints.maxResource)
+            _healthPoints.SetupResource(_healthPoints.maxResource);
+
+        if (_manaPoints.currentResource > _manaPoints.maxResource)
+            _manaPoints.SetupResource(_manaPoints.maxResource);
     }
 
     public void AffectedByStatusEffect(int finalEffectValue, StatusEffectInfo statusEffect)

@@ -9,7 +9,7 @@ public class MatchManager : MonoBehaviour
 
     public Action<MatchTurnState> TurnStateChange;
     public Action<RealtimeCombatant, bool> CombatantCreated;
-    public Action AllCombatantsCreated;
+    public Action<bool> AllCombatantsCreated;
     public Action MatchSetupDone;
     public Action<bool> MatchEnd;
 
@@ -33,26 +33,38 @@ public class MatchManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-  }
+    }
 
     #endregion
 
     #region Match Setup
 
-    public void SetupNewMatch(List<CharacterInfo> playerTeam, MatchInfo matchInfo)
+    public void SetupNewMatch(List<CharacterInfo> playerTeam, MatchInfo matchInfo, bool firstMatchInARow)
     {
+        IsMatchSetupDone = false;
+
         _currentMatchInfo = matchInfo;
 
         ChangeTurnState(MatchTurnState.PreBattle);
 
-        SetupCharacterSpots();
+        if (firstMatchInARow)
+        {
+            SetupCharacterSpots();
+            SetupTeam(playerTeam, GetPlayerTeam, _playerCharacterSpots);
+        }
+        else
+        {
+            GetEnemyTeam.Clear();
 
-        SetupTeam(playerTeam, GetPlayerTeam, _playerCharacterSpots);
+            foreach (var enemy in GetEnemyTeam)
+                Destroy(enemy.gameObject, 2f);
+        }
+
         SetupTeam(_currentMatchInfo._matchOpponents, GetEnemyTeam, _enemyCharacterSpots);
 
         SetupLists();
 
-        AllCombatantsCreated?.Invoke();
+        AllCombatantsCreated?.Invoke(firstMatchInARow);
 
         Run.After(_timeDelayToAdvanceTurn, () => AdvanceTurn());
     }
@@ -146,14 +158,7 @@ public class MatchManager : MonoBehaviour
     {
         if (HasBattleEnded)
         {
-            ChangeTurnState(MatchTurnState.PostBattle);
-
-            bool hasPlayerWon = IsTeamDefeated(GetEnemyTeam);
-
-            UpdateTeamTurnState(GetPlayerTeam, CombatantTurnState.PostGame);
-            UpdateTeamTurnState(GetEnemyTeam, CombatantTurnState.PostGame);
-
-            MatchEnd?.Invoke(hasPlayerWon);
+            EndMatch();
 
             return;
         }
@@ -210,6 +215,18 @@ public class MatchManager : MonoBehaviour
         TurnStateChange?.Invoke(GetMatchTurnState);
     }
 
+    void EndMatch()
+    {
+        ChangeTurnState(MatchTurnState.PostBattle);
+
+        bool hasPlayerWon = IsTeamDefeated(GetEnemyTeam);
+
+        UpdateTeamTurnState(GetPlayerTeam, CombatantTurnState.PostGame);
+        UpdateTeamTurnState(GetEnemyTeam, CombatantTurnState.PostGame);
+
+        MatchEnd?.Invoke(hasPlayerWon);
+    }
+
     public bool HasBattleEnded => IsTeamDefeated(GetPlayerTeam) || IsTeamDefeated(GetEnemyTeam);
 
     public bool IsTeamDefeated(List<RealtimeCombatant> team)
@@ -255,11 +272,11 @@ public class MatchManager : MonoBehaviour
 
     #region Getters
 
-    public List<RealtimeCombatant> GetPlayerTeam { get; } = new List<RealtimeCombatant>();
+    public List<RealtimeCombatant> GetPlayerTeam = new List<RealtimeCombatant>();
 
-    public List<RealtimeCombatant> GetEnemyTeam { get; } = new List<RealtimeCombatant>();
+    public List<RealtimeCombatant> GetEnemyTeam = new List<RealtimeCombatant>();
 
-    public List<RealtimeCombatant> GetAllCombatants { get; } = new List<RealtimeCombatant>();
+    public List<RealtimeCombatant> GetAllCombatants = new List<RealtimeCombatant>();
 
     public MatchTurnState GetMatchTurnState { get; private set; }
 

@@ -104,9 +104,9 @@ public class CombatManager : MonoBehaviour
                 //if it hit, this receiver will react accordingly, if not theyll show visual feedback of dodge
                 if (_storedTurnActions[i].skillActuallyHit[j])
                 {
-                    _storedTurnActions[i].receivers[j].ReceiveSkillEffect(_storedTurnActions[i].finalEffectValue, _storedTurnActions[i].skillUsed);
-
                     CheckForStatusEffectAppliedBySkill(_storedTurnActions[i].receivers[j], _storedTurnActions[i].performer, _storedTurnActions[i].skillUsed);
+
+                    _storedTurnActions[i].receivers[j].ReceiveSkillEffect(_storedTurnActions[i].finalEffectValue, _storedTurnActions[i].skillUsed);
                 }
                 else
                 {
@@ -379,7 +379,7 @@ public class CombatManager : MonoBehaviour
 
         foreach (var target in affectedTargets)
         {
-            float skillEffectiveHitChance = skill.hitChance + user._runtimeStats.accuracy - target._runtimeStats.dodge;
+            float skillEffectiveHitChance = skill.hitChance + user._runtimeStats.GetFinalStat(TargetStat.ACCURACY) - target._runtimeStats.GetFinalStat(TargetStat.DODGE);
 
             bool skillActuallyHit = true;
 
@@ -395,19 +395,19 @@ public class CombatManager : MonoBehaviour
         switch (skill.effectiveStat)
         {
             case EffectiveStat.Strenght:
-                leveragedStatValue = user._runtimeStats.strenght;
+                leveragedStatValue = user._runtimeStats.GetFinalStat(TargetStat.STR);
                 break;
             case EffectiveStat.Vitality:
-                leveragedStatValue = user._runtimeStats.vitality;
+                leveragedStatValue = user._runtimeStats.GetFinalStat(TargetStat.VIT);
                 break;
             case EffectiveStat.Dexterity:
-                leveragedStatValue = user._runtimeStats.dexterity;
+                leveragedStatValue = user._runtimeStats.GetFinalStat(TargetStat.DEX);
                 break;
             case EffectiveStat.Agility:
-                leveragedStatValue = user._runtimeStats.agility;
+                leveragedStatValue = user._runtimeStats.GetFinalStat(TargetStat.AGI);
                 break;
             case EffectiveStat.Intelligence:
-                leveragedStatValue = user._runtimeStats.intelligence;
+                leveragedStatValue = user._runtimeStats.GetFinalStat(TargetStat.INT);
                 break;
         }
 

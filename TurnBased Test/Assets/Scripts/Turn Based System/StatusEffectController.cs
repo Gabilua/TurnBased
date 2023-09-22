@@ -20,6 +20,9 @@ public class StatusEffectController : MonoBehaviour
         _skillUser = user;
         _effectApplied = effectInfo;
         _remainingAffectedTurns = _effectApplied.durationInTurns;
+
+        if (_effectApplied.effectType == EffectType.Altering)
+            _target._runtimeStats.AddTemporaryChange(_effectApplied);
     }
 
     public void StackDuration()
@@ -32,7 +35,7 @@ public class StatusEffectController : MonoBehaviour
         _remainingAffectedTurns--;
 
         if (_remainingAffectedTurns == 0)
-            EffectDurationEnded?.Invoke(this);
+            RemoveStatusEffectFromTarget();
     }
 
     void TargetDied()
@@ -51,19 +54,19 @@ public class StatusEffectController : MonoBehaviour
             switch (_effectApplied.effectiveStat)
             {
                 case EffectiveStat.Strenght:
-                    leveragedStatValue = _skillUser._runtimeStats.strenght;
+                    leveragedStatValue = _skillUser._runtimeStats.GetFinalStat(TargetStat.STR);
                     break;
                 case EffectiveStat.Vitality:
-                    leveragedStatValue = _skillUser._runtimeStats.vitality;
+                    leveragedStatValue = _skillUser._runtimeStats.GetFinalStat(TargetStat.VIT);
                     break;
                 case EffectiveStat.Dexterity:
-                    leveragedStatValue = _skillUser._runtimeStats.dexterity;
+                    leveragedStatValue = _skillUser._runtimeStats.GetFinalStat(TargetStat.DEX);
                     break;
                 case EffectiveStat.Agility:
-                    leveragedStatValue = _skillUser._runtimeStats.agility;
+                    leveragedStatValue = _skillUser._runtimeStats.GetFinalStat(TargetStat.AGI);
                     break;
                 case EffectiveStat.Intelligence:
-                    leveragedStatValue = _skillUser._runtimeStats.intelligence;
+                    leveragedStatValue = _skillUser._runtimeStats.GetFinalStat(TargetStat.INT);
                     break;
             }
 
@@ -83,5 +86,12 @@ public class StatusEffectController : MonoBehaviour
         _target.AffectedByStatusEffect(finalEffectValue, _effectApplied);
 
         TurnCountdown();
+    }    
+
+    void RemoveStatusEffectFromTarget()
+    {
+        _target._runtimeStats.RemoveTemporaryChange(_effectApplied);
+
+        EffectDurationEnded?.Invoke(this);
     }
 }

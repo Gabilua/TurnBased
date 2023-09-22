@@ -41,11 +41,11 @@ public class AICombatantController : MonoBehaviour
 
     void CharacterTurnStateChanged(RealtimeCombatant character, CombatantTurnState turnState)
     {
-        if (allies.Count == 0 || enemies.Count == 0)
-            IdentifyFactions();
-
         if (_thisCombatant.currentTurnState == CombatantTurnState.Dead)
             return;
+
+        if (allies.Count == 0 || enemies.Count == 0)
+            IdentifyFactions();
 
         if (turnState == CombatantTurnState.WaitingForInput)
            ChooseSkillToUse();

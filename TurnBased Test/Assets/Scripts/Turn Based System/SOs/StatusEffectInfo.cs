@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class TemporaryStatChanges
+{
+    public TargetStat targetStat;
+    public int effectBaseValue;
+    public StatEffectOnBaseValue statEffectOnBaseValue;
+    public StatusEffectInfo sourceOfChanges;
+}
+
 [CreateAssetMenu(fileName = "New Status Effect", menuName = "TurnBasedSystem/Combat/StatusEffect")]
 public class StatusEffectInfo : ScriptableObject
 {

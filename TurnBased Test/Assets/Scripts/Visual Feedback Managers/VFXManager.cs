@@ -18,6 +18,8 @@ public class VFXManager : VisualFeedbackManager
     [SerializeField] Transform _statusEffectDisplayHolder;
     List<Image> _activeStatusEffectDisplays = new List<Image>();
 
+    Animator _shadow;
+
     Animator _damageValueAnimator;
     Animator _healValueAnimator;
     Animator _skillDodgedAnimator;
@@ -25,6 +27,8 @@ public class VFXManager : VisualFeedbackManager
     protected override void Start()
     {
         base.Start();
+
+        _shadow = _thisCombatant.transform.GetChild(0).GetComponent<Animator>();
 
         AccountForCombatantInversion();
 
@@ -73,7 +77,6 @@ public class VFXManager : VisualFeedbackManager
 
         GameObject fx = Instantiate(skill.useVFX, _displaysHolder);
         fx.transform.SetAsFirstSibling();
-        Destroy(fx, 5f);
     }
 
     protected override void DodgedSkill()
@@ -89,13 +92,14 @@ public class VFXManager : VisualFeedbackManager
 
         GameObject fx = Instantiate(skill.receiveVFX, _displaysHolder);
         fx.transform.SetAsFirstSibling();
-        Destroy(fx, 5f);
     }
 
     protected override void Died()
     {
         foreach (Transform child in _statusEffectDisplayHolder)
             Destroy(child.gameObject);
+
+        _shadow.SetTrigger("Action");
 
         _activeStatusEffectDisplays.Clear();
     }
@@ -152,6 +156,5 @@ public class VFXManager : VisualFeedbackManager
 
         GameObject fx = Instantiate(statusEffect.receiveVFX, _displaysHolder);
         fx.transform.SetAsFirstSibling();
-        Destroy(fx, 5f);
     }
 }

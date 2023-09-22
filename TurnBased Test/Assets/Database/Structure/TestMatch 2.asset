@@ -14,4 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _matchOpponents:
   - {fileID: 11400000, guid: 14748010d07d0374894fb0e0748e15f1, type: 2}
-  - {fileID: 11400000, guid: 14748010d07d0374894fb0e0748e15f1, type: 2}
