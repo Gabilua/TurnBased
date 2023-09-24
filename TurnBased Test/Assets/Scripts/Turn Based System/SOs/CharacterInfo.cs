@@ -19,15 +19,15 @@ public class CharacterStats
 
     [Header("Main Stats")]
     [Range(1, 5)]
-    int strenght;
+  [SerializeField]  int strenght;
     [Range(1, 5)]
-    int vitality;
+    [SerializeField] int vitality;
     [Range(1, 5)]
-    int dexterity;
+    [SerializeField] int dexterity;
     [Range(1, 5)]
-    int agility;
+    [SerializeField] int agility;
     [Range(1, 5)]
-    int intelligence;
+    [SerializeField] int intelligence;
 
     int maxHP;
     int maxMP;
@@ -72,7 +72,7 @@ public class CharacterStats
                 finalStat = dexterity;
                 break;
             case TargetStat.AGI:
-                finalStat = agility;
+                finalStat = agility * tierMultiplier;
                 break;
             case TargetStat.INT:
                 finalStat = intelligence;

@@ -66,6 +66,9 @@ public class CombatManager : MonoBehaviour
             activeStatusEffect.ApplyStatusEffectToTarget();
         }
 
+        //this sorts the action list that was in order of execution to happen in order of who has the highest agility
+        _storedTurnActions.Sort((p1, p2) => p1.performer._runtimeStats.GetFinalStat(TargetStat.AGI).CompareTo(p2.performer._runtimeStats.GetFinalStat(TargetStat.AGI)));
+
         //then, we run through each stored action, remebering that each is the result of a single character skill affecting n targets.
         for (int i = 0; i < _storedTurnActions.Count; i++)
         {
