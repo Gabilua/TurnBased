@@ -14,6 +14,7 @@ public class StageManager : MonoBehaviour
 
     [SerializeField] MatchManager _matchManager;
     [SerializeField] PlayerTeamController _playerTeamController;
+    [SerializeField] StageProgressdDisplay _stageProgressUI;
 
     [SerializeField] int timeToAdvanceToNextMatch;
 
@@ -45,6 +46,8 @@ public class StageManager : MonoBehaviour
 
         SetStageProgressState(StageProgressState.InProgress);
 
+        _stageProgressUI.SetupStageDisplay(_currentStage);
+
         StartNewMatch();
     }
 
@@ -66,15 +69,19 @@ public class StageManager : MonoBehaviour
 
         bool firstMatch = _currentActiveMatchIndex == 0;
 
+        _stageProgressUI.UpdateMatchDisplay(_currentActiveMatch);
+
         _matchManager.SetupNewMatch(_playerTeamController.GetCurrentPlayerTeamInfo(), _currentActiveMatch, firstMatch);
     }
 
     void MatchEnded(bool playerWon)
     {
+        _stageProgressUI.UpdateStageProgress();
+
         if (!IsStageOver())
             Run.After(timeToAdvanceToNextMatch, ()=> AdvanceToNextMatch());
         else
-            EndStage(playerWon);
+            Run.After(timeToAdvanceToNextMatch, () => EndStage(playerWon));
     }
 
     bool IsStageOver()

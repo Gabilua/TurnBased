@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
-  m_Name: Ignite
+  m_Name: Ember Shower
   m_EditorClassIdentifier: 
   skillIcon: {fileID: 21300000, guid: d5b88f0577ddc0a4782bdd7e6878533d, type: 3}
   effectType: 0

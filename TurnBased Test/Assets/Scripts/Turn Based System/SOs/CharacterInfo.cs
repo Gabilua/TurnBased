@@ -63,19 +63,19 @@ public class CharacterStats
                 finalStat = maxMP = Mathf.CeilToInt((35 * tierMultiplier) + (intelligence * 50 * tierMultiplier));
                 break;
             case TargetStat.STR:
-                finalStat = strenght;
+                finalStat = strenght * tierMultiplier;
                 break;
             case TargetStat.VIT:
-                finalStat = vitality;
+                finalStat = vitality * tierMultiplier;
                 break;
             case TargetStat.DEX:
-                finalStat = dexterity;
+                finalStat = dexterity * tierMultiplier;
                 break;
             case TargetStat.AGI:
                 finalStat = agility * tierMultiplier;
                 break;
             case TargetStat.INT:
-                finalStat = intelligence;
+                finalStat = intelligence * tierMultiplier;
                 break;
             case TargetStat.ACCURACY:
                 finalStat = accuracy = Mathf.CeilToInt(65 + (dexterity * tierMultiplier));

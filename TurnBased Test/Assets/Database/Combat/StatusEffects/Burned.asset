@@ -20,4 +20,6 @@ MonoBehaviour:
   affectedByStats: 1
   statEffectOnBaseValue: 0
   effectiveStat: 4
-  receiveVFX: {fileID: 8709639680917579618, guid: 7a5c3638696b60946adde54cd9ef5d5e, type: 3}
+  effectStacksDuration: 0
+  chanceToInterruptActions: 0
+  receiveVFX: {fileID: 590459219073687486, guid: 9d4499e07f0a98942a5bfc2a74a5f5a7, type: 3}

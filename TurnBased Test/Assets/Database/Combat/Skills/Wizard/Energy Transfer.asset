@@ -16,12 +16,12 @@ MonoBehaviour:
   effectType: 1
   targetStat: 1
   hitChance: 100
-  effectBaseValue: 55
+  effectBaseValue: 100
   affectedByStats: 0
   statEffectOnBaseValue: 1
   effectiveStat: 4
   costStat: 1
-  costAmount: 55
+  costAmount: 100
   targetRange: 2
   selfTargetingAllowed: 1
   useVFX: {fileID: 0}
@@ -30,3 +30,4 @@ MonoBehaviour:
   targetReactionDelay: 0.35
   appliesStatusEffect: 0
   statusEffect: {fileID: 0}
+  afflictionChance: 0

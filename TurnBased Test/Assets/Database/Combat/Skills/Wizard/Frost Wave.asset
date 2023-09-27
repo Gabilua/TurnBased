@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
-  m_Name: Combustion
+  m_Name: Frost Wave
   m_EditorClassIdentifier: 
-  skillIcon: {fileID: 21300000, guid: d5b88f0577ddc0a4782bdd7e6878533d, type: 3}
+  skillIcon: {fileID: 21300000, guid: e248c73b42d579442a5c87b4421297d6, type: 3}
   effectType: 0
   targetStat: 0
-  hitChance: 75
-  effectBaseValue: 10
+  hitChance: 50
+  effectBaseValue: 2
   affectedByStats: 1
   statEffectOnBaseValue: 1
   effectiveStat: 4
   costStat: 1
-  costAmount: 35
-  targetRange: 1
-  selfTargetingAllowed: 0
-  useVFX: {fileID: 8709639680917579618, guid: 34e24821d29c3c5438c06d6f3ae849d3, type: 3}
-  receiveVFX: {fileID: 8709639680917579618, guid: 7a5c3638696b60946adde54cd9ef5d5e, type: 3}
+  costAmount: 25
+  targetRange: 0
+  selfTargetingAllowed: 1
+  useVFX: {fileID: 8709639680917579618, guid: 5bb55f439e04bf24784f1c8cef391399, type: 3}
+  receiveVFX: {fileID: 808874906696333116, guid: ed1c369cdad6ac14387bdcb8cc257b7e, type: 3}
   usesSpecialAnimation: 1
   targetReactionDelay: 1
-  appliesStatusEffect: 0
-  statusEffect: {fileID: 0}
-  afflictionChance: 0
+  appliesStatusEffect: 1
+  statusEffect: {fileID: 11400000, guid: 02c1e6e1ee051994abacebdc937c5102, type: 2}
+  afflictionChance: 60

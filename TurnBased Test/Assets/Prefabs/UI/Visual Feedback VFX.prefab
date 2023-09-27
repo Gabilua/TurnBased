@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3041014895610388551}
   - component: {fileID: 2071657564641150448}
   - component: {fileID: 6140068830762582045}
+  - component: {fileID: 7867755901434907209}
   m_Layer: 5
   m_Name: HealValueDisplay
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &164734892565108028
@@ -62,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -71,7 +72,7 @@ MonoBehaviour:
   m_text: 999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 602bf8acc851e76409f44c9ba883a79d, type: 2}
-  m_sharedMaterial: {fileID: 1414404435802409856, guid: 602bf8acc851e76409f44c9ba883a79d, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9b981e6e2b78b1c4aa560bec083691ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -169,6 +170,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!210 &7867755901434907209
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342709963405819868}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -10
 --- !u!1 &1232294159261926387
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +194,7 @@ GameObject:
   - component: {fileID: 5073095838556750902}
   - component: {fileID: 7783020009582236555}
   - component: {fileID: 1680867183342448345}
+  - component: {fileID: 5328262912563742537}
   m_Layer: 5
   m_Name: DamageValueDisplay
   m_TagString: Untagged
@@ -206,7 +219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &6037096211877067296
@@ -231,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -240,7 +253,7 @@ MonoBehaviour:
   m_text: 999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 602bf8acc851e76409f44c9ba883a79d, type: 2}
-  m_sharedMaterial: {fileID: 1414404435802409856, guid: 602bf8acc851e76409f44c9ba883a79d, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9b981e6e2b78b1c4aa560bec083691ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -274,7 +287,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -338,6 +351,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!210 &5328262912563742537
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232294159261926387}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -10
 --- !u!1 &2349296685134508318
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +375,7 @@ GameObject:
   - component: {fileID: 4650181079565550439}
   - component: {fileID: 733844350486159237}
   - component: {fileID: 2628914703920690136}
+  - component: {fileID: 7161755748515742594}
   m_Layer: 5
   m_Name: SkillDodgeDisplay
   m_TagString: Untagged
@@ -375,7 +400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3397296912867597764
@@ -400,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -409,7 +434,7 @@ MonoBehaviour:
   m_text: MISSED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 602bf8acc851e76409f44c9ba883a79d, type: 2}
-  m_sharedMaterial: {fileID: 1414404435802409856, guid: 602bf8acc851e76409f44c9ba883a79d, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9b981e6e2b78b1c4aa560bec083691ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -443,7 +468,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -507,6 +532,17 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!210 &7161755748515742594
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349296685134508318}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -10
 --- !u!1 &2478603070465344383
 GameObject:
   m_ObjectHideFlags: 0

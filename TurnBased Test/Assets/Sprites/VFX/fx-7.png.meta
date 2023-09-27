@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: fx-7_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3453869037c4c4cb80be15d6400c64
+      internalID: 98920220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx-7_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0cb0e3f9ebb5fe4ab65e99e445e6a3f
+      internalID: 1358739008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx-7_2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ffe1de2433b2646b54157a2b79c6cf
+      internalID: 512267709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx-7_3
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b22d39b251c2e44b86e82623a75302
+      internalID: 897957127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx-7_4
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db992ff738b9174c8bcf1fe5f2087d3
+      internalID: -2026987466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx-7_5
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2980de091ef74e40b3c96c95dd8fe4c
+      internalID: 241472975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx-7_6
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 0
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3573e81027948c041ba5f8fc6206d0ff
+      internalID: 336217942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx-7_7
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 0
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22a3600da3bf4b4ab085caabfab8bf5
+      internalID: 1830083623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +306,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fx-7_1: 1358739008
+      fx-7_5: 241472975
+      fx-7_6: 336217942
+      fx-7_3: 897957127
+      fx-7_4: -2026987466
+      fx-7_0: 98920220
+      fx-7_2: 512267709
+      fx-7_7: 1830083623
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

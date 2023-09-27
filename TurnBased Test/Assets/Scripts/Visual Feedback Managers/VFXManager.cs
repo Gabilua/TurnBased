@@ -48,10 +48,10 @@ public class VFXManager : VisualFeedbackManager
 
     protected override void Damaged(int value, TargetStat stat)
     {
-        _damagedFX.SetTrigger("Action");
-
         if (value == 0)
             return;
+
+        _damagedFX.SetTrigger("Action");
 
         _damageValueDisplay.transform.SetAsLastSibling();
         _damageValueDisplay.text = value.ToString();
@@ -60,10 +60,10 @@ public class VFXManager : VisualFeedbackManager
 
     protected override void Healed(int value, TargetStat stat)
     {
-        _healedFX.SetTrigger("Action");
-
         if (value == 0)
             return;
+
+        _healedFX.SetTrigger("Action");
 
         _healValueDisplay.transform.SetAsLastSibling();
         _healValueDisplay.text = value.ToString();
@@ -136,11 +136,16 @@ public class VFXManager : VisualFeedbackManager
     void RemoveStatusEffectDisplay(Image display)
     {
         _activeStatusEffectDisplays.Remove(display);
+
+        if(display != null)
         Destroy(display.gameObject);
     }
 
     protected override void StatusEffectHit(StatusEffectInfo statusEffect)
     {
+        if (statusEffect.effectBaseValue == 0 && statusEffect.affectedByStats == false)
+            return;
+
         ShowStatusEffectVFX(statusEffect);
     }
 

@@ -22,4 +22,4 @@ MonoBehaviour:
   effectiveStat: 4
   effectStacksDuration: 0
   chanceToInterruptActions: 100
-  receiveVFX: {fileID: 0}
+  receiveVFX: {fileID: 808874906696333116, guid: ed1c369cdad6ac14387bdcb8cc257b7e, type: 3}

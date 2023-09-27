@@ -58,12 +58,17 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator ExecuteStoredCombatActions()
     {
+        _activeStatusEffects.Sort((p1, p2) => p1._target._runtimeStats.GetFinalStat(TargetStat.AGI).CompareTo(p2._target._runtimeStats.GetFinalStat(TargetStat.AGI)));
+
         //at the start of the execution turn, before conventional skill effects are applied, we start by applying status effects to their targets
         foreach (var activeStatusEffect in _activeStatusEffects)
         {
             yield return new WaitForSeconds(_timeDelayBetweenCombatantActions);
 
-            activeStatusEffect.ApplyStatusEffectToTarget();
+            if (activeStatusEffect != null)
+                activeStatusEffect.ApplyStatusEffectToTarget();
+
+            yield return new WaitForSeconds(_timeDelayBetweenCombatantActions);
         }
 
         //this sorts the action list that was in order of execution to happen in order of who has the highest agility
@@ -76,8 +81,14 @@ public class CombatManager : MonoBehaviour
             if (_storedTurnActions[i].performer.currentTurnState == CombatantTurnState.Dead)
                 continue;
 
+            _storedTurnActions[i].performer.ToggleCombatantSelection(true);
+
             if (CheckForActionInterruption(_storedTurnActions[i].performer))
+            {
+                yield return new WaitForSeconds(_timeDelayBetweenCombatantActions / 2);
+                _storedTurnActions[i].performer.ToggleCombatantSelection(false);
                 continue;
+            }
 
             bool allTargetsAlreadyDead = true;
 
@@ -116,6 +127,8 @@ public class CombatManager : MonoBehaviour
                     _storedTurnActions[i].receivers[j].DodgeSkill();
                 }
             }
+
+            _storedTurnActions[i].performer.ToggleCombatantSelection(false);
         }
 
         _storedTurnActions.Clear();
@@ -129,16 +142,13 @@ public class CombatManager : MonoBehaviour
 
         foreach (var activeStatusEffect in _activeStatusEffects)
         {
-            if (activeStatusEffect._target != combatant)
-                continue;
-
-            if (UnityEngine.Random.value * 100 < activeStatusEffect._effectApplied.chanceToInterruptActions)
+            if (activeStatusEffect._target == combatant && UnityEngine.Random.value * 100 < activeStatusEffect._effectApplied.chanceToInterruptActions)
             {
-                activeStatusEffect._target.InterruptedByStatusEffect(activeStatusEffect._effectApplied);
+                combatant.InterruptedByStatusEffect(activeStatusEffect._effectApplied);
                 actionInterrupted = true;
                 break;
             }
-        }
+        }    
 
         return actionInterrupted;
     }
