@@ -12,34 +12,35 @@ public class EquipmentSet
 [System.Serializable]
 public class CharacterStats
 {
-    enum CharacterStatTier { Minion, Creature, Hero, Boss}
-
-    [Header("How Strong is This Character?")]
-    [SerializeField] CharacterStatTier characterStatTier;
-
     [Header("Main Stats")]
-    [Range(1, 5)]
-  [SerializeField]  int strenght;
-    [Range(1, 5)]
+    [Range(1, 25)]
+    [SerializeField] int strenght;
+    [Range(1, 25)]
     [SerializeField] int vitality;
-    [Range(1, 5)]
-    [SerializeField] int dexterity;
-    [Range(1, 5)]
-    [SerializeField] int agility;
-    [Range(1, 5)]
+    [Range(1, 25)]
     [SerializeField] int intelligence;
+    [Range(1, 25)]
+    [SerializeField] int dexterity;
+    [Range(1, 25)]
+    [SerializeField] int agility;
 
-    int maxHP;
-    int maxMP;
-    int dodge;
-    int accuracy;
+    [SerializeField] int maxHP;
+    [SerializeField] int maxMP;
+    [SerializeField] int accuracy;
+    [SerializeField] int dodge;
 
     List<TemporaryStatChanges> _temporaryStatChanges = new List<TemporaryStatChanges>();
 
+    public void UpdateSubStats()
+    {
+        maxHP = GetFinalStat(TargetStat.HP);
+        maxMP = GetFinalStat(TargetStat.MP);
+        dodge = GetFinalStat(TargetStat.DODGE);
+        accuracy = GetFinalStat(TargetStat.ACCURACY);
+    }
+
     public void CopyBaseStats(CharacterStats referenceStats)
     {
-        characterStatTier = referenceStats.characterStatTier;
-
         strenght = referenceStats.strenght;
         vitality = referenceStats.vitality;
         dexterity = referenceStats.dexterity;
@@ -52,36 +53,35 @@ public class CharacterStats
         int finalStat = 0;
         int additiveBonus = 0;
         int multiplicativeBonus = 1;
-        int tierMultiplier = (int)characterStatTier + 1;
 
         switch (stat)
         {
             case TargetStat.HP:
-                finalStat = maxHP = Mathf.CeilToInt((35 * tierMultiplier) + (vitality * 60 * tierMultiplier));
+                finalStat = maxHP = Mathf.CeilToInt(vitality * 60);
                 break;
             case TargetStat.MP:
-                finalStat = maxMP = Mathf.CeilToInt((35 * tierMultiplier) + (intelligence * 50 * tierMultiplier));
+                finalStat = maxMP = Mathf.CeilToInt(intelligence * 60);
                 break;
             case TargetStat.STR:
-                finalStat = strenght * tierMultiplier;
+                finalStat = strenght;
                 break;
             case TargetStat.VIT:
-                finalStat = vitality * tierMultiplier;
+                finalStat = vitality;
                 break;
             case TargetStat.DEX:
-                finalStat = dexterity * tierMultiplier;
+                finalStat = dexterity;
                 break;
             case TargetStat.AGI:
-                finalStat = agility * tierMultiplier;
+                finalStat = agility;
                 break;
             case TargetStat.INT:
-                finalStat = intelligence * tierMultiplier;
+                finalStat = intelligence;
                 break;
             case TargetStat.ACCURACY:
-                finalStat = accuracy = Mathf.CeilToInt(65 + (dexterity * tierMultiplier));
+                finalStat = accuracy = Mathf.CeilToInt(65 + dexterity);
                 break;
             case TargetStat.DODGE:
-                finalStat = dodge = Mathf.CeilToInt(5 + (agility * tierMultiplier));
+                finalStat = dodge = Mathf.CeilToInt(5 + agility);
                 break;
         }
 
@@ -142,4 +142,13 @@ public class CharacterInfo : ScriptableObject
     public Sprite faceSprite;
     public CharacterStats characterStats;
     public EquipmentSet nativeEquipmentSet;
+
+#if UNITY_EDITOR
+
+    private void OnValidate()
+    {
+        characterStats.UpdateSubStats();
+    }
+
+#endif
 }

@@ -94,9 +94,9 @@ public class RealtimeCombatant : MonoBehaviour
     public ManagedResource _healthPoints { get; private set; }
     public ManagedResource _manaPoints { get; private set; }
 
-    public CharacterStats _runtimeStats { get; private set; }   
+    public CharacterStats _runtimeStats { get; private set; }
 
-    GameObject _characterGFX;
+    public GameObject _characterGFX { get; private set; }
 
     public bool IsValidTarget { get; private set; }
     public bool IsSetupForMatch { get; private set; }

@@ -14,6 +14,7 @@ public class MatchManager : MonoBehaviour
     public Action<bool> MatchEnd;
 
     [SerializeField] float _timeDelayToAdvanceTurn;
+    [SerializeField] float _intervalBetweenCombatantSpawn;
 
     List<Transform> _playerCharacterSpots = new List<Transform>();
     List<Transform> _enemyCharacterSpots = new List<Transform>();
@@ -50,6 +51,8 @@ public class MatchManager : MonoBehaviour
         if (firstMatchInARow)
         {
             SetupCharacterSpots();
+            // StartCoroutine(SetupTeam(playerTeam, GetPlayerTeam, _playerCharacterSpots));
+
             SetupTeam(playerTeam, GetPlayerTeam, _playerCharacterSpots);
         }
         else
@@ -60,13 +63,20 @@ public class MatchManager : MonoBehaviour
                 Destroy(enemy.gameObject, 2f);
         }
 
+        //StartCoroutine(SetupTeam(_currentMatchInfo._matchOpponents, GetEnemyTeam, _enemyCharacterSpots));
+
         SetupTeam(_currentMatchInfo._matchOpponents, GetEnemyTeam, _enemyCharacterSpots);
 
-        SetupLists();
+       // float totalSpawningDuration = (playerTeam.Count * _intervalBetweenCombatantSpawn) + (_currentMatchInfo._matchOpponents.Count * _intervalBetweenCombatantSpawn);
 
-        AllCombatantsCreated?.Invoke(firstMatchInARow);
+      //  Run.After(totalSpawningDuration, () => 
+      //  {
+            SetupLists();
 
-        Run.After(_timeDelayToAdvanceTurn, () => AdvanceTurn());
+            AllCombatantsCreated?.Invoke(firstMatchInARow);
+
+            Run.After(_timeDelayToAdvanceTurn, () => AdvanceTurn());
+      //  });
     }
 
     void CombatantSetupFinished(RealtimeCombatant combatant)
@@ -116,6 +126,8 @@ public class MatchManager : MonoBehaviour
     {
         for (int i = 0; i < charactersForTeam.Count; i++)
         {
+            //yield return new WaitForSeconds(_intervalBetweenCombatantSpawn);
+
             RealtimeCombatant combatant = Instantiate(_combatantPrefab, teamSpots[i]).GetComponent<RealtimeCombatant>();
 
             combatant.SetupCharacter(charactersForTeam[i]);

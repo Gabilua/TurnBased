@@ -10,13 +10,14 @@ public class StageManager : MonoBehaviour
     public Action<StageProgressState> StageStateChange;
     public Action<bool> StageEnd;
 
-    [SerializeField] StageInfo _currentStage;
+    StageInfo _currentStage;
 
     [SerializeField] MatchManager _matchManager;
     [SerializeField] PlayerTeamController _playerTeamController;
     [SerializeField] StageProgressdDisplay _stageProgressUI;
 
-    [SerializeField] int timeToAdvanceToNextMatch;
+    [SerializeField] float timeToStartFirstMatch;
+    [SerializeField] float timeToAdvanceToNextMatch;
 
     public StageProgressState _currentStageProgressState { get; private set; }
 
@@ -27,17 +28,14 @@ public class StageManager : MonoBehaviour
 
     #region Unity
 
-    private void Start()
-    {
-        SetupStage();
-    }
-
     #endregion
 
     #region Setup & Auxiliaries
 
-    void SetupStage()
+    public void SetupStage(StageInfo stage)
     {
+        _currentStage = stage;
+
         _matchManager.MatchEnd += MatchEnded;
 
         _stageMatches.AddRange(_currentStage.orderedMatches);
@@ -48,7 +46,7 @@ public class StageManager : MonoBehaviour
 
         _stageProgressUI.SetupStageDisplay(_currentStage);
 
-        StartNewMatch();
+        Run.After(timeToStartFirstMatch, () => StartNewMatch());
     }
 
     void SetStageProgressState(StageProgressState state)

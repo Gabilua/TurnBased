@@ -15,14 +15,17 @@ MonoBehaviour:
   inGameGFX: {fileID: 8590507262704659968, guid: 8cede8c959c88474188ac96b879c1303, type: 3}
   faceSprite: {fileID: 21300000, guid: 29c066f2d019e6940abd1a6a3b11f518, type: 3}
   characterStats:
-    characterStatTier: 2
     strenght: 1
     vitality: 2
+    intelligence: 5
     dexterity: 4
     agility: 3
-    intelligence: 5
-  nativeEquipmentSets:
-  - equipments:
-    - {fileID: 11400000, guid: 3ee9b09f5d2143949bdbdb3c8c522a63, type: 2}
+    maxHP: 120
+    maxMP: 300
+    accuracy: 69
+    dodge: 8
+  nativeEquipmentSet:
+    equipments:
     - {fileID: 11400000, guid: c7ff754764572114291f48c11bcec933, type: 2}
-    - {fileID: 11400000, guid: 51717fbd6a25e884fa136917d48a6018, type: 2}
+    - {fileID: 11400000, guid: 047663d781d0b1640b80f8f4668751d1, type: 2}
+    - {fileID: 11400000, guid: 3ee9b09f5d2143949bdbdb3c8c522a63, type: 2}
