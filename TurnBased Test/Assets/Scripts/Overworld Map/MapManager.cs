@@ -12,20 +12,45 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] ScreenTransitionController _transitionController;
 
-    MapNodeController _currentMapNode;
+    public MapNodeController _startingMapNode;
 
-    private void Start()
+    public MapNodeController _currentMapNode { get; private set; }
+
+    public List<MapNodeController> GetAllMapNodes()
     {
-        SetupMapNodes();
-    }
+        if (_allMapNodes.Count == 0)
+            SetupMapNodes();
 
+        return _allMapNodes;
+    }
+    
     void SetupMapNodes()
     {
         _allMapNodes.AddRange(_mapNodeHolder.GetComponentsInChildren<MapNodeController>());
 
         foreach (var node in _allMapNodes)
         {
+            if (node == _startingMapNode)
+            {
+                node.UnlockNode();
+                SetCurrentMapNode(node);
+            }
+
             node.MapNodeSelected += MapNodeSelected;
+        }
+    }
+
+    public void DownloadMapNodeProgress(List<MapNodeController> savedMapNodes)
+    {
+        for (int i = 0; i < savedMapNodes.Count; i++)
+        {
+            if (savedMapNodes[i].currentNodeState == MapNodeController.MapNodeState.Unlocked)
+                _allMapNodes[i].UnlockNode();
+            else if (savedMapNodes[i].currentNodeState == MapNodeController.MapNodeState.Current)
+            {
+                _allMapNodes[i].SetAsCurrent();
+                _currentMapNode = _allMapNodes[i];
+            }
         }
     }
 

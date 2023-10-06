@@ -24,6 +24,18 @@ public class PlayerTeamController : MonoBehaviour
         _combatManager.CombatantSelected += CombatantSelected;
     }
 
+    public void SetSavedPlayerTeam(List<RecruitedCharacter> savedTeam)
+    {
+        _savedPlayerTeam.Clear();
+
+        _savedPlayerTeam.AddRange(savedTeam);
+    }
+
+    public List<RecruitedCharacter> GetSavedPlayerTeam()
+    {
+        return _savedPlayerTeam;
+    }
+
     void TeamCreated(bool firstMatchInARow)
     {
         if (firstMatchInARow)

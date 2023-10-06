@@ -17,10 +17,31 @@ public class MapNodeController : MonoBehaviour
     [Header("GFX")]
     [SerializeField] SpriteRenderer _nodeGFX;
     [SerializeField] Animator _nodeGFXAnimator;
+    [SerializeField] SpriteRenderer _mapGFX;
+    [SerializeField] SpriteRenderer _mapGFXShadow;
     [SerializeField] Transform _connectionsHolder;
     [SerializeField] GameObject _lineConnectionPrefab;
 
     [SerializeField] Sprite[] _nodeStateGraphics;
+
+#if UNITY_EDITOR
+
+    private void OnValidate()
+    {
+        if (nodeStageInfo != null)
+        {
+            gameObject.name =transform.GetSiblingIndex()+") "+ nodeStageInfo.name+" - Stage";
+        }
+    }
+
+#endif
+
+    private void Awake()
+    {
+        SetupNodeMapGFX();
+
+        ResetNodeConnections();
+    }
 
     public void UnlockNode()
     {
@@ -43,8 +64,8 @@ public class MapNodeController : MonoBehaviour
 
     public void MapNodeClicked()
     {
-       // if (currentNodeState == MapNodeState.Locked)
-           // return;
+        if (currentNodeState == MapNodeState.Locked)
+            return;
 
         _nodeGFXAnimator.SetTrigger("Action");
 
@@ -55,14 +76,14 @@ public class MapNodeController : MonoBehaviour
     {
         _nodeGFX.sprite = _nodeStateGraphics[(int)currentNodeState];
 
-        SetupNodeConnections();
+        if (currentNodeState != MapNodeState.Locked)
+            SetupNodeConnections();
     }
 
-    [ContextMenu("SetupNodeConnections")]
+    [ContextMenu("Setup Connections")]
     void SetupNodeConnections()
     {
-        foreach (Transform connection in _connectionsHolder)
-            Destroy(connection.gameObject);
+        ResetNodeConnections();
 
         foreach (var accessibleNode in _nodesAccessibleFromThisOne)
         {
@@ -74,6 +95,28 @@ public class MapNodeController : MonoBehaviour
             line.SetPosition(1, accessibleNode.transform.position);
 
             line.transform.SetParent(_connectionsHolder);
+        }
+    }
+
+    void ResetNodeConnections()
+    {
+        foreach (Transform connection in _connectionsHolder)
+            DestroyImmediate(connection.gameObject);
+    }
+
+    void SetupNodeMapGFX()
+    {
+        if (nodeStageInfo.stageMapGFX != null)
+        {
+            _mapGFX.gameObject.SetActive(true);
+            _mapGFX.sprite = nodeStageInfo.stageMapGFX;
+            _mapGFXShadow.sprite = nodeStageInfo.stageMapGFX;
+        }
+        else
+        {
+            _mapGFX.gameObject.SetActive(false);
+            _mapGFX.sprite = null;
+            _mapGFXShadow.sprite = null;
         }
     }
 }
