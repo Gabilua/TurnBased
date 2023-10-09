@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
     public enum StageProgressState { PreGame, InProgress, Completed}
 
@@ -15,13 +16,14 @@ public class StageManager : MonoBehaviour
     [SerializeField] MatchManager _matchManager;
     [SerializeField] PlayerTeamController _playerTeamController;
     [SerializeField] StageProgressdDisplay _stageProgressUI;
+    [SerializeField] Image _stageScenery;
+    [SerializeField] CombatManager _combatManager;
 
     [SerializeField] float timeToStartFirstMatch;
     [SerializeField] float timeToAdvanceToNextMatch;
 
     public StageProgressState _currentStageProgressState { get; private set; }
 
-    List<MatchInfo> _stageMatches = new List<MatchInfo>();
     MatchInfo _currentActiveMatch;
 
     int _currentActiveMatchIndex = 0;
@@ -37,12 +39,12 @@ public class StageManager : MonoBehaviour
         _currentStage = stage;
 
         _matchManager.MatchEnd += MatchEnded;
-
-        _stageMatches.AddRange(_currentStage.orderedMatches);
-
+        
         _currentActiveMatchIndex = 0;
 
         SetStageProgressState(StageProgressState.InProgress);
+
+        _stageScenery.sprite = _currentStage.stageScenery;
 
         _stageProgressUI.SetupStageDisplay(_currentStage);
 
@@ -63,7 +65,7 @@ public class StageManager : MonoBehaviour
 
     void StartNewMatch()
     {
-        _currentActiveMatch = _stageMatches[_currentActiveMatchIndex];
+        _currentActiveMatch = _currentStage.orderedMatches[_currentActiveMatchIndex];
 
         bool firstMatch = _currentActiveMatchIndex == 0;
 
@@ -86,7 +88,7 @@ public class StageManager : MonoBehaviour
     {
         bool result = false;
 
-        if (_currentActiveMatchIndex == _stageMatches.Count - 1)
+        if (_currentActiveMatchIndex == _currentStage.orderedMatches.Count - 1)
             result = true;
 
         return result;
@@ -102,6 +104,8 @@ public class StageManager : MonoBehaviour
     void EndStage(bool playerWon)
     {
         SetStageProgressState(StageProgressState.Completed);
+
+        _combatManager.ResetCombatManagerUI();
 
         StageEnd?.Invoke(playerWon);
     }

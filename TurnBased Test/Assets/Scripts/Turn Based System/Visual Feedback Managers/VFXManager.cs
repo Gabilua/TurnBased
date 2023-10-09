@@ -28,6 +28,9 @@ public class VFXManager : VisualFeedbackManager
     {
         base.Start();
 
+        if (_thisCombatant == null)
+            return;
+
         _shadow = _thisCombatant.transform.GetChild(0).GetComponent<Animator>();
 
         AccountForCombatantInversion();

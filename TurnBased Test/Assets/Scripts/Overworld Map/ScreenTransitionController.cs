@@ -7,10 +7,10 @@ using System;
 
 public class ScreenTransitionController : MonoBehaviour
 {
-    [SerializeField] CanvasGroup _mapCanvasGroup;
-    [SerializeField] float _screenTransitionDuration;
+    [SerializeField] GameObject _overworldMap;
+    public float _screenTransitionDuration;
 
-    bool IsMidTransition = false;
+    public bool IsMidTransition = false;
 
     private void Start()
     {
@@ -32,8 +32,7 @@ public class ScreenTransitionController : MonoBehaviour
 
         Run.After(_screenTransitionDuration, () => 
         {
-            _mapCanvasGroup.gameObject.SetActive(state);
-            //_mapCanvasGroup.blocksRaycasts = state;
+            _overworldMap.SetActive(state);
         });
     }
 

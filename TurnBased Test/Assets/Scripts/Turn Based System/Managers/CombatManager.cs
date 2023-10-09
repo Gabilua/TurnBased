@@ -36,7 +36,7 @@ public class CombatManager : MonoBehaviour
     {
         _matchManager.CombatantCreated += OnCombatantCreation;
         _matchManager.TurnStateChange += ExecutionturnStarted;
-        _matchManager.MatchSetupDone += OnMatchSetupDone;
+        _matchManager.MatchSetupDone += OnMatchSetupDone;        
     }
 
     #endregion 
@@ -48,6 +48,11 @@ public class CombatManager : MonoBehaviour
     void AssignCharacterInfoUI(RealtimeCombatant combatant)
     {
         GetAllCharacterInfoUI.Add(_combatManagerUI.NewCombatantInfoUIHolder(combatant));
+    }
+
+    public void ResetCombatManagerUI()
+    {
+        _combatManagerUI.ResetCombatManagerUI();
     }
 
     void CombatantTurnStateChanged(RealtimeCombatant combatant, CombatantTurnState combatantTurnState)

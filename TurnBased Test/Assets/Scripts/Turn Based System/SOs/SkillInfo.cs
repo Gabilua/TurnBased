@@ -17,6 +17,7 @@ public class SkillInfo : ScriptableObject
     public EffectType effectType;
     public TargetStat targetStat;
     public float hitChance;
+    public string skillDescription;
 
     [Header("Power")]
     public int effectBaseValue;

@@ -7,5 +7,6 @@ public class EquipmentInfo : ScriptableObject
 {
     public Sprite equipmentIcon;
     public SkillInfo awardedSkill;
+    public string equipmentDescription;
     public List<CharacterInfo> allowedUsers = new List<CharacterInfo>();
 }

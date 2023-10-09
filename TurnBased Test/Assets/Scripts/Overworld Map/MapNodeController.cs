@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+public enum MapNodeState { Locked, Unlocked, Current }
 public class MapNodeController : MonoBehaviour
 {
     public Action<MapNodeController> MapNodeSelected;
 
-    public enum MapNodeState { Locked, Unlocked, Current }
+    public MapNodeState currentNodeState { get; private set; }
 
     public StageInfo nodeStageInfo;
-    public MapNodeState currentNodeState { get; private set; }
-    [SerializeField] MapNodeController[] _nodesAccessibleFromThisOne;
+    public MapNodeController[] _nodesAccessibleFromThisOne;
 
     [Header("GFX")]
     [SerializeField] SpriteRenderer _nodeGFX;
@@ -39,8 +39,6 @@ public class MapNodeController : MonoBehaviour
     private void Awake()
     {
         SetupNodeMapGFX();
-
-        ResetNodeConnections();
     }
 
     public void UnlockNode()
@@ -55,11 +53,14 @@ public class MapNodeController : MonoBehaviour
 
     void SetNodeState(MapNodeState state)
     {
+        MapNodeState prevState = currentNodeState;
         currentNodeState = state;
 
         UpdateNodeGraphics();
 
-        _nodeGFXAnimator.SetTrigger("Action");
+        if ((prevState == MapNodeState.Locked && (currentNodeState == MapNodeState.Unlocked || currentNodeState == MapNodeState.Current))
+            || prevState == MapNodeState.Unlocked && currentNodeState == MapNodeState.Current)
+            _nodeGFXAnimator.SetTrigger("Action");
     }
 
     public void MapNodeClicked()
@@ -77,16 +78,18 @@ public class MapNodeController : MonoBehaviour
         _nodeGFX.sprite = _nodeStateGraphics[(int)currentNodeState];
 
         if (currentNodeState != MapNodeState.Locked)
-            SetupNodeConnections();
+            Run.After(0.1f, ()=> SetupNodeConnections());
     }
 
-    [ContextMenu("Setup Connections")]
     void SetupNodeConnections()
     {
         ResetNodeConnections();
 
         foreach (var accessibleNode in _nodesAccessibleFromThisOne)
         {
+            if (accessibleNode.currentNodeState == MapNodeState.Locked)
+                break;
+
             LineRenderer line = Instantiate(_lineConnectionPrefab).GetComponent<LineRenderer>();
 
             line.positionCount = 2;

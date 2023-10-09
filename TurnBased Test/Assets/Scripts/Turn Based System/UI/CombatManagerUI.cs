@@ -23,4 +23,13 @@ public class CombatManagerUI : MonoBehaviour
 
         return characterInfoUI;
     }
+
+    public void ResetCombatManagerUI()
+    {
+        foreach (Transform child in _combatantHealthbarHolder)
+            Destroy(child.gameObject);
+
+        foreach (Transform child in _combatantInfoUIHolder)
+            Destroy(child.gameObject);
+    }
 }

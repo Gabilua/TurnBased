@@ -37,7 +37,7 @@ public class StageProgressdDisplay : MonoBehaviour
 
     public void UpdateStageProgress()
     {
-        if (_nodeHolder.childCount > 0)
+        if (_activeNodes.Count > 0)
         {
             StageProgressNode node = _activeNodes[0];
 

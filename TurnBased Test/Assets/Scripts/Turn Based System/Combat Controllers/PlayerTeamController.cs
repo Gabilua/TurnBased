@@ -24,6 +24,18 @@ public class PlayerTeamController : MonoBehaviour
         _combatManager.CombatantSelected += CombatantSelected;
     }
 
+    #region Team Management
+
+    public void AddMemberToTeam(RecruitedCharacter member)
+    {
+        _savedPlayerTeam.Add(member);
+    }
+
+    public void RemoveMemberFromTeam(RecruitedCharacter member)
+    {
+        _savedPlayerTeam.Remove(member);
+    }
+
     public void SetSavedPlayerTeam(List<RecruitedCharacter> savedTeam)
     {
         _savedPlayerTeam.Clear();
@@ -35,6 +47,10 @@ public class PlayerTeamController : MonoBehaviour
     {
         return _savedPlayerTeam;
     }
+
+    #endregion
+
+    #region Combat
 
     void TeamCreated(bool firstMatchInARow)
     {
@@ -51,6 +67,8 @@ public class PlayerTeamController : MonoBehaviour
 
     void SetupTeam()
     {
+        _realtimeCombatantTeam.Clear();
+
         _realtimeCombatantTeam.AddRange(_matchManager.GetPlayerTeam);    
 
         foreach (var teamMember in _realtimeCombatantTeam)
@@ -72,6 +90,8 @@ public class PlayerTeamController : MonoBehaviour
 
     void SetupCharacterInfoUIs()
     {
+        _allCharacterInfoUI.Clear();
+
         _allCharacterInfoUI.AddRange(_combatManager.GetAllCharacterInfoUI);
 
         foreach (var characterInfoUI in _allCharacterInfoUI)
@@ -176,6 +196,8 @@ public class PlayerTeamController : MonoBehaviour
         _currentlyAimingSkill = skill;
         _currentlySelectedAttackerCombatant.AimSkill(_currentlyAimingSkill);
     }
+
+    #endregion
 
     public List<CharacterInfo> GetCurrentPlayerTeamInfo()
     {

@@ -8,6 +8,9 @@ public abstract class VisualFeedbackManager : MonoBehaviour
 
     protected virtual void Start()
     {
+        if (!GetComponentInParent<RealtimeCombatant>())
+            return;
+
         _thisCombatant = GetComponentInParent<RealtimeCombatant>();
 
         _thisCombatant.CombatantAimedSkill += AimedSkill;

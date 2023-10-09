@@ -8,6 +8,5 @@ public class StageInfo : ScriptableObject
     public Sprite stageMapGFX;
     public Sprite stageScenery;
     public List<MatchInfo> orderedMatches = new List<MatchInfo>();
-    //public MatchInfo bossMatch { get; private set; }
-    //public MatchInfo secretMatch { get; private set; }
+    public bool isTown;
 }

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _matchOpponents:
   - {fileID: 11400000, guid: 2020fab1420e1874ea6225f2e7eb026d, type: 2}
+  - {fileID: 11400000, guid: 2020fab1420e1874ea6225f2e7eb026d, type: 2}
+  - {fileID: 11400000, guid: 2020fab1420e1874ea6225f2e7eb026d, type: 2}

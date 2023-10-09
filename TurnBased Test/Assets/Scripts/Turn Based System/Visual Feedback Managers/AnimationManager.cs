@@ -56,4 +56,9 @@ public class AnimationManager : VisualFeedbackManager
 
         _animator.SetTrigger("Clicked");
     }
+
+    public void TavernClicked()
+    {
+        _animator.SetTrigger("Clicked");
+    }
 }

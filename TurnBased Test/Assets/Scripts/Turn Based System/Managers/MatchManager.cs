@@ -42,17 +42,15 @@ public class MatchManager : MonoBehaviour
 
     public void SetupNewMatch(List<CharacterInfo> playerTeam, MatchInfo matchInfo, bool firstMatchInARow)
     {
-        IsMatchSetupDone = false;
-
+        ResetMatchState();
+        
         _currentMatchInfo = matchInfo;
 
-        ChangeTurnState(MatchTurnState.PreBattle);
+        if (_playerCharacterSpots.Count == 0)
+            SetupCharacterSpots();
 
         if (firstMatchInARow)
-        {
-            SetupCharacterSpots();
-            // StartCoroutine(SetupTeam(playerTeam, GetPlayerTeam, _playerCharacterSpots));
-
+        { 
             SetupTeam(playerTeam, GetPlayerTeam, _playerCharacterSpots);
         }
         else
@@ -62,21 +60,14 @@ public class MatchManager : MonoBehaviour
             foreach (var enemy in GetEnemyTeam)
                 Destroy(enemy.gameObject, 2f);
         }
-
-        //StartCoroutine(SetupTeam(_currentMatchInfo._matchOpponents, GetEnemyTeam, _enemyCharacterSpots));
-
+        
         SetupTeam(_currentMatchInfo._matchOpponents, GetEnemyTeam, _enemyCharacterSpots);
 
-       // float totalSpawningDuration = (playerTeam.Count * _intervalBetweenCombatantSpawn) + (_currentMatchInfo._matchOpponents.Count * _intervalBetweenCombatantSpawn);
+        SetupLists();
 
-      //  Run.After(totalSpawningDuration, () => 
-      //  {
-            SetupLists();
+        AllCombatantsCreated?.Invoke(firstMatchInARow);
 
-            AllCombatantsCreated?.Invoke(firstMatchInARow);
-
-            Run.After(_timeDelayToAdvanceTurn, () => AdvanceTurn());
-      //  });
+        Run.After(_timeDelayToAdvanceTurn, () => AdvanceTurn());
     }
 
     void CombatantSetupFinished(RealtimeCombatant combatant)
@@ -155,6 +146,29 @@ public class MatchManager : MonoBehaviour
 
         foreach (var combatant in GetAllCombatants)
             combatant.SetCombatantList(GetAllCombatants);
+    }
+
+    void ResetMatchState()
+    {
+        foreach (var spot in _playerCharacterSpots)
+        {
+            if (spot.GetComponentInChildren<RealtimeCombatant>())
+                Destroy(spot.GetComponentInChildren<RealtimeCombatant>().gameObject);
+        }
+
+        foreach (var spot in _enemyCharacterSpots)
+        {
+            if (spot.GetComponentInChildren<RealtimeCombatant>())
+                Destroy(spot.GetComponentInChildren<RealtimeCombatant>().gameObject);
+        }
+
+        GetAllCombatants.Clear();
+        GetPlayerTeam.Clear();
+        GetEnemyTeam.Clear();
+
+        IsMatchSetupDone = false;
+
+        ChangeTurnState(MatchTurnState.PreBattle);
     }
 
     #endregion

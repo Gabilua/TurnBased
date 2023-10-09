@@ -37,7 +37,22 @@ public class GameManager : MonoBehaviour
     public void SaveCurrentGameProgress()
     {
         saveFile.currentMapNode = _mapManager._currentMapNode;
-        saveFile.mapNodeProgress = _mapManager.GetAllMapNodes();
+
+        saveFile.mapNodeProgress.Clear();
+
+        List<MapNodeProgressState> nodeProgress = new List<MapNodeProgressState>();
+
+        foreach (var node in _mapManager.GetAllMapNodes())
+        {
+            MapNodeProgressState progress = new MapNodeProgressState();
+
+            progress.mapNode = node;
+            progress.mapNodeState = node.currentNodeState;
+
+            nodeProgress.Add(progress);
+        }
+
+        saveFile.mapNodeProgress = nodeProgress;
 
         saveFile.recruitedCharacters = _playerTeamController.GetSavedPlayerTeam();
 
@@ -57,7 +72,24 @@ public class GameManager : MonoBehaviour
         SaveFile emptyFile = new SaveFile();
 
         emptyFile.currentMapNode = _mapManager._currentMapNode;
-        emptyFile.mapNodeProgress.AddRange(_mapManager.GetAllMapNodes());
+
+        List<MapNodeProgressState> nodeProgress = new List<MapNodeProgressState>();
+
+        foreach (var node in _mapManager.GetAllMapNodes())
+        {
+            MapNodeProgressState progress = new MapNodeProgressState();
+
+            progress.mapNode = node;
+
+            if (_mapManager._startingMapNode == node)
+                progress.mapNodeState = MapNodeState.Unlocked;
+            else
+                progress.mapNodeState = MapNodeState.Locked;
+
+            nodeProgress.Add(progress);
+        }
+
+        emptyFile.mapNodeProgress.AddRange(nodeProgress);
 
         emptyFile.recruitedCharacters.Clear();
         emptyFile.sharedInventory.Clear();
@@ -79,10 +111,7 @@ public class GameManager : MonoBehaviour
     public void LoadFromFile()
     {
         if (!File.Exists(Application.dataPath + Path.AltDirectorySeparatorChar + "SaveFile.json"))
-        {
             ResetSaveFile();
-            return;
-        }
 
         string json = string.Empty;
 

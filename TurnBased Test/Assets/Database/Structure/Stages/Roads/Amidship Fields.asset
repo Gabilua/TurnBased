@@ -15,4 +15,5 @@ MonoBehaviour:
   stageMapGFX: {fileID: 0}
   stageScenery: {fileID: 21300000, guid: 248e8d20879ec5c41a36dead0c18615a, type: 3}
   orderedMatches:
-  - {fileID: 11400000, guid: 4f461a159f120854c9e0e7c076a8cf70, type: 2}
+  - {fileID: 11400000, guid: 2950683d6f0db114abe5923f81b8c366, type: 2}
+  isTown: 0
