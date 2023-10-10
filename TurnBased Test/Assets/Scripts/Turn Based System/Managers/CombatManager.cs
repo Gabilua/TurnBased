@@ -65,6 +65,17 @@ public class CombatManager : MonoBehaviour
     {
         _activeStatusEffects.Sort((p1, p2) => p1._target._runtimeStats.GetFinalStat(TargetStat.AGI).CompareTo(p2._target._runtimeStats.GetFinalStat(TargetStat.AGI)));
 
+        List<StatusEffectController> toRemove = new List<StatusEffectController>();
+
+        foreach (var activeStatusEffect in _activeStatusEffects)
+        {
+            if (activeStatusEffect == null)
+                toRemove.Add(activeStatusEffect);
+        }
+
+        foreach (var status in toRemove)
+            _activeStatusEffects.Remove(status);
+
         //at the start of the execution turn, before conventional skill effects are applied, we start by applying status effects to their targets
         foreach (var activeStatusEffect in _activeStatusEffects)
         {

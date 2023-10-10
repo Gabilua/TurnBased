@@ -16,9 +16,12 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] Image _overworldStagePreview;
     [SerializeField] TextMeshProUGUI _overworldStageName;
+    [SerializeField] Animator _overworldStageNameAnimator;
+
     [SerializeField] float _timeToTransitionOutOfMatchEndScreen;
 
     [SerializeField] Button _startStageButton;
+    [SerializeField] Animator _startStageButtonAnimator;
 
     [SerializeField] ScreenTransitionController _transitionController;
 
@@ -59,13 +62,8 @@ public class MapManager : MonoBehaviour
     {
         _allMapNodes.AddRange(_mapNodeHolder.GetComponentsInChildren<MapNodeController>());
 
-        foreach (var node in _allMapNodes)
-        {
-            if (node == _startingMapNode)
-                node.UnlockNode();          
-
+        foreach (var node in _allMapNodes)            
             node.MapNodeSelected += MapNodeSelected;
-        }
     }
 
     public void DownloadMapNodeProgress(List<MapNodeProgressState> savedMapNodeProgress)
@@ -75,6 +73,9 @@ public class MapManager : MonoBehaviour
 
         for (int i = 0; i < savedMapNodeProgress.Count; i++)
         {
+            if(savedMapNodeProgress[i].mapNode == _startingMapNode)
+                _allMapNodes[i].UnlockNode();
+
             if (savedMapNodeProgress[i].mapNodeState == MapNodeState.Unlocked)
                 _allMapNodes[i].UnlockNode();
             else if (savedMapNodeProgress[i].mapNodeState == MapNodeState.Current)
@@ -82,6 +83,8 @@ public class MapManager : MonoBehaviour
                 _allMapNodes[i].UnlockNode();
                 _allMapNodes[i].SetAsCurrent();
                 _currentMapNode = _allMapNodes[i];
+
+                SetCurrentMapNode(_allMapNodes[i]);
             }
         }
     }
@@ -107,6 +110,8 @@ public class MapManager : MonoBehaviour
 
     public void StartSelectedStage()
     {
+        _startStageButtonAnimator.SetTrigger("Action");
+
         StartStageFadeInTransition();
         StartStage();
     }
@@ -126,7 +131,12 @@ public class MapManager : MonoBehaviour
         if (!playerWon)
             return;
 
-        Run.After(_transitionController._screenTransitionDuration+ _timeToTransitionOutOfMatchEndScreen, () => 
+        float transitionTime = _transitionController._screenTransitionDuration;
+
+        if (!_currentMapNode.nodeStageInfo.isTown)
+            transitionTime += _timeToTransitionOutOfMatchEndScreen;
+
+        Run.After(transitionTime, () => 
         {
             if (_currentMapNode.nodeStageInfo.isTown)
                 _tavernManager.ExitTavernScene();
@@ -149,10 +159,13 @@ public class MapManager : MonoBehaviour
         _currentMapNode.SetAsCurrent();
 
         _overworldStageName.gameObject.SetActive(true);
+        _overworldStageNameAnimator.SetTrigger("Action");
 
         _overworldStageName.text = node.nodeStageInfo.name;
         _overworldStagePreview.sprite = node.nodeStageInfo.stageScenery;
 
         _startStageButton.gameObject.SetActive(true);
+        _startStageButtonAnimator.SetTrigger("Action");
+
     }
 }

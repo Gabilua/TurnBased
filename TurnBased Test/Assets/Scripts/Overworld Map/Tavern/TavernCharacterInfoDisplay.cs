@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class TavernCharacterInfoDisplay : MonoBehaviour
 {
+    public Action<EquipmentIconDisplay> CharacterEquipmentDragging;
+    public Action<EquipmentIconDisplay> CharacteEquipmentIconDragStart;
+    public Action<EquipmentIconDisplay> CharacteEquipmentIconDragEnd;
+    public Action<TavernInventorySlot> OnInventorySlotDroppedOnEquipment;
+
     [SerializeField] TextMeshProUGUI _characterName;
     [SerializeField] Image _characterProtrait;
     [SerializeField] TextMeshProUGUI[] _characterStatValues;
@@ -19,26 +25,29 @@ public class TavernCharacterInfoDisplay : MonoBehaviour
     [SerializeField] Button _dismissButton;
 
     EquipmentIconDisplay _selectedEquipment;
+    RecruitedCharacter _selectedCharacter;
 
-    public void UpdateDisplay(RecruitedCharacter selectedCharacter, bool alreadyRecruited)
+    List<EquipmentIconDisplay> _activeEquipmentIcons = new List<EquipmentIconDisplay>();
+
+    void ResetEquipmentDisplays()
     {
-        _characterName.text = selectedCharacter.characterInfo.name;
-        _characterProtrait.sprite = selectedCharacter.characterInfo.faceSprite;
-
-        _characterStatValues[0].text = selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.HP).ToString();
-        _characterStatValues[1].text = selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.MP).ToString();
-        _characterStatValues[2].text = selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.STR).ToString();
-        _characterStatValues[3].text = selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.VIT).ToString();
-        _characterStatValues[4].text = selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.INT).ToString();
-        _characterStatValues[5].text = selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.DEX).ToString();
-        _characterStatValues[6].text = selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.AGI).ToString();
-
-        foreach (Transform child in _characterEquipmentIconHolder)
+        foreach (var icon in _activeEquipmentIcons)
         {
-            child.GetComponent<EquipmentIconDisplay>().EquipmentIconClicked -= EquipmentIconClicked;
-            Destroy(child.gameObject);
+            icon.EquipmentIconClicked -= EquipmentIconClicked;
+
+            icon.EquipmentIconDragStart -= EquipmentStartDrag;
+            icon.EquipmentIconDragEnd -= EquipmentEndDrag;
+            icon.EquipmentIconDragging -= EquipmentDragging;
         }
 
+        _activeEquipmentIcons.Clear();
+
+        foreach (Transform child in _characterEquipmentIconHolder)
+            Destroy(child.gameObject);
+    }
+
+    void SetupEquipmentDisplays(RecruitedCharacter selectedCharacter)
+    {
         for (int i = 0; i < 4; i++)
         {
             EquipmentIconDisplay display = Instantiate(_equipmentIconDisplayPrefab, _characterEquipmentIconHolder).GetComponent<EquipmentIconDisplay>();
@@ -47,10 +56,35 @@ public class TavernCharacterInfoDisplay : MonoBehaviour
                 display.SetupEquipmentIconDisplay(selectedCharacter.heldEquipment[i]);
 
             display.EquipmentIconClicked += EquipmentIconClicked;
+
+            display.EquipmentIconDragStart += EquipmentStartDrag;
+            display.EquipmentIconDragEnd += EquipmentEndDrag;
+            display.EquipmentIconDragging += EquipmentDragging;
+            display.InventorySlotDroppedOnEquipment += InventorySlotDroppedOnEquipment;
+
+            _activeEquipmentIcons.Add(display);
         }
 
         DeselectEquipment();
         UpdateEquipmentInfo();
+    }
+
+    public void UpdateDisplay(RecruitedCharacter selectedCharacter, bool alreadyRecruited)
+    {
+        _selectedCharacter = selectedCharacter;
+
+        _characterName.text = _selectedCharacter.characterInfo.name;
+        _characterProtrait.sprite = _selectedCharacter.characterInfo.faceSprite;
+
+        _characterStatValues[0].text = _selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.HP).ToString();
+        _characterStatValues[1].text = _selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.MP).ToString();
+        _characterStatValues[2].text = _selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.STR).ToString();
+        _characterStatValues[3].text = _selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.VIT).ToString();
+        _characterStatValues[4].text = _selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.INT).ToString();
+        _characterStatValues[5].text = _selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.DEX).ToString();
+        _characterStatValues[6].text = _selectedCharacter.characterInfo.characterStats.GetFinalStat(TargetStat.AGI).ToString();
+
+        UpdateEquipmentDisplay();
 
         _recruitButton.interactable = !alreadyRecruited;
         _dismissButton.interactable = alreadyRecruited;
@@ -65,6 +99,13 @@ public class TavernCharacterInfoDisplay : MonoBehaviour
             _recruitButton.GetComponentInChildren<TextMeshProUGUI>().color = _recruitButton.colors.normalColor;
             _dismissButton.GetComponentInChildren<TextMeshProUGUI>().color = _recruitButton.colors.disabledColor;
         }
+    }
+
+    public void UpdateEquipmentDisplay()
+    {
+        ResetEquipmentDisplays();
+
+        SetupEquipmentDisplays(_selectedCharacter);
     }
 
     void SelectEquipment(EquipmentIconDisplay equipment)
@@ -110,4 +151,28 @@ public class TavernCharacterInfoDisplay : MonoBehaviour
 
         UpdateEquipmentInfo();
     }
+
+    #region Equipment Drag Events
+
+    void EquipmentStartDrag(EquipmentIconDisplay equipment)
+    {
+        CharacteEquipmentIconDragStart?.Invoke(equipment);
+    }
+
+    void EquipmentEndDrag(EquipmentIconDisplay equipment)
+    {
+        CharacteEquipmentIconDragEnd?.Invoke(equipment);
+    }
+
+    void EquipmentDragging(EquipmentIconDisplay equipment)
+    {
+        CharacterEquipmentDragging?.Invoke(equipment);
+    }
+
+    void InventorySlotDroppedOnEquipment(TavernInventorySlot slot)
+    {
+        OnInventorySlotDroppedOnEquipment?.Invoke(slot);
+    }
+
+    #endregion
 }

@@ -9,4 +9,5 @@ public class EquipmentInfo : ScriptableObject
     public SkillInfo awardedSkill;
     public string equipmentDescription;
     public List<CharacterInfo> allowedUsers = new List<CharacterInfo>();
+    public int sellingPrice;
 }

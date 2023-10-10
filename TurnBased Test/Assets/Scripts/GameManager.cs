@@ -14,8 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] MapManager _mapManager;
     [SerializeField] PlayerTeamController _playerTeamController;
 
-    List<EquipmentInfo> _playerInventory = new List<EquipmentInfo>();
-    int _playerCurrentMoney;
+   [SerializeField] List<EquipmentInfo> _playerInventory = new List<EquipmentInfo>();
+    [SerializeField] int _playerCurrentMoney;
+    [SerializeField] SaveFile _testFile;
 
     public SaveFile saveFile { get; private set; }
 
@@ -64,6 +65,51 @@ public class GameManager : MonoBehaviour
         SaveToFile(saveFile);
     }
 
+    [ContextMenu("Use Test Save File")]
+    public void UseTestSaveFile()
+    {
+        saveFile = _testFile;
+
+        SaveToFile(saveFile);
+    }
+
+    public List<EquipmentInfo> GetCurrentPlayerInventory()
+    {
+        return _playerInventory;
+    }
+
+    public void AddEquipmentToPlayerInventory(EquipmentInfo equipment)
+    {
+        _playerInventory.Add(equipment);
+
+        RemoveEmptyInventorySpace();
+
+        SaveCurrentGameProgress();
+    }
+
+    public void RemoveEquipmentFromPlayerInventory(EquipmentInfo equipment)
+    {
+        _playerInventory.Remove(equipment);
+
+        RemoveEmptyInventorySpace();
+
+        SaveCurrentGameProgress();
+    }
+
+    void RemoveEmptyInventorySpace()
+    {
+        List<EquipmentInfo> emptySlots = new List<EquipmentInfo>();
+
+        foreach (var slot in _playerInventory)
+        {
+            if (slot == null)
+                emptySlots.Add(slot);
+        }
+
+        foreach (var slot in emptySlots)
+            _playerInventory.Remove(slot);
+    }
+
     #region Data Management
 
     [ContextMenu("Reset Save File")]
@@ -95,7 +141,9 @@ public class GameManager : MonoBehaviour
         emptyFile.sharedInventory.Clear();
         emptyFile.currentMoney = 0;
 
-        SaveToFile(emptyFile);
+        saveFile = emptyFile;
+
+        SaveToFile(saveFile);
     }
 
     public void SaveToFile(SaveFile file)

@@ -11,8 +11,10 @@ public class TavernManager : MonoBehaviour
     public Action OnTavernExited;
 
     [SerializeField] PlayerTeamController _playerTeamController;
+    [SerializeField] TavernInventoryManager _inventoryManager;
 
     [SerializeField] GameObject _tavernScene;
+    [SerializeField] Animator _exitButtonAnimator;
 
     [SerializeField] List<Transform> _characterSpots = new List<Transform>();
     [SerializeField] GameObject _tavernCharacterPrefab;
@@ -27,9 +29,26 @@ public class TavernManager : MonoBehaviour
 
     RecruitedCharacter _currentlySelectedCharacter;
 
+    private void Start()
+    {
+        _characterInfoDisplay.CharacteEquipmentIconDragStart += CharacterEquipmentDragStart;
+        _characterInfoDisplay.CharacteEquipmentIconDragEnd += CharacterEquipmentDragEnd;
+        _characterInfoDisplay.CharacterEquipmentDragging += CharacterEquipmentDragging;
+        _characterInfoDisplay.OnInventorySlotDroppedOnEquipment += MoveEquipmentFromStorageToCharacter;
+
+        _inventoryManager.StorageWindowStateChange += StorageWindowStageChange;
+        _inventoryManager.OnCharacterEquipmentDroppedOnSlot += MoveEquipmentFromCharacterToStorage;
+
+        _inventoryManager.SetupStorageWindow();
+    }
+
+    #region Tavern Scene Management
+
     public void SetupTavernScene(List<RecruitedCharacter> savedPlayerTeam)
     {
         _tavernScene.SetActive(true);
+
+        _inventoryManager.UpdateStorageWindow(_currentlySelectedCharacter);
 
         SetupTavernCharacters(_testCharacters);
         SetupTeamCharacters(savedPlayerTeam);
@@ -44,6 +63,8 @@ public class TavernManager : MonoBehaviour
 
     public void TavernSceneExitSelected()
     {
+        _exitButtonAnimator.SetTrigger("Action");
+
         OnTavernSceneExitSelected?.Invoke(true);
     }
 
@@ -80,6 +101,10 @@ public class TavernManager : MonoBehaviour
             display.TeamMemberClicked += TeamMemberSelected;
         }
     }
+
+    #endregion
+
+    #region Team Management
 
     void SetupDismissedCharacterOnTavern(RecruitedCharacter dismissedCharacter)
     {
@@ -147,6 +172,7 @@ public class TavernManager : MonoBehaviour
         _characterInfoDisplayAnimator.SetTrigger("Action");
 
         _characterInfoDisplay.UpdateDisplay(character, teamMember);
+        _inventoryManager.UpdateStorageWindow(_currentlySelectedCharacter);
     }
 
     public void DeselectCharacter()
@@ -175,4 +201,64 @@ public class TavernManager : MonoBehaviour
         SetupDismissedCharacterOnTavern(_currentlySelectedCharacter);
         DeselectCharacter();
     }
+
+    #endregion
+
+    #region Equipment Management
+
+    void CharacterEquipmentDragStart(EquipmentIconDisplay equipment)
+    {
+        _inventoryManager.CharacterEquipmentStartDrag(equipment);
+    }
+
+    void CharacterEquipmentDragEnd(EquipmentIconDisplay equipment)
+    {
+        _inventoryManager.CharacterEquipmentEndDrag(equipment);
+    }
+
+    void CharacterEquipmentDragging(EquipmentIconDisplay equipment)
+    {
+        _inventoryManager.CharacterEquipmentDragging(equipment);
+    }
+
+    void StorageWindowStageChange(bool state)
+    {
+        if (state)
+            DeselectCharacter();
+    }
+
+    void MoveEquipmentFromStorageToCharacter(TavernInventorySlot slot)
+    {
+        _inventoryManager.UpdateDraggedGFX(false);
+
+        if (_currentlySelectedCharacter.IsCharacterInventoryFull())
+            return;
+
+        _currentlySelectedCharacter.AddEquipmentToCharacter(slot._equipmentInfo);
+
+        GameManager.instance.RemoveEquipmentFromPlayerInventory(slot._equipmentInfo);
+
+        _characterInfoDisplay.UpdateEquipmentDisplay();
+        _inventoryManager.UpdateStorageWindow(_currentlySelectedCharacter);
+    }
+
+    void MoveEquipmentFromCharacterToStorage(EquipmentIconDisplay equipment)
+    {
+        _inventoryManager.UpdateDraggedGFX(false);
+
+        if (!_currentlySelectedCharacter.DoesCharacterInventoryContainEquipment(equipment._equipmentInfo))
+            return;
+
+        if (_inventoryManager.IsStorageFull())
+            return;
+
+        _currentlySelectedCharacter.RemoveEquipmentFromCharacter(equipment._equipmentInfo);
+
+        GameManager.instance.AddEquipmentToPlayerInventory(equipment._equipmentInfo);
+
+        _characterInfoDisplay.UpdateEquipmentDisplay();
+        _inventoryManager.UpdateStorageWindow(_currentlySelectedCharacter);
+    }
+
+    #endregion
 }
