@@ -77,14 +77,17 @@ public class CombatManager : MonoBehaviour
             _activeStatusEffects.Remove(status);
 
         //at the start of the execution turn, before conventional skill effects are applied, we start by applying status effects to their targets
-        foreach (var activeStatusEffect in _activeStatusEffects)
+       if(_activeStatusEffects.Count > 0)
         {
-            yield return new WaitForSeconds(_timeDelayBetweenCombatantActions);
+            foreach (var activeStatusEffect in _activeStatusEffects)
+            {
+                yield return new WaitForSeconds(_timeDelayBetweenCombatantActions);
 
-            if (activeStatusEffect != null)
-                activeStatusEffect.ApplyStatusEffectToTarget();
+                if (activeStatusEffect != null)
+                    activeStatusEffect.ApplyStatusEffectToTarget();
 
-            yield return new WaitForSeconds(_timeDelayBetweenCombatantActions);
+                yield return new WaitForSeconds(_timeDelayBetweenCombatantActions);
+            }
         }
 
         //this sorts the action list that was in order of execution to happen in order of who has the highest agility

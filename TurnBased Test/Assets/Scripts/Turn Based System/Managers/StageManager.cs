@@ -19,7 +19,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] Image _stageScenery;
     [SerializeField] CombatManager _combatManager;
 
-    [SerializeField] float timeToStartFirstMatch;
+    public float timeToStartFirstMatch;
     [SerializeField] float timeToAdvanceToNextMatch;
 
     public StageProgressState _currentStageProgressState { get; private set; }

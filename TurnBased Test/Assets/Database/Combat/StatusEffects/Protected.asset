@@ -15,11 +15,11 @@ MonoBehaviour:
   effectIcon: {fileID: 687515084, guid: 9ceae9da5ce5dc647bbf8834f87f5afd, type: 3}
   effectType: 2
   targetStat: 8
-  durationInTurns: 1
+  durationInTurns: 2
   effectBaseValue: 9999
   affectedByStats: 0
   statEffectOnBaseValue: 0
   effectiveStat: 0
   effectStacksDuration: 0
   chanceToInterruptActions: 0
-  receiveVFX: {fileID: 0}
+  receiveVFX: {fileID: 808874906696333116, guid: 863e058ee9ecca941adf7f17c3b69161, type: 3}

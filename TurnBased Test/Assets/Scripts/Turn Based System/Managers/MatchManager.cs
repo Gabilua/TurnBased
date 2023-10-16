@@ -16,8 +16,8 @@ public class MatchManager : MonoBehaviour
     [SerializeField] float _timeDelayToAdvanceTurn;
     [SerializeField] float _intervalBetweenCombatantSpawn;
 
-    List<Transform> _playerCharacterSpots = new List<Transform>();
-    List<Transform> _enemyCharacterSpots = new List<Transform>();
+    [SerializeField] List<Transform> _playerCharacterSpots = new List<Transform>();
+    [SerializeField] List<Transform> _enemyCharacterSpots = new List<Transform>();
 
     [SerializeField] Transform _playerSide;
     [SerializeField] Transform _enemySide;
@@ -45,9 +45,6 @@ public class MatchManager : MonoBehaviour
         ResetMatchState();
         
         _currentMatchInfo = matchInfo;
-
-        if (_playerCharacterSpots.Count == 0)
-            SetupCharacterSpots();
 
         if (firstMatchInARow)
         { 
@@ -95,22 +92,6 @@ public class MatchManager : MonoBehaviour
         IsMatchSetupDone = true;
 
        Run.After(0.1f, () => MatchSetupDone?.Invoke());
-    }
-
-    void SetupCharacterSpots()
-    {
-        Transform[] playerTransforms = _playerSide.GetComponentsInChildren<Transform>();
-        Transform[] enemyTransforms = _enemySide.GetComponentsInChildren<Transform>();
-
-        for (int i = 1; i < playerTransforms.Length; i++)
-        {
-            _playerCharacterSpots.Add(playerTransforms[i]);
-        }
-
-        for (int i = 1; i < enemyTransforms.Length; i++)
-        {
-            _enemyCharacterSpots.Add(enemyTransforms[i]);
-        }
     }
 
     void SetupTeam(List<CharacterInfo> charactersForTeam, List<RealtimeCombatant> intendedTeam, List<Transform> teamSpots)

@@ -146,7 +146,7 @@ public class VFXManager : VisualFeedbackManager
 
     protected override void StatusEffectHit(StatusEffectInfo statusEffect)
     {
-        if (statusEffect.effectBaseValue == 0 && statusEffect.affectedByStats == false)
+        if (statusEffect.effectType != EffectType.Altering && (statusEffect.effectBaseValue == 0 && statusEffect.affectedByStats == false))
             return;
 
         ShowStatusEffectVFX(statusEffect);

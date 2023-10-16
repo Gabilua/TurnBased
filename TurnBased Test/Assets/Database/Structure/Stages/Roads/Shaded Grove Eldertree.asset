@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageMapGFX: {fileID: 0}
   stageScenery: {fileID: 21300000, guid: f271da2ad3277e345b5bcc7233fba0e1, type: 3}
+  stageBGM: {fileID: 8300000, guid: a764e741eea8cd740a1d2227eb091830, type: 3}
   orderedMatches:
   - {fileID: 11400000, guid: 4f461a159f120854c9e0e7c076a8cf70, type: 2}
+  isTown: 0

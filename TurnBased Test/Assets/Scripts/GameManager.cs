@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public Action<StageInfo> StageLoaded;
     public Action GameSaved;
     public Action GameLoaded;
 

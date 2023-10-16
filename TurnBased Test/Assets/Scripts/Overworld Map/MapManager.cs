@@ -7,6 +7,10 @@ using TMPro;
 
 public class MapManager : MonoBehaviour
 {
+    public Action StageTransitionStarted;
+    public Action<StageInfo> StageLoaded;
+    public Action StageUnloaded;
+
     [SerializeField] StageManager _stageManager;
     [SerializeField] PlayerTeamController _playerTeamController;
     [SerializeField] TavernManager _tavernManager;
@@ -118,10 +122,20 @@ public class MapManager : MonoBehaviour
 
     void StartStage()
     {
+        StageTransitionStarted?.Invoke();
+
         if (!_currentMapNode.nodeStageInfo.isTown)
+        {
             _stageManager.SetupStage(_currentMapNode.nodeStageInfo);
+
+            Run.After(_stageManager.timeToStartFirstMatch, () => StageLoaded?.Invoke(_currentMapNode.nodeStageInfo));
+        }
         else
-            Run.After(_transitionController._screenTransitionDuration, ()=> _tavernManager.SetupTavernScene(_playerTeamController.GetSavedPlayerTeam()));
+            Run.After(_transitionController._screenTransitionDuration, () =>
+            {
+                _tavernManager.SetupTavernScene(_playerTeamController.GetSavedPlayerTeam());
+                StageLoaded?.Invoke(_currentMapNode.nodeStageInfo);
+            });
     }
 
     void StageEnd(bool playerWon)
@@ -136,6 +150,8 @@ public class MapManager : MonoBehaviour
         if (!_currentMapNode.nodeStageInfo.isTown)
             transitionTime += _timeToTransitionOutOfMatchEndScreen;
 
+        StageTransitionStarted?.Invoke();
+
         Run.After(transitionTime, () => 
         {
             if (_currentMapNode.nodeStageInfo.isTown)
@@ -147,6 +163,8 @@ public class MapManager : MonoBehaviour
             _currentMapNode.SetAsCurrent();
 
             GameManager.instance.SaveCurrentGameProgress();
+
+            StageUnloaded?.Invoke();
         });
     }
 
