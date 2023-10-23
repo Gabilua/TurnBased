@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
+  m_Name: Rock Strike
+  m_EditorClassIdentifier: 
+  skillIcon: {fileID: 74180019, guid: d7ebe5cf6db04964999cbd284b5bf08d, type: 3}
+  effectType: 0
+  targetStat: 0
+  hitChance: 90
+  skillDescription: 
+  effectBaseValue: 2
+  affectedByStats: 1
+  statEffectOnBaseValue: 0
+  effectiveStat: 0
+  costStat: 1
+  costAmount: 35
+  targetRange: 1
+  selfTargetingAllowed: 0
+  useVFX: {fileID: 0}
+  receiveVFX: {fileID: 0}
+  usesSpecialAnimation: 0
+  targetReactionDelay: 0.35
+  appliesStatusEffect: 1
+  statusEffect: {fileID: 11400000, guid: 7baaa07900bf71844a2e2b13a2f5265b, type: 2}
+  afflictionChance: 50

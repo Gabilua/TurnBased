@@ -14,6 +14,7 @@ public class GeneralCombatantHealthBar : MonoBehaviour
     {
         _respectiveCombatant = combatant;
         _respectiveCombatant.CombatantReceivedSkillEffect += CombatantHealthChanged;
+        _respectiveCombatant.CombatantDied += CombatantDied;
 
         transform.position = _respectiveCombatant.transform.position;
     }
@@ -32,5 +33,10 @@ public class GeneralCombatantHealthBar : MonoBehaviour
 
         if (_respectiveCombatant.currentTurnState == CombatantTurnState.Dead)
             _canvasGroup.alpha = 0;
+    }
+
+    void CombatantDied()
+    {
+        _canvasGroup.alpha = 0;
     }
 }

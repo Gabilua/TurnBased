@@ -1,0 +1,2347 @@
+fileFormatVersion: 2
+guid: 9325af78d9d09654fa8483e8ee9adfe1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _Armor02_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1180
+        width: 80
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8327bc6ce15f848ab4f18ebe9dec4d
+      internalID: 1929121830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1172
+        width: 72
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d2dec2ffee47541a2c9d0d6dce0701
+      internalID: 2034418368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1176
+        width: 96
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6229b077202a8a44bb63fab269892fb
+      internalID: 2107753102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1168
+        width: 104
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168439fa29086a449a107733d339f642
+      internalID: 1191858479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_4
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1184
+        width: 88
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4727bf2300894b243903f0061aa3207e
+      internalID: 41758330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_5
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1176
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125041f3529326240a2db2df50896582
+      internalID: 1710500141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_6
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 1180
+        width: 100
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f6c050901efbf4b8ed43673a35413d
+      internalID: 137256205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_7
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1160
+        width: 104
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053003b8377f56e4b9b754266906741a
+      internalID: -1465878022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_8
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1168
+        width: 120
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2d93efd6491d242978e553d8fd970e
+      internalID: -198276697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_9
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1164
+        width: 112
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfc66cb586daff48b7a6afbf7447971
+      internalID: -1863840490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_10
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1028
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed83c403a221154c9c93eaf0cc17fa3
+      internalID: 695126621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1032
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59acf8e7946f0ae4cbf03ff87b5e30f6
+      internalID: -295659965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_12
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1028
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1823d13b2ddedf34ca6fe1ffff35342f
+      internalID: 129869068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_13
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1028
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977c82fc08e762146a9163c7402d0840
+      internalID: -2001174881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_14
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1028
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c821724c340125a42a900b22965ec299
+      internalID: -798279212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_15
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1032
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0406a2824c569c8449855be7a8ae13b8
+      internalID: -44875478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_16
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 1028
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc3d6b3ace5cac845afed209594d80d4
+      internalID: 208198639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_17
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1028
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140444f32b04f7a44979de6e3d07f099
+      internalID: -736898456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_18
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1032
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5806f4b527c3e34788f73f020cd682a
+      internalID: 1229948525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_19
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 1032
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fbfea1a6648a249ae4e595636ff9c0
+      internalID: -822478537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_20
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 904
+        width: 88
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b7cecc99095ee4bb4021493d9dd481
+      internalID: -280181087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_21
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 904
+        width: 88
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e234ae6285a13c4ea416ff9b5f3cc27
+      internalID: -2031323745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_22
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 900
+        width: 80
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5fb8a63554e9c47b4196b05409dddf
+      internalID: -1193107085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_23
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 900
+        width: 80
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5734df3439606a44da57cc821e04ed41
+      internalID: 1341722250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_24
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 900
+        width: 104
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a336783bd799654ba40f0dcf5b7aaca
+      internalID: -590254194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_25
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 900
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0925b6afd5e47848a31c822a4848114
+      internalID: 402418889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_26
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 900
+        width: 80
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3738ba211b3254a489a965655d4f5880
+      internalID: -513107093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_27
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 900
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc8f19a50f43944e9df2f3520911f9c
+      internalID: -1681669459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_28
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 900
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742f019de2197b94c9c1da51c574cdd6
+      internalID: 616303637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_29
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 900
+        width: 104
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7e473715b37974c9ce31db2e78c343
+      internalID: 2102883626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_30
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 772
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12a83114bc96bf4a99d86b53be280f0
+      internalID: -2011318818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_31
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 772
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf3fd5d9684c644aa9aa4955c9af958
+      internalID: -2120332037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_32
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 772
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3f24d5da85f4f4aafadd48741e9bf0
+      internalID: 1134981051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_33
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 776
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae7cf574849ce24ca041219e43b8444
+      internalID: -154824675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_34
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 772
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450f018d49ace6c4c9ff32cb98e822eb
+      internalID: 935820565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_35
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 776
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd7886d72497ee4bb73ff0f5e1f4c23
+      internalID: 493307488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_36
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 776
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918c18210ded40c42a1a4d6d7e890d24
+      internalID: -783616784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_37
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 776
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b496020da73dcf42a327c413a8fd2bf
+      internalID: -1615885804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_38
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 776
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1562e86c765d70e4496e863c072c9af9
+      internalID: -492896354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_39
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 772
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6573bc04efdce144283971a93756998c
+      internalID: -258371511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_40
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 648
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50373c932a0f81b468e2e7939725e413
+      internalID: 1858837748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_41
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 644
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56497b68da63e24e813d55016e4e88d
+      internalID: 408760048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_42
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 644
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44468b88be9eb74f865f430b3c981a3
+      internalID: 1679110411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_43
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 644
+        width: 80
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c06253d3c98ce479e97c5fb2be974f
+      internalID: 2094269392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_44
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 652
+        width: 112
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a324dbe2dd09c4597aaefc1d75b0e4
+      internalID: 2052833033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_45
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 644
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0881afe4f11eb54ca11ec7d5ae62ee9
+      internalID: 411914526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_46
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 644
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b0093ffee20254db22c60019943aa2
+      internalID: 556378394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_47
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 644
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84753456209a9234ea7c296c2c2bf98e
+      internalID: -51681954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_48
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 644
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ffb65a8184f4b4fad2f0cff85ce3ac
+      internalID: 2038190264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_49
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 644
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1572ec03492d44a41a18d6334dcf2b0a
+      internalID: 789226640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_50
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 520
+        width: 80
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7b864b637e9424693106fcbc0331d1
+      internalID: 466557408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_51
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 516
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f610e6d9394299419edb4716a202848
+      internalID: 320297262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_52
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 516
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0e67a6be4f7c844b458e302683c946
+      internalID: -193272457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_53
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 516
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38712cc75d405341abe3267f4b2c992
+      internalID: -1846118423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_54
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 516
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c475d593214c4459143eb55e1b10fe
+      internalID: -1533922218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_55
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 516
+        width: 80
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7134b709ac4d3c4bbebea0e74aea96f
+      internalID: -1452204395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_56
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 516
+        width: 80
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7e48e613781fd429320bf3646a74b4
+      internalID: -1691644725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_57
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 516
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3094288e361fd54f9ee6f7480811561
+      internalID: -1744780301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_58
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 516
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c591748f75a52498e0af214c848199
+      internalID: 233904704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_59
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 516
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0399826784bba94aa61cd13e09b94a8
+      internalID: 726679679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_60
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 392
+        width: 96
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be1975516639314884965e4392d183c
+      internalID: -965982817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_61
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 400
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b674792e7f134e84f82c927ac921c70d
+      internalID: -946755241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_62
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2a9b0954ee68d4a9d7c69c29208c3b
+      internalID: 1155709840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_63
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 400
+        width: 120
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddc220d6bd85ee4daf303ebd902b26a
+      internalID: 1879053934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_64
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 392
+        width: 88
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9552dcfac9cf3f48ab140afd782cc0d
+      internalID: 1764605683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_65
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 388
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020e259a69ae07a4eafc10aa3ee8fd71
+      internalID: 588013363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_66
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 416
+        width: 112
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ba4d098c09f9b43b5558468238c638
+      internalID: -1332676286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_67
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 412
+        width: 112
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57d2296cf9ce254a890c01511175fb1
+      internalID: 1632129348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_68
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 412
+        width: 96
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3848144606601b4478b5f83b9f6757cf
+      internalID: 2037509909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_69
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da9d9559728f7f42bbe2cc1d2838d48
+      internalID: 722539595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_70
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495c00052d6db8b419a422028dd4dde1
+      internalID: 956021211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_71
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 260
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2fc645de8540394d84558190ac0c31d
+      internalID: 242565950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_72
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 260
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27143b41e24cb7947ab5cb09a7a16300
+      internalID: -16887187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_73
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 260
+        width: 104
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be7e64cbbec91748ab8a8e831160ed2
+      internalID: -506123625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_74
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 264
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cc78ca25f56a64c8ad24794be5801a
+      internalID: 1656374146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_75
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 264
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd412f222fcb8a49a29f5f8c6b33c98
+      internalID: -64994943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_76
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 264
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba06afb9b1e14de4b929ae9ee398f7c9
+      internalID: 307994509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_77
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 260
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2740bd593acb1ea4f93a13c044af623f
+      internalID: 660450694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_78
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 264
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7922b6f071c3c614c9cdff5c09946a7e
+      internalID: -1484661312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_79
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 264
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a05e1b7d2233e04eaf6c35ad25519f3
+      internalID: -1202437714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_80
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 132
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3245dc91e25c15648bb9ee3998d95125
+      internalID: 801636992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_81
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 132
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4c15c41cdae2941b0fc719b886c19d
+      internalID: 1807232457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_82
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 132
+        width: 88
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d946012040157e14e8c06953b21e6e73
+      internalID: -1046340416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_83
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 132
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2736672e19cd2144aaca90c3fba3831b
+      internalID: 889197070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_84
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 132
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe8bec6f8025024783ff0bdd534e3eb
+      internalID: -411479888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_85
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 132
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1368c971878294fa3ce60c522c713f
+      internalID: 1450766493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_86
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 132
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8db4ac53db0904199c9569db93e485
+      internalID: -983559510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_87
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 136
+        width: 72
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adc431c31c44ce41aba269f39cb4bc0
+      internalID: 2059177389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_88
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 132
+        width: 80
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124fd0cab427e5844a54ed8bf2969533
+      internalID: -1540890323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_89
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 132
+        width: 104
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b42bad964dcb8d4a9606022480063ab
+      internalID: -1412492336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_90
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 28
+        width: 72
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96297671892ea204da4319d234d2e2d5
+      internalID: -730187337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_91
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 32
+        width: 76
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32612f070b16cdf43821c244439640d7
+      internalID: -618961444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_92
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 24
+        width: 88
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eceb49fb90020eb4484958cd0a8f5f13
+      internalID: -544395989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_93
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 28
+        width: 112
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8875ac47d1bfd346bb46a5fd0d12a9c
+      internalID: 2050110109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_94
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 4
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef21b06336395d4680fc881ec655178
+      internalID: 982050649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_95
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 28
+        width: 88
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986d66541c944bd46b584df51a0bdf7c
+      internalID: 447588811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_96
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 28
+        width: 88
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f453bcb486a09ce45912ef51ca31fd08
+      internalID: 321800222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_97
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 8
+        width: 72
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9ee3af12855ec4f995b78d0d955fb7
+      internalID: -1609990630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_98
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 28
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd020ee190e19143b8837920035eeef
+      internalID: -1737898813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Armor02_99
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 16
+        width: 108
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79064b188321544429d887e8361d86e8
+      internalID: -971191742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e57e851ff867d4643bc639365ab3d3a0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      _Armor02_63: 1879053934
+      _Armor02_30: -2011318818
+      _Armor02_40: 1858837748
+      _Armor02_93: 2050110109
+      _Armor02_98: -1737898813
+      _Armor02_69: 722539595
+      _Armor02_92: -544395989
+      _Armor02_28: 616303637
+      _Armor02_9: -1863840490
+      _Armor02_42: 1679110411
+      _Armor02_46: 556378394
+      _Armor02_12: 129869068
+      _Armor02_86: -983559510
+      _Armor02_82: -1046340416
+      _Armor02_36: -783616784
+      _Armor02_24: -590254194
+      _Armor02_60: -965982817
+      _Armor02_22: -1193107085
+      _Armor02_48: 2038190264
+      _Armor02_31: -2120332037
+      _Armor02_56: -1691644725
+      _Armor02_83: 889197070
+      _Armor02_66: -1332676286
+      _Armor02_85: 1450766493
+      _Armor02_88: -1540890323
+      _Armor02_19: -822478537
+      _Armor02_20: -280181087
+      _Armor02_0: 1929121830
+      _Armor02_5: 1710500141
+      _Armor02_49: 789226640
+      _Armor02_77: 660450694
+      _Armor02_43: 2094269392
+      _Armor02_76: 307994509
+      _Armor02_16: 208198639
+      _Armor02_65: 588013363
+      _Armor02_39: -258371511
+      _Armor02_15: -44875478
+      _Armor02_97: -1609990630
+      _Armor02_7: -1465878022
+      _Armor02_74: 1656374146
+      _Armor02_8: -198276697
+      _Armor02_68: 2037509909
+      _Armor02_10: 695126621
+      _Armor02_57: -1744780301
+      _Armor02_52: -193272457
+      _Armor02_62: 1155709840
+      _Armor02_89: -1412492336
+      _Armor02_64: 1764605683
+      _Armor02_13: -2001174881
+      _Armor02_80: 801636992
+      _Armor02_4: 41758330
+      _Armor02_90: -730187337
+      _Armor02_17: -736898456
+      _Armor02_70: 956021211
+      _Armor02_81: 1807232457
+      _Armor02_58: 233904704
+      _Armor02_2: 2107753102
+      _Armor02_34: 935820565
+      _Armor02_78: -1484661312
+      _Armor02_71: 242565950
+      _Armor02_27: -1681669459
+      _Armor02_6: 137256205
+      _Armor02_51: 320297262
+      _Armor02_87: 2059177389
+      _Armor02_47: -51681954
+      _Armor02_75: -64994943
+      _Armor02_73: -506123625
+      _Armor02_94: 982050649
+      _Armor02_84: -411479888
+      _Armor02_67: 1632129348
+      _Armor02_96: 321800222
+      _Armor02_18: 1229948525
+      _Armor02_91: -618961444
+      _Armor02_59: 726679679
+      _Armor02_95: 447588811
+      _Armor02_53: -1846118423
+      _Armor02_29: 2102883626
+      _Armor02_26: -513107093
+      _Armor02_21: -2031323745
+      _Armor02_72: -16887187
+      _Armor02_44: 2052833033
+      _Armor02_3: 1191858479
+      _Armor02_79: -1202437714
+      _Armor02_23: 1341722250
+      _Armor02_1: 2034418368
+      _Armor02_61: -946755241
+      _Armor02_14: -798279212
+      _Armor02_38: -492896354
+      _Armor02_33: -154824675
+      _Armor02_41: 408760048
+      _Armor02_32: 1134981051
+      _Armor02_25: 402418889
+      _Armor02_55: -1452204395
+      _Armor02_99: -971191742
+      _Armor02_35: 493307488
+      _Armor02_37: -1615885804
+      _Armor02_54: -1533922218
+      _Armor02_11: -295659965
+      _Armor02_50: 466557408
+      _Armor02_45: 411914526
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
+  m_Name: Toxic Shot
+  m_EditorClassIdentifier: 
+  skillIcon: {fileID: -1645256204, guid: 18bb9a1d080775c4499d56d38300784b, type: 3}
+  effectType: 0
+  targetStat: 0
+  hitChance: 65
+  skillDescription: 
+  effectBaseValue: 10
+  affectedByStats: 1
+  statEffectOnBaseValue: 1
+  effectiveStat: 2
+  costStat: 1
+  costAmount: 55
+  targetRange: 1
+  selfTargetingAllowed: 0
+  useVFX: {fileID: 8709639680917579618, guid: 245105ffac2ed6f45b1f97075e5bf15a, type: 3}
+  receiveVFX: {fileID: 8709639680917579618, guid: 517b478e36f243e45b211f7a81cc4b4f, type: 3}
+  usesSpecialAnimation: 1
+  targetReactionDelay: 1.25
+  appliesStatusEffect: 1
+  statusEffect: {fileID: 11400000, guid: 72fbc4764fde63642ab736a2fa5488f6, type: 2}
+  afflictionChance: 100

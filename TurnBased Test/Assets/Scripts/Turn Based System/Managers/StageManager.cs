@@ -78,10 +78,34 @@ public class StageManager : MonoBehaviour
     {
         _stageProgressUI.UpdateStageProgress();
 
+        if (playerWon)
+        {
+            List<CharacterInfo> defeatedUnlockables = UnlockableCharactersDefeatedThisMatch();
+
+            if (defeatedUnlockables.Count > 0)
+                GameManager.instance.UnlockableCharactersDefeatedInMatch(defeatedUnlockables);
+        }
+
         if (!IsStageOver())
             Run.After(timeToAdvanceToNextMatch, ()=> AdvanceToNextMatch());
         else
             Run.After(timeToAdvanceToNextMatch, () => EndStage(playerWon));
+    }
+
+    List<CharacterInfo> UnlockableCharactersDefeatedThisMatch()
+    {
+        List<CharacterInfo> defeatedUnlockables = new List<CharacterInfo>();
+
+        foreach (var opponent in _currentActiveMatch._matchOpponents)
+        {
+            foreach (var unlockableCharacter in GameManager.instance.GetUnlockableCharacters())
+            {
+                if (opponent == unlockableCharacter)
+                    defeatedUnlockables.Add(opponent);
+            }
+        }
+
+        return defeatedUnlockables;
     }
 
     bool IsStageOver()

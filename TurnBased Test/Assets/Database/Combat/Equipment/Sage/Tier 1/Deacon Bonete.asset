@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
+  m_Name: Deacon Bonete
+  m_EditorClassIdentifier: 
+  equipmentIcon: {fileID: 1528825482, guid: 9169fd140167f544882db74606f1114e, type: 3}
+  awardedSkill: {fileID: 11400000, guid: bfee9f7262ac9c2408b098f0114dcf5a, type: 2}
+  equipmentDescription: 
+  allowedUsers:
+  - {fileID: 11400000, guid: a57c1b75eb8d4ea4a94bec55938b74e0, type: 2}
+  equipmentValue: 0

@@ -15,8 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] MapManager _mapManager;
     [SerializeField] PlayerTeamController _playerTeamController;
 
-   [SerializeField] List<EquipmentInfo> _playerInventory = new List<EquipmentInfo>();
+   [SerializeField] List<EquipmentInfo> _playerStorage = new List<EquipmentInfo>();
     [SerializeField] int _playerCurrentMoney;
+    [SerializeField] SaveFile _templateStartingFile;
     [SerializeField] SaveFile _testFile;
 
     public SaveFile saveFile { get; private set; }
@@ -38,8 +39,6 @@ public class GameManager : MonoBehaviour
 
     public void SaveCurrentGameProgress()
     {
-        saveFile.currentMapNode = _mapManager._currentMapNode;
-
         saveFile.mapNodeProgress.Clear();
 
         List<MapNodeProgressState> nodeProgress = new List<MapNodeProgressState>();
@@ -58,91 +57,138 @@ public class GameManager : MonoBehaviour
 
         saveFile.recruitedCharacters = _playerTeamController.GetSavedPlayerTeam();
 
-        saveFile.sharedInventory.Clear();
-        saveFile.sharedInventory.AddRange(_playerInventory);
+        saveFile.equipmentStorage.Clear();
+        saveFile.equipmentStorage.AddRange(_playerStorage);
 
         saveFile.currentMoney = _playerCurrentMoney;
 
         SaveToFile(saveFile);
+    } 
+
+    public List<EquipmentInfo> GetCurrentPlayerStorage()
+    {
+        return _playerStorage;
     }
 
-    [ContextMenu("Use Test Save File")]
-    public void UseTestSaveFile()
+    public void AddEquipmentToPlayerStorage(EquipmentInfo equipment)
     {
-        saveFile = _testFile;
+        _playerStorage.Add(equipment);
 
-        SaveToFile(saveFile);
-    }
-
-    public List<EquipmentInfo> GetCurrentPlayerInventory()
-    {
-        return _playerInventory;
-    }
-
-    public void AddEquipmentToPlayerInventory(EquipmentInfo equipment)
-    {
-        _playerInventory.Add(equipment);
-
-        RemoveEmptyInventorySpace();
+        RemoveEmptyStorageSpace();
 
         SaveCurrentGameProgress();
     }
 
-    public void RemoveEquipmentFromPlayerInventory(EquipmentInfo equipment)
+    public void RemoveEquipmentFromPlayerStorage(EquipmentInfo equipment)
     {
-        _playerInventory.Remove(equipment);
+        _playerStorage.Remove(equipment);
 
-        RemoveEmptyInventorySpace();
+        RemoveEmptyStorageSpace();
 
         SaveCurrentGameProgress();
     }
 
-    void RemoveEmptyInventorySpace()
+    void RemoveEmptyStorageSpace()
     {
         List<EquipmentInfo> emptySlots = new List<EquipmentInfo>();
 
-        foreach (var slot in _playerInventory)
+        foreach (var slot in _playerStorage)
         {
             if (slot == null)
                 emptySlots.Add(slot);
         }
 
         foreach (var slot in emptySlots)
-            _playerInventory.Remove(slot);
+            _playerStorage.Remove(slot);
+    }
+
+    public List<CharacterInfo> GetUnlockedCharacters()
+    {
+        List<CharacterInfo> alreadyUnlockedCharacters = new List<CharacterInfo>();
+
+        foreach (var unlockableCharacter in saveFile.unlockableCharacters)
+        {
+            if (unlockableCharacter.IsUnlocked)
+                alreadyUnlockedCharacters.Add(unlockableCharacter.characterInfo);
+        }
+
+        return alreadyUnlockedCharacters;
+    }
+
+    public List<CharacterInfo> GetUnlockableCharacters()
+    {
+        List<CharacterInfo> list = new List<CharacterInfo>();
+
+        foreach (var unlockableCharacter in saveFile.unlockableCharacters)
+            list.Add(unlockableCharacter.characterInfo);
+
+        return list;
+    }
+
+    public void UnlockableCharactersDefeatedInMatch(List<CharacterInfo> defeatedCharacters)
+    {
+        foreach (var unlockableCharacter in saveFile.unlockableCharacters)
+        {
+            foreach (var defeatedCharacter in defeatedCharacters)
+            {
+                if (defeatedCharacter == unlockableCharacter.characterInfo)
+                    unlockableCharacter.IsUnlocked = true;
+            }
+        }
+
+        SaveCurrentGameProgress();
+    }
+
+    public bool IsStartingCharacterAlreadyRecruited()
+    {
+        return saveFile.startingCharacterRecruited;
+    }
+
+    public void StartingCharacterRecruited()
+    {
+        saveFile.startingCharacterRecruited = true;
+
+        SaveCurrentGameProgress();
+    }
+
+    public int GetCurrentPlayerMoney()
+    {
+        return _playerCurrentMoney;
+    }
+
+    public void SpendPlayerMoney(int amount)
+    {
+        if (GetCurrentPlayerMoney() == 0 || GetCurrentPlayerMoney() < amount)
+            return;
+
+        _playerCurrentMoney -= amount;
+
+        SaveCurrentGameProgress();
+    }
+
+    public void EarnPlayerMoney(int amount)
+    {
+        _playerCurrentMoney += amount;
+
+        SaveCurrentGameProgress();
     }
 
     #region Data Management
 
+    [ContextMenu("Use Test Save File")]
+    public void UseTestSaveFile()
+    {
+        ResetSaveFile();
+
+        saveFile = _testFile;
+
+        SaveToFile(saveFile);
+    }
+
     [ContextMenu("Reset Save File")]
     public void ResetSaveFile()
     {
-        SaveFile emptyFile = new SaveFile();
-
-        emptyFile.currentMapNode = _mapManager._currentMapNode;
-
-        List<MapNodeProgressState> nodeProgress = new List<MapNodeProgressState>();
-
-        foreach (var node in _mapManager.GetAllMapNodes())
-        {
-            MapNodeProgressState progress = new MapNodeProgressState();
-
-            progress.mapNode = node;
-
-            if (_mapManager._startingMapNode == node)
-                progress.mapNodeState = MapNodeState.Unlocked;
-            else
-                progress.mapNodeState = MapNodeState.Locked;
-
-            nodeProgress.Add(progress);
-        }
-
-        emptyFile.mapNodeProgress.AddRange(nodeProgress);
-
-        emptyFile.recruitedCharacters.Clear();
-        emptyFile.sharedInventory.Clear();
-        emptyFile.currentMoney = 0;
-
-        saveFile = emptyFile;
+        saveFile = _templateStartingFile;
 
         SaveToFile(saveFile);
     }
@@ -173,10 +219,10 @@ public class GameManager : MonoBehaviour
         _mapManager.DownloadMapNodeProgress(saveFile.mapNodeProgress);
         _playerTeamController.SetSavedPlayerTeam(saveFile.recruitedCharacters);
 
-        _playerInventory.Clear();
-        _playerInventory.AddRange(saveFile.sharedInventory);
+        _playerStorage.Clear();
+        _playerStorage.AddRange(saveFile.equipmentStorage);
 
-        _playerCurrentMoney = saveFile.currentMoney;
+        _playerCurrentMoney = saveFile.currentMoney;        
 
         GameLoaded?.Invoke();
     }

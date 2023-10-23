@@ -77,19 +77,8 @@ public class MapManager : MonoBehaviour
 
         for (int i = 0; i < savedMapNodeProgress.Count; i++)
         {
-            if(savedMapNodeProgress[i].mapNode == _startingMapNode)
+            if (savedMapNodeProgress[i].mapNodeState == MapNodeState.Unlocked || savedMapNodeProgress[i].mapNode == _startingMapNode)
                 _allMapNodes[i].UnlockNode();
-
-            if (savedMapNodeProgress[i].mapNodeState == MapNodeState.Unlocked)
-                _allMapNodes[i].UnlockNode();
-            else if (savedMapNodeProgress[i].mapNodeState == MapNodeState.Current)
-            {
-                _allMapNodes[i].UnlockNode();
-                _allMapNodes[i].SetAsCurrent();
-                _currentMapNode = _allMapNodes[i];
-
-                SetCurrentMapNode(_allMapNodes[i]);
-            }
         }
     }
 
@@ -133,7 +122,7 @@ public class MapManager : MonoBehaviour
         else
             Run.After(_transitionController._screenTransitionDuration, () =>
             {
-                _tavernManager.SetupTavernScene(_playerTeamController.GetSavedPlayerTeam());
+                _tavernManager.SetupTavernScene(_playerTeamController.GetSavedPlayerTeam(), _currentMapNode.nodeStageInfo);
                 StageLoaded?.Invoke(_currentMapNode.nodeStageInfo);
             });
     }

@@ -1,0 +1,2347 @@
+fileFormatVersion: 2
+guid: f4727bcc02d463c448a7f9f389ae8969
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _Rings&Amulets_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1160
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6ff7f0a671e334bb0682f96c6c8de7
+      internalID: -927734990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1164
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b6c4fde3e878147b58fde8e8a517e6
+      internalID: -873442040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1164
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1eac981812bc74ebef38f8543fb0c7
+      internalID: -1974252669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1156
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a99f07c129a22469137631c9f4ad9a
+      internalID: -1041465680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1164
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba5ae20176c35d44bbc62f1f15255d6
+      internalID: 835535208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_5
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1160
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5538b805caf5c042ab8b6184e6bda3a
+      internalID: -1124960657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_6
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 1156
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550d0cb1166aada4387d2c149334f298
+      internalID: -1746824338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_7
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1160
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf49cf12cf5c934d9ac2073d1b44fae
+      internalID: -1278391735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_8
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 1164
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc85215cfbd6019489d20b88af261821
+      internalID: 1311303154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_9
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 1156
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3777a9e7f5d9c84ea505b6ed6136f16
+      internalID: 737270965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1036
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf53bf3ddd8def44927da521cf75766
+      internalID: -661796962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_11
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1036
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b0ac0dfe75dd940b9ca02289bfa768
+      internalID: 2100040955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_12
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1036
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c53f81caf795c04db51685849e3e471
+      internalID: 1559838015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_13
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1036
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ae20a6605ca7a4085c467aa0301b15
+      internalID: 1526373401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_14
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1032
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ee8318966ad514dbcc49bd844e3849
+      internalID: -1360306143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_15
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1032
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aea37e82b13ddc48a3e07e757c16aa6
+      internalID: 593242939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_16
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1032
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eead7e9af82b9e43a955270c0e8ff32
+      internalID: -115482342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_17
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1036
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82414f1f67d58d449867ea907bf5606
+      internalID: 762049545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_18
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 1036
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857c20a290c2335469d59d530318d111
+      internalID: -90182369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_19
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 1028
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a663989a522bc4794a4e529c106f99
+      internalID: -31314597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 904
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9686b4fe5d3944da5dd9c1bcc08e1c
+      internalID: 1590333900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_21
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 900
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea94de3130ad51a45bd43c1b355337e3
+      internalID: -2092379705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_22
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 908
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f794f146069a548a2b1a010bbd6f3a
+      internalID: -328531716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_23
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 900
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f87f9f2b91aa3144a7ce5abe1a61ff3
+      internalID: -2004622241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_24
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 904
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd929b8a0259ca46bae309064d05529
+      internalID: 1980567646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_25
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 904
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9839ecad8b246f744ad180c6e9f0cbcf
+      internalID: -488057353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_26
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 908
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5db90e103e265441b7d9df0559b6a62
+      internalID: -2101214337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_27
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 904
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f990a68618d954fb852bd8560aa5ad
+      internalID: 1287219629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_28
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 908
+        width: 112
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa094ae3eb87514faffde107b594019
+      internalID: 55350981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_29
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 904
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19276a52f43d9a34f96fc10d6f2e5048
+      internalID: 1130060295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_30
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 780
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c3b15078929b24da6a1dc0ef3dfa0c
+      internalID: -897290900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_31
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 776
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb96c0ccbb375c94cba691ed6351a3e5
+      internalID: -83072654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_32
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 776
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d31b210ce8023d4c901be3b8e61fadb
+      internalID: 439847365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_33
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 780
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a46a2f3ccb6fdc42a8962f52d667066
+      internalID: 1226762004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_34
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 780
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c9de627f6d91840aac6fee83576f14
+      internalID: -84521131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_35
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 780
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c656255de1454242bf6d4a951d92745
+      internalID: -942828855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_36
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 780
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8affd39b1411e9e4b8a2104de96901e1
+      internalID: 102593976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_37
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 776
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2be9b5246b8db469697a8996d0cf0f
+      internalID: 2053629228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_38
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 780
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e463508932bd142bc2218b14daf4ca
+      internalID: -581691110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_39
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 772
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4eaff6c9505ab44a285a0de431ebef
+      internalID: 1925470574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_40
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 648
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc9a675a34d39d4d96df15389961451
+      internalID: -469465665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_41
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 648
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd305a331d572941982c471a42d8462
+      internalID: 955666823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_42
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 648
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978446b8756baa34c9995c1757146937
+      internalID: 1678027179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_43
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 644
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792e41e5436e929449645b6325063d61
+      internalID: -701723383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_44
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 648
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc45de95ce9eb58499bd382f8b0accf3
+      internalID: 263416574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_45
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 644
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73e484179054044c91466a9959265bd
+      internalID: -78864642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_46
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 644
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5f49f9acdf7354485ac05eea8db304
+      internalID: 827468610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_47
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 644
+        width: 116
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e6ef02f709ed148822d3b697069bff
+      internalID: 248826936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_48
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 644
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c9995115ccbf4408293ef916c65d34
+      internalID: 2045850254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_49
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 644
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc42e0fd844ad644da545b99e7404719
+      internalID: -2008395669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_50
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e920639ed3a13584e86288a10c17e0e6
+      internalID: 648398461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_51
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d440edc94bdb08a4ca2252eafd309959
+      internalID: -1383170738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_52
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38340546aa286a046be8abf6a6f56bc8
+      internalID: 308902777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_53
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d5a86a6bbafab4b9f00795a6aeb5e6
+      internalID: 1668603817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_54
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80200c1d6ab29645a201f40dfc9cd05
+      internalID: 1609890191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_55
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdd97a79e50e1048b337bb0fa988ef7
+      internalID: -821295360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_56
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74087a68b98dc5479dc015ff04ee73d
+      internalID: -1856320994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_57
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9a911893092c949825261255f904d4
+      internalID: -1540572444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_58
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3efd544a86c5147830d0bf5a53a943
+      internalID: 870221563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_59
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 516
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d091821f16a9f7046bf960b05e7fdcd6
+      internalID: 1846744163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_60
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c231b8ee5003546a9d5897648785e7
+      internalID: 1632353876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_61
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b301a3ae08a064a90857a49771dc31
+      internalID: 256426264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_62
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ce8b834f4fb2a438f4dbbd9d37ac1b
+      internalID: 281534524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_63
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934d7494a43f6df4798290b78b8adf7d
+      internalID: -27413924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_64
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c938922de80d74fbc8065c328470bb
+      internalID: -2147327836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_65
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05abe6badb0aed447ab1c1c1940ad65a
+      internalID: -234645921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_66
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 392
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8223cb4b88d724882478dfc5437f1a
+      internalID: -1738228534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_67
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45acb4d9c7c4b9e40bb8cf54e20997bd
+      internalID: 19841638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_68
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31438f50367bfb34daffea4b1e31bd76
+      internalID: -1021275148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_69
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 388
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 370bd46d9bcdc2e4ba5b1ec6a70a2418
+      internalID: 1480769379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_70
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca1b31d32c2c144fa9fd42dc682d92a
+      internalID: 1604862400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_71
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0c29122848de147bb5b8f71e5f01e8
+      internalID: -78541320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_72
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1f81315a465134cb0418b35a6fe0a4
+      internalID: 615380766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_73
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7e89f4df2a87a4f9d2f1ae9bd2fef5
+      internalID: 576297412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_74
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c518b3719e2524b479efed486eb9c2d0
+      internalID: 284734840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_75
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ee3d5abef744f47a75425135a86b51
+      internalID: 2035203477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_76
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40876b3bc6a01b042bacad78da816070
+      internalID: -156901393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_77
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 260
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654f651d9e6eb504daaf2e32f6d80d2c
+      internalID: -697860287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_78
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe45740cc5fd3c24bab5245da14d1147
+      internalID: 268311010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_79
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 260
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30027ca7231c8fa48880034847b5a4c1
+      internalID: -1186056655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_80
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 136
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb82d881cc291349bfe38e043f3edfc
+      internalID: -1708230984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_81
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 136
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b06a34bf4e06049bfd75dc51c02c8f
+      internalID: 1155118037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_82
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 132
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8465a6fcbb224f4681cba083d6992d8
+      internalID: 7534242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_83
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 136
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d3b29c7fed64e43acbe62adb4bd15a
+      internalID: 962531267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_84
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 132
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7fa3fb5ee75f04082dc91a802277cb
+      internalID: -1752668737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_85
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 132
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78bef26fdb65edf4ba14b2d5e8cc214c
+      internalID: -672488881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_86
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 132
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e977684f926e24eabae871a9b0bed3
+      internalID: -1223840931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_87
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 132
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9145bb674833d624d8f5d4cd4ec20817
+      internalID: 782437796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_88
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 140
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989c0ae636eedce43a1326660ff2917d
+      internalID: -1509945623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_89
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 132
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4f9cebbf753b245acbe4f492a82894
+      internalID: 682194215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_90
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 108
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386585eb53a149d4492f2c959bf01f9e
+      internalID: -1804563233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_91
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 4
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777816dda14d0db4ba870cba30b22769
+      internalID: -598771971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_92
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 8
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d3b9c94a013d942a7933a07948270f
+      internalID: -683977836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_93
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 8
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a4d9d4045a5114c9aa2d8c7e267d2a
+      internalID: 1317950729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_94
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 4
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e4f7712653dea479282465bffabfda
+      internalID: 1723308750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_95
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 4
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50abbf031007ead43a27ddb60c6702eb
+      internalID: -1876597945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_96
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 8
+        width: 112
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fe7cf68e67a264cbd452868825c0d7
+      internalID: -1573032165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_97
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591eaa8c23a28214ba5986b2c18d7ccf
+      internalID: -393659680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_98
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 8
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b6510f8ffeffe4894e2d27b27c1680
+      internalID: -426513931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Rings&Amulets_99
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 4
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a08d0734df9fd24c9efb3369ebeab9d
+      internalID: -2100193914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b36b640c132e3ff4abf135a2fec027a0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      _Rings&Amulets_39: 1925470574
+      _Rings&Amulets_82: 7534242
+      _Rings&Amulets_18: -90182369
+      _Rings&Amulets_40: -469465665
+      _Rings&Amulets_67: 19841638
+      _Rings&Amulets_78: 268311010
+      _Rings&Amulets_91: -598771971
+      _Rings&Amulets_25: -488057353
+      _Rings&Amulets_68: -1021275148
+      _Rings&Amulets_74: 284734840
+      _Rings&Amulets_84: -1752668737
+      _Rings&Amulets_11: 2100040955
+      _Rings&Amulets_1: -873442040
+      _Rings&Amulets_55: -821295360
+      _Rings&Amulets_81: 1155118037
+      _Rings&Amulets_69: 1480769379
+      _Rings&Amulets_42: 1678027179
+      _Rings&Amulets_28: 55350981
+      _Rings&Amulets_79: -1186056655
+      _Rings&Amulets_43: -701723383
+      _Rings&Amulets_49: -2008395669
+      _Rings&Amulets_33: 1226762004
+      _Rings&Amulets_36: 102593976
+      _Rings&Amulets_75: 2035203477
+      _Rings&Amulets_71: -78541320
+      _Rings&Amulets_93: 1317950729
+      _Rings&Amulets_0: -927734990
+      _Rings&Amulets_41: 955666823
+      _Rings&Amulets_46: 827468610
+      _Rings&Amulets_24: 1980567646
+      _Rings&Amulets_98: -426513931
+      _Rings&Amulets_30: -897290900
+      _Rings&Amulets_87: 782437796
+      _Rings&Amulets_51: -1383170738
+      _Rings&Amulets_54: 1609890191
+      _Rings&Amulets_59: 1846744163
+      _Rings&Amulets_60: 1632353876
+      _Rings&Amulets_52: 308902777
+      _Rings&Amulets_61: 256426264
+      _Rings&Amulets_38: -581691110
+      _Rings&Amulets_22: -328531716
+      _Rings&Amulets_97: -393659680
+      _Rings&Amulets_65: -234645921
+      _Rings&Amulets_66: -1738228534
+      _Rings&Amulets_85: -672488881
+      _Rings&Amulets_63: -27413924
+      _Rings&Amulets_2: -1974252669
+      _Rings&Amulets_14: -1360306143
+      _Rings&Amulets_6: -1746824338
+      _Rings&Amulets_7: -1278391735
+      _Rings&Amulets_5: -1124960657
+      _Rings&Amulets_31: -83072654
+      _Rings&Amulets_50: 648398461
+      _Rings&Amulets_9: 737270965
+      _Rings&Amulets_44: 263416574
+      _Rings&Amulets_83: 962531267
+      _Rings&Amulets_95: -1876597945
+      _Rings&Amulets_94: 1723308750
+      _Rings&Amulets_19: -31314597
+      _Rings&Amulets_90: -1804563233
+      _Rings&Amulets_72: 615380766
+      _Rings&Amulets_80: -1708230984
+      _Rings&Amulets_96: -1573032165
+      _Rings&Amulets_76: -156901393
+      _Rings&Amulets_10: -661796962
+      _Rings&Amulets_21: -2092379705
+      _Rings&Amulets_70: 1604862400
+      _Rings&Amulets_16: -115482342
+      _Rings&Amulets_92: -683977836
+      _Rings&Amulets_3: -1041465680
+      _Rings&Amulets_48: 2045850254
+      _Rings&Amulets_8: 1311303154
+      _Rings&Amulets_64: -2147327836
+      _Rings&Amulets_62: 281534524
+      _Rings&Amulets_20: 1590333900
+      _Rings&Amulets_73: 576297412
+      _Rings&Amulets_77: -697860287
+      _Rings&Amulets_89: 682194215
+      _Rings&Amulets_99: -2100193914
+      _Rings&Amulets_45: -78864642
+      _Rings&Amulets_53: 1668603817
+      _Rings&Amulets_57: -1540572444
+      _Rings&Amulets_34: -84521131
+      _Rings&Amulets_27: 1287219629
+      _Rings&Amulets_32: 439847365
+      _Rings&Amulets_13: 1526373401
+      _Rings&Amulets_17: 762049545
+      _Rings&Amulets_86: -1223840931
+      _Rings&Amulets_12: 1559838015
+      _Rings&Amulets_29: 1130060295
+      _Rings&Amulets_35: -942828855
+      _Rings&Amulets_88: -1509945623
+      _Rings&Amulets_56: -1856320994
+      _Rings&Amulets_26: -2101214337
+      _Rings&Amulets_47: 248826936
+      _Rings&Amulets_4: 835535208
+      _Rings&Amulets_58: 870221563
+      _Rings&Amulets_23: -2004622241
+      _Rings&Amulets_37: 2053629228
+      _Rings&Amulets_15: 593242939
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

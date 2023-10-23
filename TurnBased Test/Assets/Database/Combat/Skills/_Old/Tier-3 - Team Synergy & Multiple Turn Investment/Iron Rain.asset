@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
+  m_Name: Iron Rain
+  m_EditorClassIdentifier: 
+  skillIcon: {fileID: 335571336, guid: 6aadc95cb4c3d3f468d2276d55b2f879, type: 3}
+  effectType: 0
+  targetStat: 0
+  hitChance: 55
+  skillDescription: 
+  effectBaseValue: 6
+  affectedByStats: 1
+  statEffectOnBaseValue: 1
+  effectiveStat: 2
+  costStat: 1
+  costAmount: 35
+  targetRange: 3
+  selfTargetingAllowed: 0
+  useVFX: {fileID: 0}
+  receiveVFX: {fileID: 0}
+  usesSpecialAnimation: 1
+  targetReactionDelay: 1
+  appliesStatusEffect: 1
+  statusEffect: {fileID: 11400000, guid: b39fa624355b2134ca60795f313c28af, type: 2}
+  afflictionChance: 25

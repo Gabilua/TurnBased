@@ -26,6 +26,7 @@ public class CharacterStats
 
     [SerializeField] int maxHP;
     [SerializeField] int maxMP;
+    [SerializeField] int defense;
     [SerializeField] int accuracy;
     [SerializeField] int dodge;
 
@@ -37,6 +38,7 @@ public class CharacterStats
         maxMP = GetFinalStat(TargetStat.MP);
         dodge = GetFinalStat(TargetStat.DODGE);
         accuracy = GetFinalStat(TargetStat.ACCURACY);
+        defense = GetFinalStat(TargetStat.DEFENSE);
     }
 
     public void CopyBaseStats(CharacterStats referenceStats)
@@ -46,6 +48,7 @@ public class CharacterStats
         dexterity = referenceStats.dexterity;
         agility = referenceStats.agility;
         intelligence = referenceStats.intelligence;
+        defense = referenceStats.defense;
     }
 
     public int GetFinalStat(TargetStat stat)
@@ -82,6 +85,9 @@ public class CharacterStats
                 break;
             case TargetStat.DODGE:
                 finalStat = dodge = Mathf.CeilToInt(5 + agility);
+                break;
+            case TargetStat.DEFENSE:
+                finalStat = (vitality+strenght+dexterity+agility+intelligence) / 5;
                 break;
         }
 
@@ -142,6 +148,8 @@ public class CharacterInfo : ScriptableObject
     public Sprite faceSprite;
     public CharacterStats characterStats;
     public EquipmentSet nativeEquipmentSet;
+    [Range(0, 100)]
+    public int tavernAppearanceChance;
 
 #if UNITY_EDITOR
 

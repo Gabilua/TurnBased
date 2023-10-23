@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
+  m_Name: Raid Mallet
+  m_EditorClassIdentifier: 
+  equipmentIcon: {fileID: 1294735871, guid: 8fb15473b6ec8cf4292c764a0b69df54, type: 3}
+  awardedSkill: {fileID: 11400000, guid: b12625d6b3a20da41b05d0697f665709, type: 2}
+  equipmentDescription: 
+  allowedUsers:
+  - {fileID: 11400000, guid: 186d19e25798b2348b1b72ccb0e337f6, type: 2}
+  equipmentValue: 0

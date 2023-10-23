@@ -35,7 +35,7 @@ public class StatusEffectController : MonoBehaviour
         _remainingAffectedTurns--;
 
         if (_remainingAffectedTurns == 0)
-            RemoveStatusEffectFromTarget();
+            EffectDurationEnded?.Invoke(this);
     }
 
     void TargetDied()
@@ -88,10 +88,9 @@ public class StatusEffectController : MonoBehaviour
         TurnCountdown();
     }    
 
-    void RemoveStatusEffectFromTarget()
+    public void RemoveStatusEffectFromTarget()
     {
+        _target.SetStatusEffectAffliction(this._effectApplied, false);
         _target._runtimeStats.RemoveTemporaryChange(_effectApplied);
-
-        EffectDurationEnded?.Invoke(this);
     }
 }

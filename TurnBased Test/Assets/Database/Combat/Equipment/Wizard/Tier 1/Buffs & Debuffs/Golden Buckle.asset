@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
+  m_Name: Golden Buckle
+  m_EditorClassIdentifier: 
+  equipmentIcon: {fileID: -1377377037, guid: 4ebeba27ec97e09439b22479da083c5a, type: 3}
+  awardedSkill: {fileID: 11400000, guid: 123087f4f978ac249a1f6d187a23c85f, type: 2}
+  equipmentDescription: 
+  allowedUsers:
+  - {fileID: 11400000, guid: 3fdf187ab3e7ad24a934241dbe77353b, type: 2}
+  sellingPrice: 0

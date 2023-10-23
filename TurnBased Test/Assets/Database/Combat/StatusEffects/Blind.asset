@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d7fae53e7d3ff4f800b93bc04c8e96, type: 3}
+  m_Name: Blind
+  m_EditorClassIdentifier: 
+  effectIcon: {fileID: 441520494, guid: 9ceae9da5ce5dc647bbf8834f87f5afd, type: 3}
+  effectType: 2
+  targetStat: 7
+  durationInTurns: 2
+  effectBaseValue: -9999
+  affectedByStats: 0
+  statEffectOnBaseValue: 0
+  effectiveStat: 4
+  effectStacksDuration: 0
+  chanceToInterruptActions: 100
+  receiveVFX: {fileID: 808874906696333116, guid: ed1c369cdad6ac14387bdcb8cc257b7e, type: 3}

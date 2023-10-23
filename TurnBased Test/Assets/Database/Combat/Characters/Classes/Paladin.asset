@@ -22,10 +22,12 @@ MonoBehaviour:
     agility: 1
     maxHP: 300
     maxMP: 240
+    defense: 3
     accuracy: 67
     dodge: 6
   nativeEquipmentSet:
     equipments:
-    - {fileID: 11400000, guid: c7ff754764572114291f48c11bcec933, type: 2}
     - {fileID: 11400000, guid: 047663d781d0b1640b80f8f4668751d1, type: 2}
     - {fileID: 11400000, guid: 3ee9b09f5d2143949bdbdb3c8c522a63, type: 2}
+    - {fileID: 11400000, guid: c7ff754764572114291f48c11bcec933, type: 2}
+  tavernAppearanceChance: 100

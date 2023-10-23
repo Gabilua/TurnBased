@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c93268109dfc2047bd1d043b62431d6, type: 3}
+  m_Name: Cloaking
+  m_EditorClassIdentifier: 
+  skillIcon: {fileID: -954199385, guid: 18bb9a1d080775c4499d56d38300784b, type: 3}
+  effectType: 1
+  targetStat: 0
+  hitChance: 100
+  skillDescription: 
+  effectBaseValue: 0
+  affectedByStats: 0
+  statEffectOnBaseValue: 0
+  effectiveStat: 2
+  costStat: 1
+  costAmount: 100
+  targetRange: 6
+  selfTargetingAllowed: 1
+  useVFX: {fileID: 0}
+  receiveVFX: {fileID: 0}
+  usesSpecialAnimation: 0
+  targetReactionDelay: 0.35
+  appliesStatusEffect: 1
+  statusEffect: {fileID: 11400000, guid: e9cdb51e09e2bfb46bd18abe121a505e, type: 2}
+  afflictionChance: 100

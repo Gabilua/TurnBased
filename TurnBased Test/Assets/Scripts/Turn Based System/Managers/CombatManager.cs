@@ -29,6 +29,7 @@ public class CombatManager : MonoBehaviour
 
     List<StoredTurnAction> _storedTurnActions = new List<StoredTurnAction>();
     List<StatusEffectController> _activeStatusEffects = new List<StatusEffectController>();
+    List<StatusEffectController> _statusEffectsExpiredThisTurn = new List<StatusEffectController>();
 
     #region Unity
 
@@ -65,25 +66,29 @@ public class CombatManager : MonoBehaviour
     {
         _activeStatusEffects.Sort((p1, p2) => p1._target._runtimeStats.GetFinalStat(TargetStat.AGI).CompareTo(p2._target._runtimeStats.GetFinalStat(TargetStat.AGI)));
 
-        List<StatusEffectController> toRemove = new List<StatusEffectController>();
+        #region Cleanup Empty Variables
+
+        List<StatusEffectController> statusEffectsToRemoveThisTurn = new List<StatusEffectController>();
 
         foreach (var activeStatusEffect in _activeStatusEffects)
         {
             if (activeStatusEffect == null)
-                toRemove.Add(activeStatusEffect);
+                statusEffectsToRemoveThisTurn.Add(activeStatusEffect);
         }
 
-        foreach (var status in toRemove)
+        foreach (var status in statusEffectsToRemoveThisTurn)
             _activeStatusEffects.Remove(status);
 
+        #endregion
+
         //at the start of the execution turn, before conventional skill effects are applied, we start by applying status effects to their targets
-       if(_activeStatusEffects.Count > 0)
+        if (_activeStatusEffects.Count > 0)
         {
             foreach (var activeStatusEffect in _activeStatusEffects)
             {
                 yield return new WaitForSeconds(_timeDelayBetweenCombatantActions);
 
-                if (activeStatusEffect != null)
+                if (activeStatusEffect != null && !_statusEffectsExpiredThisTurn.Contains(activeStatusEffect))
                     activeStatusEffect.ApplyStatusEffectToTarget();
 
                 yield return new WaitForSeconds(_timeDelayBetweenCombatantActions);
@@ -139,6 +144,11 @@ public class CombatManager : MonoBehaviour
                 {
                     CheckForStatusEffectAppliedBySkill(_storedTurnActions[i].receivers[j], _storedTurnActions[i].performer, _storedTurnActions[i].skillUsed);
 
+                    int finalEffectValue = _storedTurnActions[i].finalEffectValue;
+
+                    if (_storedTurnActions[i].skillUsed.effectType == EffectType.Damaging)
+                        finalEffectValue = finalEffectValue - (finalEffectValue * (_storedTurnActions[i].receivers[j]._runtimeStats.GetFinalStat(TargetStat.DEFENSE) / 100));
+
                     _storedTurnActions[i].receivers[j].ReceiveSkillEffect(_storedTurnActions[i].finalEffectValue, _storedTurnActions[i].skillUsed);
                 }
                 else
@@ -149,6 +159,17 @@ public class CombatManager : MonoBehaviour
 
             _storedTurnActions[i].performer.ToggleCombatantSelection(false);
         }
+
+        statusEffectsToRemoveThisTurn.Clear();
+
+        foreach (var activeStatusEffect in _activeStatusEffects)
+        {
+            if (_statusEffectsExpiredThisTurn.Contains(activeStatusEffect))
+                statusEffectsToRemoveThisTurn.Add(activeStatusEffect);
+        }
+
+        foreach (var status in statusEffectsToRemoveThisTurn)
+            RemoveExpiredStatusEffect(status);
 
         _storedTurnActions.Clear();
 
@@ -468,9 +489,14 @@ public class CombatManager : MonoBehaviour
 
     void StatusEffectDurationEnded(StatusEffectController statusEffectController)
     {
-        statusEffectController._target.SetStatusEffectAffliction(statusEffectController._effectApplied, false);
+        _statusEffectsExpiredThisTurn.Add(statusEffectController);
+    }
 
-        _activeStatusEffects.Remove(statusEffectController);
+    void RemoveExpiredStatusEffect(StatusEffectController statusEffectController)
+    {
+        statusEffectController.RemoveStatusEffectFromTarget();
+
+        _statusEffectsExpiredThisTurn.Remove(statusEffectController);
 
         if (statusEffectController != null)
             Destroy(statusEffectController);

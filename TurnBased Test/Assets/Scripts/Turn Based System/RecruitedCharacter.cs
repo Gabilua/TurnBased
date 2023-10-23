@@ -6,7 +6,15 @@ using UnityEngine;
 public class RecruitedCharacter 
 {
     public CharacterInfo characterInfo;
-    public List<EquipmentInfo> heldEquipment;
+    public List<EquipmentInfo> heldEquipment = new List<EquipmentInfo>();
+
+    public RecruitedCharacter(CharacterInfo info, List<EquipmentInfo> equipments)
+    {
+        characterInfo = info;
+
+        foreach (var equipment in equipments)
+            AddEquipmentToCharacter(equipment);
+    }
 
     public bool IsCharacterInventoryFull()
     {

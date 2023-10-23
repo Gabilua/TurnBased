@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: Everglade Town
   m_EditorClassIdentifier: 
   stageMapGFX: {fileID: 21300000, guid: 00861d03ffd2fcd479bc1848ec7a5f49, type: 3}
-  stageScenery: {fileID: 21300000, guid: 248e8d20879ec5c41a36dead0c18615a, type: 3}
+  stageScenery: {fileID: 21300000, guid: 45a48ca7e4fff304a89765ddc8c9fa6c, type: 3}
   stageBGM: {fileID: 8300000, guid: f1c59b268b2ec9241833430369b3228f, type: 3}
   orderedMatches: []
+  stageEquipmentRewards:
+  - {fileID: 11400000, guid: 047663d781d0b1640b80f8f4668751d1, type: 2}
+  - {fileID: 11400000, guid: 3ee9b09f5d2143949bdbdb3c8c522a63, type: 2}
+  - {fileID: 11400000, guid: c7ff754764572114291f48c11bcec933, type: 2}
+  stageGoldRewardRange: {x: 0, y: 0}
   isTown: 1

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum EffectType { Damaging, Healing, Altering }
-public enum TargetStat { HP, MP, STR, VIT, DEX, AGI, INT, ACCURACY, DODGE }
+public enum TargetStat { HP, MP, STR, VIT, DEX, AGI, INT, ACCURACY, DODGE, DEFENSE }
 public enum StatEffectOnBaseValue { Additive, Multiplicative }
 public enum EffectiveStat {  Strenght, Vitality, Dexterity, Agility, Intelligence}
 public enum CostStat { HP, MP }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
+  m_Name: Scratched Plate
+  m_EditorClassIdentifier: 
+  equipmentIcon: {fileID: 1392719157, guid: bbf50459bb49c4140808d973e23230c9, type: 3}
+  awardedSkill: {fileID: 11400000, guid: c2204a49045e428489462bf07cfa820f, type: 2}
+  equipmentDescription: 
+  allowedUsers:
+  - {fileID: 11400000, guid: 186d19e25798b2348b1b72ccb0e337f6, type: 2}
+  equipmentValue: 10

@@ -2,6 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
+
+[System.Serializable]
+public class GeneratedTeamsByTavern
+{
+    public StageInfo tavernTown;
+    public List<RecruitedCharacter> tavernTeam = new List<RecruitedCharacter>();
+
+    public void SetupTeam(StageInfo town, List<RecruitedCharacter> team)
+    {
+        tavernTown = town;
+        tavernTeam.AddRange(team);
+    }
+}
 
 public class TavernManager : MonoBehaviour
 {
@@ -11,7 +25,8 @@ public class TavernManager : MonoBehaviour
     public Action OnTavernExited;
 
     [SerializeField] PlayerTeamController _playerTeamController;
-    [SerializeField] TavernInventoryManager _inventoryManager;
+    [SerializeField] StorageManager _storageManager;
+    [SerializeField] ShopManager _shopManager;
 
     [SerializeField] GameObject _tavernScene;
     [SerializeField] Animator _exitButtonAnimator;
@@ -19,43 +34,132 @@ public class TavernManager : MonoBehaviour
     [SerializeField] List<Transform> _characterSpots = new List<Transform>();
     [SerializeField] GameObject _tavernCharacterPrefab;
 
-    [SerializeField] TavernCharacterInfoDisplay _characterInfoDisplay;
+    [SerializeField] CharacterInfoDisplay _characterInfoDisplay;
     [SerializeField] Animator _characterInfoDisplayAnimator;
 
     [SerializeField] Transform _teamMemberDisplayHolder;
     [SerializeField] GameObject _teamMemberDisplayPrefab;
+    List<TavernCharacter> _generatedTavernCharacters = new List<TavernCharacter>();
 
-    [SerializeField] RecruitedCharacter[] _testCharacters;
+    [SerializeField] List<RecruitedCharacter> _startingCharacterOptions = new List<RecruitedCharacter>();
 
     RecruitedCharacter _currentlySelectedCharacter;
+    public StageInfo _currentTown { get; private set; }
+
+    List<GeneratedTeamsByTavern> _generatedTavernTeams = new List<GeneratedTeamsByTavern>();
+
+    [SerializeField] Image _draggedSlotGFX;
 
     private void Start()
     {
         _characterInfoDisplay.CharacteEquipmentIconDragStart += CharacterEquipmentDragStart;
         _characterInfoDisplay.CharacteEquipmentIconDragEnd += CharacterEquipmentDragEnd;
         _characterInfoDisplay.CharacterEquipmentDragging += CharacterEquipmentDragging;
-        _characterInfoDisplay.OnInventorySlotDroppedOnEquipment += MoveEquipmentFromStorageToCharacter;
+        _characterInfoDisplay.OnStorageSlotDroppedOnEquipment += AttemptToMoveEquipmentFromStorageToCharacter;
 
-        _inventoryManager.StorageWindowStateChange += StorageWindowStageChange;
-        _inventoryManager.OnCharacterEquipmentDroppedOnSlot += MoveEquipmentFromCharacterToStorage;
+        _storageManager.StorageWindowStateChange += StorageWindowStageChange;
+        _storageManager.OnCharacterEquipmentDroppedOnSlot += AttemptToMoveEquipmentFromCharacterToStorage;
 
-        _inventoryManager.SetupStorageWindow();
+        _storageManager.OnShopStockDroppedOnSlot += AttemptToBuyEquipmentFromShop;
+        _storageManager.SetupStorageWindow();
+
+        _shopManager.OnStorageSlotDroppedOnBuyingArea += AttemptToSellEquipmentToShop;
+        _shopManager.ShopWindowStateChanged += ShopWindowStateChange;
+        _shopManager.ShopSlotDragStart += ShopStockDragStart;
+        _shopManager.ShopSlotDragEnd += ShopStockDragEnd;
+        _shopManager.ShopSlotDragging += ShopStockDragging;
+
+        _tavernScene.SetActive(false);
     }
 
     #region Tavern Scene Management
 
-    public void SetupTavernScene(List<RecruitedCharacter> savedPlayerTeam)
+    bool FirstTimeThisSessionVisitingThisTavern(StageInfo tavernTown)
     {
+        bool result = true;
+
+        foreach (var tavernTeam in _generatedTavernTeams)
+        {
+            if(tavernTeam.tavernTown == tavernTown)
+            {
+                result = false;
+                break;
+            }
+        }
+
+        return result;
+    }
+
+    List<RecruitedCharacter> GetTavernCharactersForThisTavern(StageInfo tavern)
+    {
+        List<RecruitedCharacter> team = new List<RecruitedCharacter>();
+
+        foreach (var generatedTeam in _generatedTavernTeams)
+        {
+            if(generatedTeam.tavernTown == tavern)
+            {
+                team.AddRange(generatedTeam.tavernTeam);
+                break;
+            }
+        }
+
+        return team;
+    }
+
+    public void SetupTavernScene(List<RecruitedCharacter> savedPlayerTeam, StageInfo currentTownTavern)
+    {
+        _currentTown = currentTownTavern;
+
         _tavernScene.SetActive(true);
 
-        _inventoryManager.UpdateStorageWindow(_currentlySelectedCharacter);
+        _storageManager.UpdateStorageWindow(_currentlySelectedCharacter);
 
-        SetupTavernCharacters(_testCharacters);
+        if (GameManager.instance.IsStartingCharacterAlreadyRecruited())
+        {
+            if (FirstTimeThisSessionVisitingThisTavern(_currentTown))
+            {
+                GeneratedTeamsByTavern newTeam = new GeneratedTeamsByTavern();
+
+                newTeam.SetupTeam(_currentTown, GenerateNewTavernTeam());
+
+                _generatedTavernTeams.Add(newTeam);
+            }
+
+            SetupTavernCharacters(GetTavernCharactersForThisTavern(_currentTown));
+        }
+        else
+            SetupTavernCharacters(_startingCharacterOptions);
+
         SetupTeamCharacters(savedPlayerTeam);
+    }
+
+    List<RecruitedCharacter> GenerateNewTavernTeam()
+    {
+        List<RecruitedCharacter> newTeam = new List<RecruitedCharacter>();
+
+        foreach (var unlockedCharacter in GameManager.instance.GetUnlockedCharacters())
+        {
+            if(UnityEngine.Random.value*100 <= unlockedCharacter.tavernAppearanceChance)
+            {
+                RecruitedCharacter newCharacter = new RecruitedCharacter(unlockedCharacter, unlockedCharacter.nativeEquipmentSet.equipments);
+
+                newTeam.Add(newCharacter);
+            }
+        }
+
+        return newTeam;
     }
 
     public void ExitTavernScene()
     {
+        _currentTown = null;
+
+        if (_storageManager.IsStorageOpen())
+            _storageManager.ChestIconClicked();
+
+        if (_shopManager.IsShopOpen())
+            _shopManager.NPCIconClicked();
+
         _tavernScene.SetActive(false);
 
         OnTavernExited?.Invoke();
@@ -68,17 +172,13 @@ public class TavernManager : MonoBehaviour
         OnTavernSceneExitSelected?.Invoke(true);
     }
 
-    void SetupTavernCharacters(RecruitedCharacter[] availableCharacters)
+    void SetupTavernCharacters(List<RecruitedCharacter> availableCharacters)
     {
-        foreach (Transform child in _characterSpots)
-        {
-            if (child.childCount > 0)
-                Destroy(child.GetChild(0).gameObject);
-        }
+        ResetTavernCharacters();
 
         _characterSpots.Shuffle();
 
-        for (int i = 0; i < availableCharacters.Length; i++)
+        for (int i = 0; i < availableCharacters.Count; i++)
         {
             TavernCharacter tavernCharacter = Instantiate(_tavernCharacterPrefab, _characterSpots[i]).GetComponent<TavernCharacter>();
             tavernCharacter.SetupCharacter(availableCharacters[i]);
@@ -86,13 +186,14 @@ public class TavernManager : MonoBehaviour
             tavernCharacter.gameObject.name = "Tavern "+availableCharacters[i].characterInfo.name;
 
             tavernCharacter.TavernCharacterSelected += TavernCharacterSelected;
+
+            _generatedTavernCharacters.Add(tavernCharacter);
         }
     }
 
     void SetupTeamCharacters(List<RecruitedCharacter> teamCharacters)
     {
-        foreach (Transform child in _teamMemberDisplayHolder)
-            Destroy(child.gameObject);
+        ResetTeamCharacters();
 
         for (int i = 0; i < teamCharacters.Count; i++)
         {
@@ -100,6 +201,20 @@ public class TavernManager : MonoBehaviour
             display.SetupTeamMemberDisplay(teamCharacters[i]);
             display.TeamMemberClicked += TeamMemberSelected;
         }
+    }
+
+    void ResetTavernCharacters()
+    {
+        foreach (var tavernCharacter in _generatedTavernCharacters)
+            Destroy(tavernCharacter.gameObject);
+
+        _generatedTavernCharacters.Clear();
+    }
+
+    void ResetTeamCharacters()
+    {
+        foreach (Transform child in _teamMemberDisplayHolder)
+            Destroy(child.gameObject);
     }
 
     #endregion
@@ -129,6 +244,8 @@ public class TavernManager : MonoBehaviour
 
                 tavernCharacter.TavernCharacterSelected += TavernCharacterSelected;
 
+                _generatedTavernCharacters.Add(tavernCharacter);
+
                 break;
             }
         }
@@ -136,18 +253,22 @@ public class TavernManager : MonoBehaviour
 
     void RemoveRecruitedCharacterFromTavern(RecruitedCharacter recruitedCharacter)
     {
-        foreach (var spot in _characterSpots)
-        {
-            if (spot.childCount == 0)
-                continue;
+        TavernCharacter toBeRemoved = null;
 
-            if (spot.GetComponentInChildren<TavernCharacter>() && spot.GetComponentInChildren<TavernCharacter>()._characterInfo == recruitedCharacter)
+        foreach (var tavernCharacter in _generatedTavernCharacters)
+        {
+            if(recruitedCharacter == tavernCharacter._characterInfo)
             {
-                spot.GetComponentInChildren<TavernCharacter>().TavernCharacterSelected -= TavernCharacterSelected;
-                Destroy(spot.GetComponentInChildren<TavernCharacter>().gameObject);
+                toBeRemoved = tavernCharacter;
+              
                 break;
             }
         }
+
+        _generatedTavernCharacters.Remove(toBeRemoved);
+
+        toBeRemoved.TavernCharacterSelected -= TavernCharacterSelected;
+        Destroy(toBeRemoved.gameObject);
 
         TavernTeamMemberDisplay display = Instantiate(_teamMemberDisplayPrefab, _teamMemberDisplayHolder).GetComponent<TavernTeamMemberDisplay>();
         display.SetupTeamMemberDisplay(recruitedCharacter);
@@ -166,13 +287,16 @@ public class TavernManager : MonoBehaviour
 
     void SelectCharacter(RecruitedCharacter character, bool teamMember)
     {
+        if (_shopManager.IsShopOpen())
+            return;
+
         _currentlySelectedCharacter = character;
 
         _characterInfoDisplay.gameObject.SetActive(true);
         _characterInfoDisplayAnimator.SetTrigger("Action");
 
         _characterInfoDisplay.UpdateDisplay(character, teamMember);
-        _inventoryManager.UpdateStorageWindow(_currentlySelectedCharacter);
+        _storageManager.UpdateStorageWindow(_currentlySelectedCharacter);
     }
 
     public void DeselectCharacter()
@@ -190,6 +314,13 @@ public class TavernManager : MonoBehaviour
         TeamMemberRecruited?.Invoke(_currentlySelectedCharacter);
         RemoveRecruitedCharacterFromTavern(_currentlySelectedCharacter);
         DeselectCharacter();
+
+        if (!GameManager.instance.IsStartingCharacterAlreadyRecruited())
+        {
+            GameManager.instance.StartingCharacterRecruited();
+
+            ResetTavernCharacters();
+        }
     }
 
     public void DismissCharacter()
@@ -206,19 +337,33 @@ public class TavernManager : MonoBehaviour
 
     #region Equipment Management
 
+    public void UpdateDraggedGFX(bool state, Sprite icon = null)
+    {
+        if (!_storageManager.IsStorageOpen())
+            return;
+
+        _draggedSlotGFX.gameObject.SetActive(state);
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        _draggedSlotGFX.transform.position = new Vector3(mousePos.x, mousePos.y, _draggedSlotGFX.transform.position.z);
+
+        _draggedSlotGFX.sprite = icon;
+    }
+
     void CharacterEquipmentDragStart(EquipmentIconDisplay equipment)
     {
-        _inventoryManager.CharacterEquipmentStartDrag(equipment);
+        _storageManager.CharacterEquipmentStartDrag(equipment);
     }
 
     void CharacterEquipmentDragEnd(EquipmentIconDisplay equipment)
     {
-        _inventoryManager.CharacterEquipmentEndDrag(equipment);
+        _storageManager.CharacterEquipmentEndDrag(equipment);
     }
 
     void CharacterEquipmentDragging(EquipmentIconDisplay equipment)
     {
-        _inventoryManager.CharacterEquipmentDragging(equipment);
+        _storageManager.CharacterEquipmentDragging(equipment);
     }
 
     void StorageWindowStageChange(bool state)
@@ -227,37 +372,95 @@ public class TavernManager : MonoBehaviour
             DeselectCharacter();
     }
 
-    void MoveEquipmentFromStorageToCharacter(TavernInventorySlot slot)
+    void ShopWindowStateChange(bool state)
     {
-        _inventoryManager.UpdateDraggedGFX(false);
+        if (state)
+        {
+            _storageManager.ChestIconClicked();
+
+            DeselectCharacter();
+        }
+
+        _storageManager.ToggleSellingValueOnStorage(state);
+    }
+
+    void ShopStockDragStart(ShopStockSlot shopSlot)
+    {
+        UpdateDraggedGFX(true);
+    }
+
+    void ShopStockDragEnd(ShopStockSlot shopSlot)
+    {
+        UpdateDraggedGFX(false);
+    }
+
+    void ShopStockDragging(ShopStockSlot shopSlot)
+    {
+        UpdateDraggedGFX(true, shopSlot._equipmentInfo.equipmentIcon);
+    }
+
+    void AttemptToMoveEquipmentFromStorageToCharacter(StorageSlot slot)
+    {
+        UpdateDraggedGFX(false);
 
         if (_currentlySelectedCharacter.IsCharacterInventoryFull())
             return;
 
         _currentlySelectedCharacter.AddEquipmentToCharacter(slot._equipmentInfo);
 
-        GameManager.instance.RemoveEquipmentFromPlayerInventory(slot._equipmentInfo);
+        GameManager.instance.RemoveEquipmentFromPlayerStorage(slot._equipmentInfo);
 
         _characterInfoDisplay.UpdateEquipmentDisplay();
-        _inventoryManager.UpdateStorageWindow(_currentlySelectedCharacter);
+        _storageManager.UpdateStorageWindow(_currentlySelectedCharacter);
     }
 
-    void MoveEquipmentFromCharacterToStorage(EquipmentIconDisplay equipment)
+    void AttemptToMoveEquipmentFromCharacterToStorage(EquipmentIconDisplay equipment)
     {
-        _inventoryManager.UpdateDraggedGFX(false);
+        UpdateDraggedGFX(false);
 
         if (!_currentlySelectedCharacter.DoesCharacterInventoryContainEquipment(equipment._equipmentInfo))
             return;
 
-        if (_inventoryManager.IsStorageFull())
+        if (_storageManager.IsStorageFull())
             return;
 
         _currentlySelectedCharacter.RemoveEquipmentFromCharacter(equipment._equipmentInfo);
 
-        GameManager.instance.AddEquipmentToPlayerInventory(equipment._equipmentInfo);
+        GameManager.instance.AddEquipmentToPlayerStorage(equipment._equipmentInfo);
 
         _characterInfoDisplay.UpdateEquipmentDisplay();
-        _inventoryManager.UpdateStorageWindow(_currentlySelectedCharacter);
+        _storageManager.UpdateStorageWindow(_currentlySelectedCharacter);
+    }
+
+    void AttemptToBuyEquipmentFromShop(ShopStockSlot stock)
+    {
+        UpdateDraggedGFX(false);
+
+        if (_storageManager.IsStorageFull())
+            return;
+
+        if (GameManager.instance.GetCurrentPlayerMoney() < stock._equipmentInfo.equipmentValue)
+            return;
+
+        GameManager.instance.AddEquipmentToPlayerStorage(stock._equipmentInfo);
+        GameManager.instance.SpendPlayerMoney(stock._equipmentInfo.equipmentValue);
+
+        _shopManager.RemoveStockFromSale(stock);
+        _shopManager.UpdateShopWindow();
+
+        _storageManager.UpdateStorageWindow(_currentlySelectedCharacter);
+        _storageManager.ToggleSellingValueOnStorage(true);
+    }
+
+    void AttemptToSellEquipmentToShop(StorageSlot storageSlot)
+    {
+        UpdateDraggedGFX(false);
+
+        GameManager.instance.RemoveEquipmentFromPlayerStorage(storageSlot._equipmentInfo);
+        GameManager.instance.EarnPlayerMoney(storageSlot._equipmentInfo.equipmentValue);
+
+        _storageManager.UpdateStorageWindow(_currentlySelectedCharacter);
+        _storageManager.ToggleSellingValueOnStorage(true);
     }
 
     #endregion

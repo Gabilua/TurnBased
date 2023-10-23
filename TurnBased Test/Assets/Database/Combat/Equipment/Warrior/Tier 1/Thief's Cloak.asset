@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
+  m_Name: Thief's Cloak
+  m_EditorClassIdentifier: 
+  equipmentIcon: {fileID: -1264741822, guid: 4ebeba27ec97e09439b22479da083c5a, type: 3}
+  awardedSkill: {fileID: 11400000, guid: 7845e5009bdb0bb4cb57b530bad72871, type: 2}
+  equipmentDescription: Inconspicuous attire of the ones that live life on the move.
+  allowedUsers:
+  - {fileID: 11400000, guid: fa28c73f8e0f99044b81c4afcccdcda3, type: 2}
+  equipmentValue: 0

@@ -7,7 +7,8 @@ public class EquipmentInfo : ScriptableObject
 {
     public Sprite equipmentIcon;
     public SkillInfo awardedSkill;
+    [TextArea]
     public string equipmentDescription;
     public List<CharacterInfo> allowedUsers = new List<CharacterInfo>();
-    public int sellingPrice;
+    public int equipmentValue;
 }

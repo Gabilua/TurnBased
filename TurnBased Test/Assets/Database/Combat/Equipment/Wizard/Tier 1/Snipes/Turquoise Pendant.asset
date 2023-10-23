@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
+  m_Name: Turquoise Pendant
+  m_EditorClassIdentifier: 
+  equipmentIcon: {fileID: 1604862400, guid: f4727bcc02d463c448a7f9f389ae8969, type: 3}
+  awardedSkill: {fileID: 11400000, guid: 9b3f3682405f6ec49b98b675706c8076, type: 2}
+  equipmentDescription: 
+  allowedUsers:
+  - {fileID: 11400000, guid: 3fdf187ab3e7ad24a934241dbe77353b, type: 2}
+  equipmentValue: 0
