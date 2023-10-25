@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2961f27934ff8d44cb47f55aab3c4e01, type: 3}
   m_Name: Magic Powder
   m_EditorClassIdentifier: 
-  equipmentIcon: {fileID: 21300000, guid: c56aac1f13bd9024da7655cf137b5856, type: 3}
+  equipmentIcon: {fileID: 283562775, guid: 0e4c211e9e95d3d4c9f50227085f13b2, type: 3}
   awardedSkill: {fileID: 11400000, guid: d1f5f11e6d00b6b4da11de8c21e6df19, type: 2}
   equipmentDescription: Grounded fairy wings. Still as hostile.
   allowedUsers:

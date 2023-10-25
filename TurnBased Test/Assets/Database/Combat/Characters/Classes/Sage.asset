@@ -27,7 +27,6 @@ MonoBehaviour:
     dodge: 7
   nativeEquipmentSet:
     equipments:
-    - {fileID: 11400000, guid: 69976c1d4eedc9047ae39c1c20c8b4eb, type: 2}
     - {fileID: 11400000, guid: 3ee9b09f5d2143949bdbdb3c8c522a63, type: 2}
-    - {fileID: 11400000, guid: c7ff754764572114291f48c11bcec933, type: 2}
+    - {fileID: 11400000, guid: fb11b28a8ab4b5d439d3c06492196d62, type: 2}
   tavernAppearanceChance: 100

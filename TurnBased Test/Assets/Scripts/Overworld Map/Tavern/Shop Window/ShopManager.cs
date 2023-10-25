@@ -182,7 +182,12 @@ public class ShopManager : MonoBehaviour
         {
             GeneratedShopStocksByTown newStock = new GeneratedShopStocksByTown();
 
-            newStock.SetupStock(_tavernManager._currentTown, _tavernManager._currentTown.stageEquipmentRewards);
+            List<EquipmentInfo> stageEquipmentRewards = new List<EquipmentInfo>();
+
+            foreach (var stageReward in _tavernManager._currentTown.stageEquipmentRewards)
+                stageEquipmentRewards.Add(stageReward.equipmentReward);
+
+            newStock.SetupStock(_tavernManager._currentTown, stageEquipmentRewards);
 
             _generatedShopStocks.Add(newStock);
         }

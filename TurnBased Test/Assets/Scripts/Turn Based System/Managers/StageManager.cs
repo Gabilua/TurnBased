@@ -14,17 +14,21 @@ public class StageManager : MonoBehaviour
     StageInfo _currentStage;
 
     [SerializeField] MatchManager _matchManager;
+    [SerializeField] CombatManager _combatManager;
     [SerializeField] PlayerTeamController _playerTeamController;
     [SerializeField] StageProgressdDisplay _stageProgressUI;
+    [SerializeField] StageRewardsScreen _stageRewardScreen;
     [SerializeField] Image _stageScenery;
-    [SerializeField] CombatManager _combatManager;
 
     public float timeToStartFirstMatch;
     [SerializeField] float timeToAdvanceToNextMatch;
+    [SerializeField] float timeToShowRewardScreen;
 
     public StageProgressState _currentStageProgressState { get; private set; }
 
     MatchInfo _currentActiveMatch;
+
+    bool _stageResult;
 
     int _currentActiveMatchIndex = 0;
 
@@ -125,13 +129,49 @@ public class StageManager : MonoBehaviour
         StartNewMatch();
     }
 
+    void ToggleRewardScreen(bool state)
+    {
+        _stageRewardScreen.gameObject.SetActive(state);
+    }
+
+    void UpdateRewardScreen()
+    {
+        List<EquipmentInfo> droppedEquipments = new List<EquipmentInfo>();
+
+        foreach (var stageReward in _currentStage.stageEquipmentRewards)
+        {
+            if(UnityEngine.Random.value * 100 <= stageReward.equipmentDropChance)
+                droppedEquipments.Add(stageReward.equipmentReward);
+        }
+
+        int goldReward = Mathf.CeilToInt(UnityEngine.Random.Range(_currentStage.stageGoldRewardRange.x, _currentStage.stageGoldRewardRange.y));
+
+        foreach (var droppedEquipment in droppedEquipments)
+            GameManager.instance.AddEquipmentToPlayerStorage(droppedEquipment);
+
+        GameManager.instance.EarnPlayerMoney(goldReward);
+
+        ToggleRewardScreen(true);
+
+        _stageRewardScreen.SetupRewardScreen(goldReward, droppedEquipments);
+    }
+
     void EndStage(bool playerWon)
     {
         SetStageProgressState(StageProgressState.Completed);
 
         _combatManager.ResetCombatManagerUI();
 
-        StageEnd?.Invoke(playerWon);
+        _stageResult = playerWon;
+
+        UpdateRewardScreen();
+    }
+
+    public void RewardScreenClosed()
+    {
+        ToggleRewardScreen(false);
+
+        Run.After(timeToAdvanceToNextMatch, () => StageEnd?.Invoke(_stageResult));
     }
 
     #endregion

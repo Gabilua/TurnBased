@@ -126,6 +126,17 @@ public class RealtimeCombatant : MonoBehaviour
     {
         _learnedSkills.Clear();
 
+        List<SkillInfo> emptySkills = new List<SkillInfo>();
+
+        foreach (var skill in skills)
+        {
+            if (skill == null)
+                emptySkills.Add(skill);
+        }
+
+        foreach (var emptySkill in emptySkills)
+            skills.Remove(emptySkill);
+
         _learnedSkills.AddRange(skills);
 
         FinishCombatantSetup();

@@ -17,4 +17,14 @@ MonoBehaviour:
   stageBGM: {fileID: 8300000, guid: a764e741eea8cd740a1d2227eb091830, type: 3}
   orderedMatches:
   - {fileID: 11400000, guid: f427f0cffada19445a8196f27e45b09e, type: 2}
+  stageEquipmentRewards:
+  - equipmentReward: {fileID: 11400000, guid: 8d65fd52892914341a5f6b2a6087b8bb, type: 2}
+    equipmentDropChance: 100
+  - equipmentReward: {fileID: 11400000, guid: 2430a025a280c984480e449dd0bebfd4, type: 2}
+    equipmentDropChance: 50
+  - equipmentReward: {fileID: 11400000, guid: f0b6962de43c28d45b7e6a8b3042fb69, type: 2}
+    equipmentDropChance: 25
+  - equipmentReward: {fileID: 11400000, guid: 07bc555ee950a354cba9e0c32c439571, type: 2}
+    equipmentDropChance: 10
+  stageGoldRewardRange: {x: 5, y: 25}
   isTown: 0

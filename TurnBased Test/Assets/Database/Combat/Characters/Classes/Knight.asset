@@ -28,5 +28,5 @@ MonoBehaviour:
   nativeEquipmentSet:
     equipments:
     - {fileID: 11400000, guid: 047663d781d0b1640b80f8f4668751d1, type: 2}
-    - {fileID: 11400000, guid: c7ff754764572114291f48c11bcec933, type: 2}
+    - {fileID: 11400000, guid: 9d55393fe14193a4198baf3fa540f9b7, type: 2}
   tavernAppearanceChance: 100
